@@ -1,5 +1,5 @@
 
-import MuiButton from "@mui/material/Button";
+import {Button} from "@mui/material";
 export interface buttonType {
     //properties
     text?: string;
@@ -16,7 +16,7 @@ export interface buttonType {
 }
 export function ButtonComponent({ text, variant, color, background, isDisabled, onClick, startIcon, endIcon }: buttonType) {
     return (
-        <MuiButton
+        <Button
             variant={variant}
             color={color}
             onClick={() => {
@@ -25,7 +25,7 @@ export function ButtonComponent({ text, variant, color, background, isDisabled, 
             startIcon={startIcon}
             endIcon={endIcon}
         >{text}
-        </MuiButton>
+        </Button>
     );
 }
 export default ButtonComponent;

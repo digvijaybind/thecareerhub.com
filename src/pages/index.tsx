@@ -16,7 +16,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <h1>hii there</h1>
-      <ButtonComponent />
+      <ButtonComponent variant={"red"} color={"primary"} text={"click here"} onClick={()=>{alert("clicked")}} />
     </>
   )
 }
