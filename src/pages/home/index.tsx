@@ -2,15 +2,16 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
-// import styles from '@/styles/Home.Header.css'
-import DrawerAppBar from '@/libs/material-ui/components/header'
-import ButtonComponent from '@/libs/material-ui/components/button'
-import HomeComponent from './home'
+import { Grid } from '@mui/material'
+//interestSectionBG
+import interestSectionBG from '../../assets/home/interestSectionBG.png'
+
+
 
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export default function HomeComponent() {
   return (
     <>
       <Head>
@@ -19,8 +20,19 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <DrawerAppBar/>
-     <HomeComponent/>
+     <div style={{background:"#013388",width:'100%',color:"white",height:500}}>
+     <Grid container spacing={2}>
+  <Grid item xs={7}>
+<Image src={interestSectionBG} width={820} height={450} alt={"home background"}/>
+  </Grid>
+  <Grid item xs={5}>
+  
+  </Grid>
+
+</Grid>
+
+     </div>
+    
     </>
   )
 }

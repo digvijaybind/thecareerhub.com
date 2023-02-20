@@ -1,6 +1,6 @@
 
 import {Button} from "@mui/material";
-export interface buttonType {
+export interface navigationType {
     //properties
     text?: string;
     variant?: any;//text,content,outlined
@@ -15,11 +15,10 @@ export interface buttonType {
     //custom style
     className?:any;
     style?:any;
-    sx?:any
     
 
 }
-export function ButtonComponent({ text, variant, color, background, isDisabled, onClick, startIcon, endIcon, className, style,sx }: buttonType) {
+export function NavigationComponent({ text, variant, color, background, isDisabled, onClick, startIcon, endIcon, className, style }: navigationType) {
     return (
         <Button
             variant={variant}
@@ -31,10 +30,9 @@ export function ButtonComponent({ text, variant, color, background, isDisabled, 
             endIcon={endIcon}
             className={className}
             style={style}
-            sx={sx}
             
         >{text}
         </Button>
     );
 }
-export default ButtonComponent;
+export default NavigationComponent;
