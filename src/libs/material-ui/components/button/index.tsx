@@ -3,7 +3,7 @@ import {Button} from "@mui/material";
 export interface buttonType {
     //properties
     text?: string;
-    variant?: any;
+    variant?: any;//text,content,outlined
     color?: any;
     background?: string;
     isDisabled?: boolean;
@@ -12,9 +12,12 @@ export interface buttonType {
     //objects
     startIcon?: any;
     endIcon?: any;
+    //custom style
+    className?:any;
+    
 
 }
-export function ButtonComponent({ text, variant, color, background, isDisabled, onClick, startIcon, endIcon }: buttonType) {
+export function ButtonComponent({ text, variant, color, background, isDisabled, onClick, startIcon, endIcon, className }: buttonType) {
     return (
         <Button
             variant={variant}
@@ -24,6 +27,7 @@ export function ButtonComponent({ text, variant, color, background, isDisabled, 
             }}
             startIcon={startIcon}
             endIcon={endIcon}
+            className={className}
         >{text}
         </Button>
     );
