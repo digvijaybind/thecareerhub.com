@@ -97,7 +97,7 @@ points:[
 'Understand how to enhance your abilities',
 'Explore the best of your options'
 ],
-button:'Take a free test nowww',
+button:'Take a free test now',
 isButton:true,image:section6Img
 }
     
