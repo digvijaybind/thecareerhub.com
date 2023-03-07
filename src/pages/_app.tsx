@@ -7,7 +7,7 @@ import { CacheProvider } from '@emotion/react';
 import theme from '../styles/theme';
 import createEmotionCache from './createEmotionCache';
 import DrawerAppBar from '@/libs/material-ui/components/header';
-
+import '../styles/globals.css';
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
 

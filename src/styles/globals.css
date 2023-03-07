@@ -107,4 +107,5 @@ a {
 }
 ul{
   list-style: none !important;
+  padding: 0 !important;
 }
