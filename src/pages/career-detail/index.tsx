@@ -388,6 +388,10 @@ export default function CareerDetail() {
             <div className={styles.cards}>
               <div className={styles.card}>
                 <div className={styles.top}>
+                  <Grid xl={2} lg={2}>
+                  <Image src={collegeLogo} alt="" />
+                  </Grid>
+                  <Grid xl={10} lg={10}>
                   <div className={styles.title}>
                   Advertisement & Brand Manager
                   </div>
@@ -409,6 +413,7 @@ export default function CareerDetail() {
                     </div>
                    
                   </div>
+                  </Grid>
                 </div>
                 <div className={styles.bottom}>
                   <div className={styles.subTitleItem}>9 Courses Options</div>
@@ -522,6 +527,10 @@ export default function CareerDetail() {
             <div className={styles.cards}>
               <div className={styles.card}>
                 <div className={styles.top}>
+                <Grid xl={2} lg={2}>
+                  <Image src={collegeLogo} alt="" />
+                  </Grid>
+                  <Grid xl={10} lg={10}>
                   <div className={styles.title}>
                   Advertisement & Brand Manager
                   </div>
@@ -543,6 +552,7 @@ export default function CareerDetail() {
                     </div>
                    
                   </div>
+                </Grid>
                 </div>
                 <div className={styles.bottom}>
                   <div className={styles.subTitleItem}>9 Courses Options</div>
