@@ -1,0 +1,127 @@
+@import "../../assets/Fonts/Poppins/style.css";
+.fontBold {
+  font-weight: bold;
+}
+.container {
+  padding: 16px 100px;
+  display: flex;
+  gap: 1rem;
+  font-family: Poppins;
+  position: relative;
+  background: #e2ebff;
+  color: #112152;
+}
+.mainSec {
+  background-color: #112152;
+  padding: 30px 75px;
+  height: 390px;
+  border-radius: 0 45% 54% 0;
+}
+.mainSec .title {
+  font-size: 19px;
+  font-weight: 500;
+}
+.mainSec .subTitle {
+  font-size: 44px;
+  font-weight: bold;
+}
+.mainSec .text {
+  opacity: 0.84;
+}
+.statsSection {
+  display: flex;
+  gap: 0.75rem;
+}
+.statsSection .statsItem {
+  margin: 40px 0;
+  padding: 5px 24px;
+  border-left: 1px solid #313f69;
+}
+.statsSection .statsItem:last-child {
+  border-right: 1px solid #313f69;
+}
+.statsSection .statsItem .title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #52edf6;
+}
+.statsSection .statsItem .data {
+  display: flex;
+  font-size: 14px;
+  color: #fff;
+}
+.statsSection .statsItem .data .stats {
+  opacity: 0.64;
+}
+.btnYellow {
+  padding: 9px 16px;
+  border-radius: 4px;
+  background-color: #fee040;
+  margin-left: auto;
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 600;
+  color: #112152;
+}
+.contentBox {
+  font-size: 18px;
+  color: #112152;
+}
+.contentBox .short {
+  font-weight: 500;
+  color: #f37128;
+}
+.contentBox .heading {
+  font-size: 34px;
+  font-weight: bold;
+}
+.contentBox .description {
+  color: #2b2b2b;
+  font-size: 16px;
+}
+.contentBox .list {
+  font-weight: 500;
+  color: #000;
+  margin: 32px 0;
+}
+.contentBox .listItem {
+  display: flex;
+  align-items: center;
+  
+  padding-left: 0;
+
+}
+.contentBox .listItem .listIndicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background-color: #fee040;
+  margin-right: 14px;
+}
+.section{
+  color: #4a158d;
+  font-size: 12px;
+  margin-bottom: 33px;
+}
+.section .sectionTitle{
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.section .subSections{
+  display: flex;
+  gap:1rem;
+ 
+}
+.section .subSection .subSectionTitle{
+  font-size: 14px;
+  font-weight: 600;
+  padding: 7px 0;
+  border-bottom: 2px solid #4a158d;
+  margin-bottom: 15px;
+}
+.section .subSection ul{
+color: #000;
+line-height: 30px;
+}
+.section .subSection ul li{}
