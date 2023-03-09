@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "@next/font/google";
 import styles from "./style.module.css";
+import styled from 'styled-components';
 import {
   Box,
   Button,
@@ -136,13 +137,7 @@ export default function HomeComponent() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div
-        style={{
-          background: "#013388",
-          width: "100%",
-          color: "white",
-          height: 500,
-          padding: "30px 0",
-        }}
+        className={styles.homePageWrap}
       >
         {/* <Container maxWidth="lg"> */}
         <Grid container spacing={2}>
@@ -282,7 +277,7 @@ export default function HomeComponent() {
         </Grid>
         {/* </Container> */}
       </div>
-      <Modal
+      {/* <Modal
         open
         // onClose={handleClose}
       >
@@ -399,7 +394,7 @@ export default function HomeComponent() {
             </div>
           </div>
         </Box>
-      </Modal>
+      </Modal> */}
     </>
   );
 }

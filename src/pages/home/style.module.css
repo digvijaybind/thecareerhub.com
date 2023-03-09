@@ -11,11 +11,22 @@
   background: #e2ebff;
   color: #112152;
 }
+.homePageWrap {
+  background: #013388;
+  width: 100%;
+  color: white;
+  height: 500px;
+  padding: 30px 0;
+}
 .mainSec {
   background-color: #112152;
   padding: 30px 75px;
   height: 390px;
   border-radius: 0 45% 54% 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
 }
 .mainSec .title {
   font-size: 19px;
@@ -33,7 +44,7 @@
   gap: 0.75rem;
 }
 .statsSection .statsItem {
-  margin: 40px 0;
+  margin: 15px 0;
   padding: 5px 24px;
   border-left: 1px solid #313f69;
 }
@@ -57,7 +68,8 @@
   padding: 9px 16px;
   border-radius: 4px;
   background-color: #fee040;
-  margin-left: auto;
+  width: fit-content;
+  /* margin-left: auto; */
   font-family: Poppins;
   font-size: 14px;
   font-weight: 600;
@@ -87,9 +99,8 @@
 .contentBox .listItem {
   display: flex;
   align-items: center;
-  
-  padding-left: 0;
 
+  padding-left: 0;
 }
 .contentBox .listItem .listIndicator {
   width: 8px;
@@ -98,30 +109,51 @@
   background-color: #fee040;
   margin-right: 14px;
 }
-.section{
+.section {
   color: #4a158d;
   font-size: 12px;
   margin-bottom: 33px;
 }
-.section .sectionTitle{
+.section .sectionTitle {
   font-size: 14px;
   font-weight: 600;
   margin-bottom: 20px;
 }
-.section .subSections{
+.section .subSections {
   display: flex;
-  gap:1rem;
- 
+  gap: 1rem;
 }
-.section .subSection .subSectionTitle{
+.section .subSection .subSectionTitle {
   font-size: 14px;
   font-weight: 600;
   padding: 7px 0;
   border-bottom: 2px solid #4a158d;
   margin-bottom: 15px;
 }
-.section .subSection ul{
-color: #000;
-line-height: 30px;
+.section .subSection ul {
+  color: #000;
+  line-height: 30px;
 }
-.section .subSection ul li{}
+.section .subSection ul li {
+}
+
+@media (max-width: 595px) {
+  .mainSec {
+    padding: 10px;
+  }
+  .mainSec .subTitle {
+    font-size: 20px;
+  }
+}
+@media (max-width: 400px) {
+  .homePageWrap {
+    height: auto;
+  }
+  .mainSec {
+    height: auto;
+  }
+  .mainSec .statsSection {
+    flex-direction: column;
+    gap: 0;
+  }
+}

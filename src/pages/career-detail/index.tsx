@@ -16,9 +16,10 @@ import upArrow from "../../assets/career-detail/upArrow.png";
 import collegeLogo from "../../assets/career-detail/college-logo.png";
 export default function CareerDetail() {
   return (
-    <Grid className={styles.container}>
-      <div className={styles.topSection}></div>
-      <Grid xl={2} lg={2} className={styles.menuList}>
+    <Grid container className={styles.container} spacing={1}>
+      {/* <div className={styles.topSection}></div> */}
+      <Grid item xl={2} lg={2} className={styles.menuList} display={{ xs: "none", lg: "block" }}
+>
         <ul>
           <li>Overview</li>
           <li className={styles.active}>Typical day at work</li>
@@ -31,12 +32,14 @@ export default function CareerDetail() {
           <li>Industries</li>
         </ul>
       </Grid>
-      <Grid xl={10} lg={10} className={styles.rightSection}>
+      <Grid item xl={10} lg={10} className={styles.rightSection}>
+        <div className={styles.titleBlock}>
         <div className={styles.title}>Accountant </div>
         <div className={styles.subTitle}>
           <div className={styles.subTitleItem}>Finance & Accounts</div>
           <div className={styles.subTitleItem}>Commerce</div>
           <div className={styles.subTitleItem}>Management</div>
+        </div>
         </div>
         <div className={styles.dataSection}>
           <div className={styles.mainImg}>
@@ -388,10 +391,11 @@ export default function CareerDetail() {
             <div className={styles.cards}>
               <div className={styles.card}>
                 <div className={styles.top}>
-                  <Grid xl={2} lg={2}>
+                  <Grid container spacing={1}>
+                  <Grid item xl={2} lg={2}>
                   <Image src={collegeLogo} alt="" />
                   </Grid>
-                  <Grid xl={10} lg={10}>
+                  <Grid item xl={10} lg={10}>
                   <div className={styles.title}>
                   Advertisement & Brand Manager
                   </div>
@@ -413,6 +417,7 @@ export default function CareerDetail() {
                     </div>
                    
                   </div>
+                  </Grid>
                   </Grid>
                 </div>
                 <div className={styles.bottom}>

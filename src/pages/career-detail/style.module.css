@@ -3,9 +3,8 @@
   font-weight: bold;
 }
 .container {
-  padding: 16px 100px;
+  padding: 16px 65px;
   display: flex;
-  gap: 1rem;
   font-family: Poppins;
   position: relative;
   background: #e2ebff;
@@ -24,7 +23,6 @@
   border: solid 1px #dce0e9;
   background-color: #fff;
   padding: 24px 0px;
-  min-width: 295px;
   color: #2b2b2b;
   height: fit-content;
   line-height: 36px;
@@ -40,13 +38,16 @@
   border-left: 3px solid #112152;
 }
 .rightSection {
+  width: 100%;
 }
+
 .rightSection .title {
   font-size: 36px;
   font-weight: 600;
 }
 .rightSection .subTitle {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.25rem;
 }
 .subTitleItem {
@@ -105,7 +106,7 @@
   font-weight: normal;
   color: #2b2b2b;
   line-height: 30px;
-  margin-top: 15px;
+  /* margin-top: 15px; */
 }
 .textSection ul.text li {
   padding-left: 30px;
@@ -122,6 +123,7 @@ ul li .listIndicator {
 .tabs ul {
   display: flex;
   gap: 0.75rem;
+  flex-wrap: wrap;
 }
 .tabs ul li {
   padding: 13px;
@@ -132,6 +134,7 @@ ul li .listIndicator {
 .pathways {
   display: flex;
   gap: 2rem;
+  flex-wrap: wrap;
 }
 .pathways .pathway {
 }
@@ -185,6 +188,7 @@ ul li .listIndicator {
   border-radius: 8px;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
   margin-bottom: 17px;
+  overflow: hidden;
 }
 .cards .card .top {
   padding: 20px;
@@ -205,6 +209,7 @@ ul li .listIndicator {
 }
 .cards .card .top .details {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
   margin-top: 19px;
 }
@@ -227,6 +232,7 @@ ul li .listIndicator {
   border-top: solid 1px #d6ddec;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap:0.5rem;
 }
 .cards .card .bottom .subTitleItem {
@@ -244,4 +250,22 @@ ul li .listIndicator {
   font-size: 14px;
   font-weight: 500;
   text-decoration: underline;
+}
+
+@media (max-width: 595px) {
+  .container {
+    padding: 16px 0px;
+  }
+  .title{
+    font-size: 20px !important;
+  }
+  .container .titleBlock{
+    padding: 0px 24px;
+  }
+  .dataSection{
+    padding: 50px 24px;
+  }
+  .btnYellow{
+    margin-left: unset;
+  }
 }

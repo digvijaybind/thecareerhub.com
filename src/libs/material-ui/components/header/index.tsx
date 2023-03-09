@@ -19,7 +19,8 @@ import ButtonComponent from '../button';
 import SearchIcon from '@mui/icons-material/Search';
 import InputBase from '@mui/material/InputBase';
 import Logo from '../../../../assets/logo/Logo4.webp'
-import Image from 'next/image'
+import Image from 'next/image';
+import styles from "./style.module.css";
 interface Props {
   /**
    * Injected by the documentation to work in an iframe.
@@ -119,8 +120,9 @@ const navItems = [{text:'Career Test',color:"white"}, {text:'Blog',color:"white"
   return (
     <Box sx={{ display: 'flex'}}>
       <CssBaseline />
-      <AppBar component="nav" style={{backgroundColor:"#013388" ,boxShadow:"none",position:"relative"}}>
-        <Toolbar>
+      <AppBar component="nav" style={{backgroundColor:"#013388" ,boxShadow:"none",position:"relative"}}
+      >
+        <Toolbar className={styles.header}>
           <IconButton
             color="inherit"
             aria-label="open drawer"

@@ -9,11 +9,11 @@ export default function BlogDetail() {
   return (
     <Grid className={styles.container}>
       <div className={styles.topSection}></div>
-
       <Grid xl={9} lg={9} className={styles.leftSection}>
+      <div className={styles.titleBlock}>
         <div className={styles.title}>
           Think Beyond MBBS: 14 In-Demand Career Options for PCB Students after
-          Class 12th{" "}
+          Class 12th
         </div>
         <div className={styles.subTitle}>
           <div className={styles.subTitleItem}>Finance & Accounts</div>
@@ -21,6 +21,7 @@ export default function BlogDetail() {
           <div className={styles.subTitleItem}>Management</div>
         </div>
         <div >19 October 2018</div>
+        </div>
         <div className={styles.dataSection}>
           <div className={styles.mainImg}>
             <Image src={sectionImg} alt="" width={170} height={25} />
@@ -119,7 +120,7 @@ export default function BlogDetail() {
           </div>
         </div>
       </Grid>
-      <Grid xl={3} lg={3} className={styles.rightSection}>
+      <Grid xl={3} lg={3} className={styles.rightSection} display={{ xs: "none", lg: "block" }}>
         <div className={styles.imageBlockWrap}>
         <div className={styles.imageBlock}>  
         </div>
