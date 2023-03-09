@@ -105,3 +105,16 @@ a {
     color-scheme: dark;
   }
 }
+ul{
+  list-style: none !important;
+  padding: 0 !important;
+}
+.fontBold {
+  font-weight: bold;
+}
+.dFlex{
+  display: flex;
+}
+.alignItemsCenter{
+  align-items: center;
+}

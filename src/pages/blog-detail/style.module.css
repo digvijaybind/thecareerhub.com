@@ -1,0 +1,174 @@
+@import "../../assets/Fonts/Poppins/style.css";
+.container {
+  padding: 16px 100px;
+  font-family: Poppins;
+  position: relative;
+  background: #e2ebff;
+  color: #112152;
+}
+.leftSection {
+}
+.leftSection .title {
+  font-size: 36px;
+  font-weight: 600;
+}
+.leftSection .subTitle {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin:15px 0;
+}
+.subTitleItem {
+  padding: 9px;
+  border-radius: 4px;
+  background-color: #fee040;
+}
+.dataSection {
+  width: 100%;
+  padding: 50px;
+  background-color: #fff;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.11);
+  margin-top: 20px;
+}
+.dataSection .mainImg img {
+  width: 100%;
+  height: 374px;
+}
+.textSection {
+  margin: 20px 0 70px 0;
+}
+.textSection .title {
+  margin: 15px 0;
+}
+.textSection .subTitle {
+  font-size: 12px;
+  font-weight: 500;
+  color: #f37128;
+  text-transform: uppercase;
+}
+.textSection .text {
+  /* font-family: PTSerif; */
+  font-size: 16px;
+  font-weight: normal;
+  color: #2b2b2b;
+  line-height: 30px;
+  margin-top: 15px;
+}
+.cards {
+  margin: 32px 0;
+}
+.cards .card {
+  border-radius: 8px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
+  margin-bottom: 17px;
+  overflow: hidden;
+}
+.cards .card .top {
+  padding: 20px;
+  background: #f3f7fe;
+  gap:0.25rem;
+}
+.cards .card .title{
+  font-size: 16px;
+  margin:0;
+  margin-left: 10px;
+}
+.cards .card .subTitleItem{
+background: transparent;
+}
+.cards .card .btnsBlock{
+  display: flex;
+  flex-wrap: wrap;
+  place-content: end;
+  gap:0.5rem;
+}
+.btnsBlock button{
+  padding: 13px 16px;
+  border-radius: 4px;
+  background-color: rgba(85, 108, 214, 0.04);
+}
+.btnYellow{
+  background-color: #fee040 !important;
+}
+.link {
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: underline;
+  margin: auto;
+}
+.rightSection .imageBlockWrap{
+  /* margin-bottom: 30px; */
+}
+.rightSection .imageBlock{
+  background-image: url(../../assets/career-detail/career-detail.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 178px;
+  width: 260px;
+  background-size: cover;
+
+}
+.rightSection .imageText{
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000 78%);
+ padding: 15px;
+ font-size: 11px;
+}
+.rightSection .imageText .btnsBlock{
+  display: flex;
+  flex-wrap: wrap;
+  gap:1rem;
+}
+.rightSection .imageText .title{
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  margin:10px 0;
+}
+.rightSection .imageText .btnYellow{
+  font-size: 11px;
+  padding: 5px;
+}
+.rightSection .imageText .lightText{
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.4);
+}
+.rightSection .menuList {
+  border-radius: 8px;
+  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.15);
+  border: solid 1px #dce0e9;
+  background-color: #fff;
+  padding: 24px 0px;
+  min-width: 295px;
+  color: #2b2b2b;
+  height: fit-content;
+  line-height: 36px;
+}
+.rightSection .menuList ul li {
+  padding: 0 20px;
+}
+
+.rightSection .menuList ul li.active {
+  color: #112152;
+  font-size: 14px;
+  font-weight: 600;
+  background: #ecf1ff;
+  border-left: 3px solid #112152;
+}
+@media (max-width: 595px) {
+  .container {
+    padding: 16px 10px;
+  }
+  .title{
+    font-size: 20px !important;
+  }
+  .container .titleBlock{
+    padding: 0px 24px;
+  }
+  .dataSection{
+    padding: 50px 24px;
+  }
+  .btnYellow{
+    margin-left: unset;
+  }
+}
