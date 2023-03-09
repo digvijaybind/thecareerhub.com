@@ -33,7 +33,7 @@ const drawerWidth = 240;
 const navItems = [{text:'Career Test',color:"white"}, {text:'Blog',color:"white"},{text: 'Login',color:"#fee040"}];
 
  export function DrawerAppBar(props: Props) {
-  const { window } = props;
+  const { window,toggleModal } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
@@ -155,7 +155,8 @@ const navItems = [{text:'Career Test',color:"white"}, {text:'Blog',color:"white"
       </IconButton>
           </Search>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-             <ButtonComponent endIcon={<ExpandMoreIcon/>}  text={"Explore"} style={{ color: '#fff',paddingLeft:25,paddingRight:25 }} />
+             <ButtonComponent endIcon={<ExpandMoreIcon/>}  text={"Explore"} style={{ color: '#fff',paddingLeft:25,paddingRight:25 }} 
+             onClick={toggleModal}/>
             {navItems.map((item) => (
               <ButtonComponent key={item.text} text={item.text} style={{ color: item.color,paddingLeft:25,paddingRight:25  }} />
                 

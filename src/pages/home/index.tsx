@@ -11,7 +11,6 @@ import {
   Link,
   List,
   ListItem,
-  Modal,
   Paper,
   Typography,
 } from "@mui/material";
@@ -26,7 +25,7 @@ import ButtonComponent from "@/libs/material-ui/components/button";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function HomeComponent() {
+export default function HomeComponent({prop}) {
   const content = [
     {
       short: "Presenting, the best of careers to you",
@@ -144,7 +143,6 @@ export default function HomeComponent() {
           <Grid item xl={6} lg={6}>
             <div className={styles.mainSec}>
               <div className={styles.title}>
-                {" "}
                 Take the world’s most advanced
               </div>
               <div className={styles.subTitle}>Interest Aptitude Test</div>
@@ -277,124 +275,7 @@ export default function HomeComponent() {
         </Grid>
         {/* </Container> */}
       </div>
-      {/* <Modal
-        open
-        // onClose={handleClose}
-      >
-        <Box
-          sx={{
-            position: "absolute" as "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            width: "auto",
-            bgcolor: "background.paper",
-            border: "2px solid #000",
-            boxShadow: 24,
-            p: 4,
-          }}
-        >
-          <div className={styles.section}>
-            <div className={styles.sectionTitle}>Careers</div>
-            <div className={styles.subSections}>
-            <div className={styles.subSection}>
-              <div className={styles.subSectionTitle}>Top Categories</div>
-              <ul>
-                <li>Academics & Research</li>
-                <li>Aviation</li>
-              </ul>
-            </div>
-            <div className={styles.subSection}>
-              <div className={styles.subSectionTitle}>Top Categories</div>
-              <ul>
-                <li>Academics & Research</li>
-                <li>Aviation</li>
-              </ul>
-            </div>
-            <div className={styles.subSection}>
-              <div className={styles.subSectionTitle}>Top Categories</div>
-              <ul>
-                <li>Academics & Research</li>
-                <li>Aviation</li>
-              </ul>
-            </div>
-            <div className={styles.subSection}>
-              <div className={styles.subSectionTitle}>Top Categories</div>
-              <ul>
-                <li>Academics & Research</li>
-                <li>Aviation</li>
-              </ul>
-            </div>
-            </div>
-          </div>
-          <div className={styles.section}>
-            <div className={styles.sectionTitle}>Careers</div>
-            <div className={styles.subSections}>
-            <div className={styles.subSection}>
-              <div className={styles.subSectionTitle}>Top Categories</div>
-              <ul>
-                <li>Academics & Research</li>
-                <li>Aviation</li>
-              </ul>
-            </div>
-            <div className={styles.subSection}>
-              <div className={styles.subSectionTitle}>Top Categories</div>
-              <ul>
-                <li>Academics & Research</li>
-                <li>Aviation</li>
-              </ul>
-            </div>
-            <div className={styles.subSection}>
-              <div className={styles.subSectionTitle}>Top Categories</div>
-              <ul>
-                <li>Academics & Research</li>
-                <li>Aviation</li>
-              </ul>
-            </div>
-            <div className={styles.subSection}>
-              <div className={styles.subSectionTitle}>Top Categories</div>
-              <ul>
-                <li>Academics & Research</li>
-                <li>Aviation</li>
-              </ul>
-            </div>
-            </div>
-          </div>
-          <div className={styles.section}>
-            <div className={styles.sectionTitle}>Careers</div>
-            <div className={styles.subSections}>
-            <div className={styles.subSection}>
-              <div className={styles.subSectionTitle}>Top Categories</div>
-              <ul>
-                <li>Academics & Research</li>
-                <li>Aviation</li>
-              </ul>
-            </div>
-            <div className={styles.subSection}>
-              <div className={styles.subSectionTitle}>Top Categories</div>
-              <ul>
-                <li>Academics & Research</li>
-                <li>Aviation</li>
-              </ul>
-            </div>
-            <div className={styles.subSection}>
-              <div className={styles.subSectionTitle}>Top Categories</div>
-              <ul>
-                <li>Academics & Research</li>
-                <li>Aviation</li>
-              </ul>
-            </div>
-            <div className={styles.subSection}>
-              <div className={styles.subSectionTitle}>Top Categories</div>
-              <ul>
-                <li>Academics & Research</li>
-                <li>Aviation</li>
-              </ul>
-            </div>
-            </div>
-          </div>
-        </Box>
-      </Modal> */}
+      
     </>
   );
 }

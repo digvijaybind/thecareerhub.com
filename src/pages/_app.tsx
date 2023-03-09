@@ -8,12 +8,15 @@ import theme from '../styles/theme';
 import createEmotionCache from './createEmotionCache';
 import DrawerAppBar from '@/libs/material-ui/components/header';
 import '../styles/globals.css';
+import { useState } from "react";
+import ModalComp from '@/libs/material-ui/ModalComp/ModalComp';
+
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
 
 export default function MyApp(props) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
-
+  const [open,setOpen]=useState(false);
   return (
     <CacheProvider value={emotionCache}>
       <Head>
@@ -22,8 +25,12 @@ export default function MyApp(props) {
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
-        <DrawerAppBar/>
-        <Component {...pageProps} />
+        <DrawerAppBar toggleModal={()=>setOpen(true)} />
+        <Component {...pageProps} 
+        prop={true}
+        // onClick={(e)=>{debugger;console.log(e)}}
+        />
+    <ModalComp open={open} toggleModal={()=>setOpen(!open)}/>
       </ThemeProvider>
     </CacheProvider>
   );
