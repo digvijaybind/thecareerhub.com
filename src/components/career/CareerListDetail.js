@@ -12,9 +12,9 @@ class CourseListDetail extends React.Component {
   render() {
     // console.log(this.data.id);
     const career = this.props.data ? this.props.data.map((item,i) => 
-      <CareerItem key={`course_item_${i}`} career={item} model = {this.props.model} />) : "N data";
+      <CareerItem key={`course_item_${i}`} career={item} model = {this.props.model} />) : "No data";
     const CareerMobile = this.props.data ? this.props.data.map((item,i) => 
-    <CareerMobileItem key={`course_item_${i}`} career={item} model = {this.props.model} />) : "N data";
+    <CareerMobileItem key={`course_item_${i}`} career={item} model = {this.props.model} />) : "No data";
     return (
       <div className="list-colright">
         <ListDetail title="Career" count={this.props.count} filters={this.props.filters}

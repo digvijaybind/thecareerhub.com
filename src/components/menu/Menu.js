@@ -3,16 +3,27 @@ import React from "react";
 import Const from "../../util/Constants";
 
 class Menu extends React.Component {
+    
   render() {
     const testlink = Const.testlink;
+   const {open,setOpen}=this.props;
     return (
-      <div className="collapse navbar-collapse col-md-5" id="navbarScroll">
+      <div className="collapse navbar-collapse col-md-5" id="navbarScroll"
+
+      >
        <ul className="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
           <li className="nav-item dropdown">
-             <Link href='#' className="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+             <Link href='#' className="nav-link dropdown-toggle" id="navbarScrollingDropdown" 
+             onClick={(e)=>{
+                e.preventDefault();
+                e.stopPropagation();
+                setOpen(true);
+              }}
+             role="button" data-bs-toggle="dropdown" aria-expanded="false">
+             
              Explore
              </Link>
-             <ul className="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+             <ul className={`dropdown-menu ${open && "show"}`} aria-labelledby="navbarScrollingDropdown">
                 <div className="row rowcareer submenu-col">
                     <div className="col-md-12 explore-menu-title">
                         <h5><Link href='/career'><img src="/images/g3.png" alt="img" className="img-fluid" /> &nbsp; Careers</Link></h5>

@@ -129,6 +129,7 @@ class Header extends React.Component {
   };
 
   render() {
+    const {open,setOpen}=this.props;
     let searchresult = null;
     if (this.state.focus)
       searchresult = 
@@ -199,7 +200,7 @@ class Header extends React.Component {
                 </div>
               </div>
                 </ClickAwayListener>
-              <Menu />
+              <Menu open={open} setOpen={setOpen}/>
             </nav>
           </div>
         </div>

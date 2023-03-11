@@ -10,9 +10,14 @@ const title = "CareerHub";
 const description = "description";
 export default function MyApp(props) {
   const { Component, pageProps } = props;
-  const [open, setOpen] = useState(false);
+  const [open,setOpen]=useState(false);
+  
   return (
-    <>
+    <div onClick={(e)=>{
+      // e.preventDefault();
+      // e.stopPropagation();
+     setOpen(false);
+   }}>
       <Head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
         <link
@@ -28,11 +33,11 @@ export default function MyApp(props) {
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
       </Head>
       <HtmlHeader title={title} description={description} />
-      <Header />
+      <Header open={open} setOpen={(val)=>setOpen(val)}/>
       <div style={{minHeight:"1000px"}}>
       <Component {...pageProps} prop={true} /></div>
       <Footer />
-    </>
+    </div>
   );
 }
 

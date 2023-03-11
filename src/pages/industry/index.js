@@ -1,6 +1,4 @@
 import React from "react";
-import HtmlHeader from "../../components/common/HtmlHeader";
-import Header from "../../components/common/Header";
 import PageHeading from "../../components/common/PageHeading";
 import IndustryListFilter from "../../components/industry/IndustryListFilter";
 import IndustryListDetail from "../../components/industry/IndustryListDetail";
@@ -130,8 +128,6 @@ class IndustryList extends React.Component {
     if (this.state.inApiCall) return <Loader />;
     return (
       <>
-        <HtmlHeader title="Industry" description="description" />
-        <Header />
         <PageHeading headingmain="Find your Industry" />
 
         <div className="section3">

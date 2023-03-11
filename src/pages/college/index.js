@@ -61,7 +61,7 @@ class CollegeList extends React.Component {
     if (searchParam && searchParam.category) {
       const cat =
         this.model &&
-        this.model.category.find((item) => item.id === searchParam.category);
+        this.model?.category.find((item) => item.id === searchParam.category);
       if (cat) this.addFilter(cat);
 
       this.filter.category = [parseInt(searchParam.category)];
@@ -70,7 +70,7 @@ class CollegeList extends React.Component {
     if (searchParam && searchParam.studyMode) {
       const studyMode =
         this.model &&
-        this.model.study_mode.find(
+        this.model?.study_mode.find(
           (item) => item.name === searchParam.studyMode
         );
       if (studyMode) {
@@ -80,7 +80,7 @@ class CollegeList extends React.Component {
     }
 
     if (searchParam && searchParam.states) {
-      const states = this.model.states.find(
+      const states = this.model?.states.find(
         (item) => item.name === searchParam.states
       );
       if (states) {
@@ -95,7 +95,7 @@ class CollegeList extends React.Component {
     }
 
     if (searchParam && searchParam.cities) {
-      const cities = this.model.cities.find(
+      const cities = this.model?.cities.find(
         (item) => item.name === searchParam.cities
       );
       if (cities) {
@@ -105,7 +105,7 @@ class CollegeList extends React.Component {
     }
 
     if (searchParam && searchParam.course_level) {
-      const levl = this.model.course_level.find(
+      const levl = this.model?.course_level.find(
         (item) => item.id === searchParam.course_level
       );
       if (levl) this.addFilter(levl);
