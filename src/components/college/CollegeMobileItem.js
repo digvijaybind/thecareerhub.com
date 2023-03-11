@@ -16,24 +16,24 @@ class CollegeMobileItem extends React.Component {
     return (
 
         <div className="row">
-            <div class="col-md-12">
-            <div class="card main-card">
+            <div className="col-md-12">
+            <div className="card main-card">
                 <Link href={"/college/"+this.props.college.sef_url}>
-                <div class="card-body card-one lightbluemain">
-                    <div class="row">
-                    <div class="col-md-12">
-                        <div class="row">
-                        <div class="col maxw-30">
-                            <img src={url+this.props.college.logo} alt="img" class="img-fluid"/>
+                <div className="card-body card-one lightbluemain">
+                    <div className="row">
+                    <div className="col-md-12">
+                        <div className="row">
+                        <div className="col maxw-30">
+                            <img src={url+this.props.college.logo} alt="img" className="img-fluid"/>
                         </div>
-                        <div class="col maxw-70 p-0">
-                            <h5 class="card-title">{this.props.college.name} </h5>
+                        <div className="col maxw-70 p-0">
+                            <h5 className="card-title">{this.props.college.name} </h5>
                             {category}
                         </div>
                         </div>
                     </div>
-                    <div class="col-md-12">
-                        <div class="detail pt-2">
+                    <div className="col-md-12">
+                        <div className="detail pt-2">
                         <span>{location}</span>
                         <span>
                         {this.props.college.approved_by ? <>
@@ -47,9 +47,9 @@ class CollegeMobileItem extends React.Component {
                     </div>
                 </div>
                 </Link>
-                <div class="card-body card-two">
-                <div class="boxwcolor row">
-                    <div class="col-md-12">
+                <div className="card-body card-two">
+                <div className="boxwcolor row">
+                    <div className="col-md-12">
                     <Link href={"/course"}>
                         <div className="btn-detail lightbluemain">{this.props.college.courseCount} Courses Options</div>
                     </Link> 

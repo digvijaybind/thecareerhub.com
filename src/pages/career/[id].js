@@ -1,18 +1,15 @@
 import React from "react";
-
-import HtmlHeader from '../common/HtmlHeader';
-import Header from '../common/Header';
-import PageDetailHeading from '../common/PageDetailHeading';
-import CareerDetailSidebar from './CareerDetailSidebar';
-import CareerExploreRelated from './CareerExploreRelated';
-import CareerImage from './CareerImage';
-import Overview from './Overview';
-import TypicalDayAtWork from './TypicalDayAtWork';
-import Pathways from './Pathways';
-import WorkInternCareer from './WorkInternCareer';
-import WhichCourse from './WhichCourse';
-import BestColleges from './BestColleges';
-import Loader from '../common/Loader';
+import PageDetailHeading from '../../components/common/PageDetailHeading';
+import CareerDetailSidebar from '../../components/career/CareerDetailSidebar';
+import CareerExploreRelated from '../../components/career/CareerExploreRelated';
+import CareerImage from '../../components/career/CareerImage';
+import Overview from '../../components/career/Overview';
+import TypicalDayAtWork from '../../components/career/TypicalDayAtWork';
+import Pathways from '../../components/career/Pathways';
+import WorkInternCareer from '../../components/career/WorkInternCareer';
+import WhichCourse from '../../components/career/WhichCourse';
+import BestColleges from '../../components/career/BestColleges';
+import Loader from '../../components/common/Loader';
 
 import CareerAPI from '../../api/CareerAPI';
 import ModelAPI from '../../api/ModelAPI';
@@ -22,7 +19,9 @@ import { withRouter } from "next/router";
 class CareerDetails extends React.Component {
   constructor(props) {
     super(props);
-    const sef = props.match.params.id;
+    debugger
+    console.log("props",this.props);
+    const sef = this.props.match.params.id;
     this.id = parseInt(sef.split(/[- ]+/).pop());
     this.model = {course:null,college:null};
     // this.model = this.props.model;

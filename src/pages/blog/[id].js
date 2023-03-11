@@ -1,23 +1,13 @@
 import React from "react";
-
-import HtmlHeader from "../common/HtmlHeader";
-import Header from "../common/Header";
-import Footer from "../common/Footer";
-import Loader from "../common/Loader";
-
+import Loader from "../../components/common/Loader";
 import BlogAPI from "../../api/BlogAPI";
 import ModelAPI from "../../api/ModelAPI";
 import dateFormat from "dateformat";
 import Util from "../../util/Util";
 import Const from "../../util/Constants";
-import ReactHtmlParser, {
-  processNodes,
-  convertNodeToElement,
-  htmlparser2,
-} from "react-html-parser";
+import ReactHtmlParser from "react-html-parser";
 import Link from "next/link";
 import { withRouter } from "next/router";
-
 
 class BlogDetails extends React.Component {
   constructor(props) {
@@ -85,48 +75,70 @@ class BlogDetails extends React.Component {
     const description = "fdsfsdf";
     const url = Const.backendLink;
     // const model = this.model;
-    let category = this.blog && this.blog.category ? Util.multiLabel(this.model, 'category', this.blog.category):null;
-    const blogcategory = this.model.category.map((item) => <li>{item.name}({item.blog ? item.blog :0})</li>);
+    let category =
+      this.blog && this.blog.category
+        ? Util.multiLabel(this.model, "category", this.blog.category)
+        : null;
+    const blogcategory = this.model.category.map((item) => (
+      <li>
+        {item.name}({item.blog ? item.blog : 0})
+      </li>
+    ));
     // console.log('gere', this.relatedpost);
-    const relatedpost = this.relatedpost && this.relatedpost.map((item) => <>
-      <div className="blogrelated">
-        <img
-          src={
-              item.banner_image
-              ? url + item.banner_image
-              : `${"/images/2.png"}`
-          }
-          width="100%"
-          alt="img"
-          className="bloglist-image"
-        />
-        <div className="blog-detail-text1 blogbtnn left-blog">
-         <span>
-          {item.category ? Util.multiLabel(this.model, 'category', item.category) : null}
-          </span>
-          <p className="blogtitileside bmt-16">
-            {item.title}
-          </p>
-          <p className="blog-date">{item.date ? 
-                    dateFormat(`${item.date}`, " dS mmmm, yyyy") : null}</p>
-        </div>
-      </div>
-    </>);
+    const relatedpost =
+      this.relatedpost &&
+      this.relatedpost.map((item) => (
+        <>
+          <div className="blogrelated">
+            <img
+              src={
+                item.banner_image
+                  ? url + item.banner_image
+                  : `${"/images/2.png"}`
+              }
+              width="100%"
+              alt="img"
+              className="bloglist-image"
+            />
+            <div className="blog-detail-text1 blogbtnn left-blog">
+              <span>
+                {item.category
+                  ? Util.multiLabel(this.model, "category", item.category)
+                  : null}
+              </span>
+              <p className="blogtitileside bmt-16">{item.title}</p>
+              <p className="blog-date">
+                {item.date
+                  ? dateFormat(`${item.date}`, " dS mmmm, yyyy")
+                  : null}
+              </p>
+            </div>
+          </div>
+        </>
+      ));
 
-    const comment = this.comment && this.comment.map((item,i) => <div className="comment  row ">
-    <div className="col-md-1">
-      <img src="/images/career-test-icon.png" alt="blog_image" />
-    </div>
-    <div className="col-md-11">
-      <h3 className="c-name">{item && item.user_name ? item.user_name : "Heather McLaughlin"}</h3>
-      <h3 className="c-date">{item && item.date ? dateFormat(`${item.date}`, " dS mmmm, yyyy") : "Jan 23, 2020"}</h3>
-    </div>
-    <div>
-      <p className="blog-comment">
-      {item && item.text ? item.text : ""}
-      </p>
-    </div>
-  </div>);
+    const comment =
+      this.comment &&
+      this.comment.map((item, i) => (
+        <div className="comment  row ">
+          <div className="col-md-1">
+            <img src="/images/career-test-icon.png" alt="blog_image" />
+          </div>
+          <div className="col-md-11">
+            <h3 className="c-name">
+              {item && item.user_name ? item.user_name : "Heather McLaughlin"}
+            </h3>
+            <h3 className="c-date">
+              {item && item.date
+                ? dateFormat(`${item.date}`, " dS mmmm, yyyy")
+                : "Jan 23, 2020"}
+            </h3>
+          </div>
+          <div>
+            <p className="blog-comment">{item && item.text ? item.text : ""}</p>
+          </div>
+        </div>
+      ));
 
     return (
       <>
@@ -157,8 +169,9 @@ class BlogDetails extends React.Component {
                 </div>
                 <p className="blog-detail-date">
                   {this.blog && this.blog.author},
-                  {this.blog && this.blog.date ? 
-                    dateFormat(`${this.blog.date}`, " dS mmmm, yyyy") : null}
+                  {this.blog && this.blog.date
+                    ? dateFormat(`${this.blog.date}`, " dS mmmm, yyyy")
+                    : null}
                 </p>
                 <div className="blogimg mt-3 mb-2">
                   <img
@@ -185,35 +198,48 @@ class BlogDetails extends React.Component {
                   </div>
                   <div className="blog-social col-md-8">
                     <span>
-                    <a href="https://www.linkedin.com/in/thecareerhub/" target="blank">
-                      <img src="/images/social/li.png" alt="social" /></a>
+                      <a
+                        href="https://www.linkedin.com/in/thecareerhub/"
+                        target="blank"
+                      >
+                        <img src="/images/social/li.png" alt="social" />
+                      </a>
                     </span>
                     <span>
-                    <a href="https://www.facebook.com/The-Career-Hub-110040528233534/" target="blank">
-                      <img src="/images/social/fb.png" alt="social" /></a>
+                      <a
+                        href="https://www.facebook.com/The-Career-Hub-110040528233534/"
+                        target="blank"
+                      >
+                        <img src="/images/social/fb.png" alt="social" />
+                      </a>
                     </span>
                     <span>
-                    <a href="https://www.instagram.com/thecareerhubindia/" target="blank">
-                      <img src="/images/social/ig.png" alt="social" /></a>
+                      <a
+                        href="https://www.instagram.com/thecareerhubindia/"
+                        target="blank"
+                      >
+                        <img src="/images/social/ig.png" alt="social" />
+                      </a>
                     </span>
                     <span>
-                    <a href="https://twitter.com/TheCareerH" target="blank">
-                      <img src="/images/social/tw.png" alt="social" /></a>
+                      <a href="https://twitter.com/TheCareerH" target="blank">
+                        <img src="/images/social/tw.png" alt="social" />
+                      </a>
                     </span>
                   </div>
                 </div>
                 <div className="blog-detail-divider mt-4 mb-4"></div>
 
                 {comment}
-                
+
                 <div className="lm">
                   <p>Load More</p>
                 </div>
               </div>
               <div className="col-md-4 rpost-div">
                 <h3>Related Post</h3>
-               {relatedpost}
-                {/* <div className="Blog">
+                {relatedpost}
+                <div className="Blog">
                   <img
                     src="/images/2.png"
                     width="100%"
@@ -265,12 +291,10 @@ class BlogDetails extends React.Component {
                     </p>
                     <p className="blog-date">19 October 2018</p>
                   </div>
-                </div> */}
+                </div>
 
                 <div className="blog-sidebar deatil-sidebar">
-                  <ul>
-                    {blogcategory}
-                  </ul>
+                  <ul>{blogcategory}</ul>
                 </div>
               </div>
             </div>

@@ -1,15 +1,12 @@
 import React from "react";
-// import HtmlHeader from "../../components/common/HtmlHeader";
-// import Header from "../../components/common/Header";
-// import Footer from "../../components/common/Footer";
-// import BlogPageHeading from "../../components/common/BlogPageHeading";
+import BlogPageHeading from "../../components/common/BlogPageHeading";
 import ModelAPI from "../../api/ModelAPI";
 import BlogAPI from "../../api/BlogAPI";
-// import Loader from "../../components/common/Loader";
-// import dateFormat from "dateformat";
-// import Util from "../../util/Util";
-// import Const from "../../util/Constants";
-// import BlogListItem from '../../components/blog/BlogListItem';
+import Loader from "../../components/common/Loader";
+import dateFormat from "dateformat";
+import Util from "../../util/Util";
+import Const from "../../util/Constants";
+import BlogListItem from '../../components/blog/BlogListItem';
 import Link from "next/link";
 
 
@@ -111,21 +108,17 @@ class BlogList extends React.Component {
   };
 
   render() {
-    // const url = Const.backendLink;
-    // if (this.state.inApiCall) return <Loader />;
-    // const blogitem = this.blog && this.blog.map((item,i) => 
-    //   <BlogListItem key={`blog_item_${i}`} blog={item} model = {this.model} />);
-
-    // const blogcategory = this.model.category.map((item) => <li>{item.name}({item.blog ? item.blog :0})</li>);
-
+    const url = Const.backendLink;
+    if (this.state.inApiCall) return <Loader />;
+    const blogitem = this.blog && this.blog.map((item,i) => 
+      <BlogListItem key={`blog_item_${i}`} blog={item} model = {this.model} />);
+    const blogcategory = this.model.category.map((item) => <li>{item.name}({item.blog ? item.blog :0})</li>);
     return (
       <>
-      {/* <HtmlHeader title="Blogs - The Career Hub" description="description" /> */}
-      {/* <Header /> */}
-      {/* <BlogPageHeading
+      <BlogPageHeading
         headingmain="Blogs"
         subheading="Discover about a variety of topics related to careers, courses and industries and get useful in-depth information"
-      /> */}
+      />
       <div className="section3">
         <div className="container-fluid padding-left-right pb-5">
           <div className="row">
@@ -207,7 +200,7 @@ class BlogList extends React.Component {
               <h3 className="blog-heading2">Recently Added</h3>
             </div>
           </div>
-          {/* <div className="row">
+          <div className="row">
             <div className="col-md-4">
             <Link href={"/blog/"+this.recent[0].sef_url}>
               <div className="blogrelated">
@@ -274,7 +267,7 @@ class BlogList extends React.Component {
               </div>
               </Link>
             </div>
-          </div> */}
+          </div>
         </div>
 
         <div className="container-fluid padding-left-right pb-5">
@@ -287,19 +280,18 @@ class BlogList extends React.Component {
             <div className="col-md-2">
               <div className="blog-sidebar">
                 <ul>
-                  {/* {blogcategory} */}
+                  {blogcategory}
                 </ul>
               </div>
             </div>
             <div className="col-md-10">
               <div className="row ">
-                {/* {blogitem} */}
+                {blogitem}
               </div>
             </div>
           </div>
         </div>
       </div>
-      {/* <Footer /> */}
     </>
     );
   }

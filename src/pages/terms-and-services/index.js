@@ -1,9 +1,6 @@
 import React from "react";
-import HtmlHeader from "../components/common/HtmlHeader";
-import Header from "../components/common/Header";
-import Footer from "../components/common/Footer";
-import Loader from "../components/common/Loader";
-import PageHeading from "../components/common/PageHeading";
+import Loader from "../../components/common/Loader";
+import PageHeading from "../../components/common/PageHeading";
 
 
 
@@ -17,8 +14,6 @@ class BlogList extends React.Component {
     if (this.state.inApiCall) return <Loader />;
     return (
       <>
-        <HtmlHeader title="Terms & Services" description="description" />
-        <Header />
         <PageHeading headingmain="Terms and Conditions" />
         <div className="section3 mb-3 mt-3 pt-5 pb-5">
           <div className="container padding-left-right">
@@ -37,11 +32,11 @@ class BlogList extends React.Component {
                   conditions. Please check these periodically for any changes
                   that may have been made.
                 </p>
-                <ol class="ol-class">
+                <ol className="ol-class">
                   <li>
                     <strong>Disclaimer</strong>
                   </li>
-                  <ul class="ul-class">
+                  <ul className="ul-class">
                     <li>
                       {" "}
                       We use our reasonable endeavors to ensure the accuracy of
@@ -159,7 +154,7 @@ class BlogList extends React.Component {
                       Service
                     </strong>
                   </li>
-                  <ul class="ul-class">
+                  <ul className="ul-class">
                     <li>
                       {" "}
                       Users are permitted to read, print or download text, data
@@ -220,7 +215,7 @@ class BlogList extends React.Component {
                   <li>
                     <strong>Intellectual Property</strong>
                   </li>
-                  <ul class="ul-class">
+                  <ul className="ul-class">
                     <li>
                       The data and information contained on the{" "}
                       <a href="https://www.thecareerhub.com">
@@ -259,7 +254,7 @@ class BlogList extends React.Component {
                       </a>
                     </strong>
                   </li>
-                  <ul class="ul-class">
+                  <ul className="ul-class">
                     <li>
                       Please send your emails relating to your registration,
                       purchase and account, including site upgrades. Keep a log
@@ -271,7 +266,7 @@ class BlogList extends React.Component {
                   <li>
                     <strong>Cookies</strong>
                   </li>
-                  <ul class="ul-class">
+                  <ul className="ul-class">
                     <li>
                       By accessing our Site, you permit us to put our cookies on
                       your hard disc subject. You may, if you please, refuse
@@ -282,7 +277,7 @@ class BlogList extends React.Component {
                   <li>
                     <strong>HyperText Links to Third Party Sites</strong>
                   </li>
-                  <ul class="ul-class">
+                  <ul className="ul-class">
                     <li>
                       <a href="https://www.thecareerhub.com">
                         thecareerhub.com
@@ -318,7 +313,7 @@ class BlogList extends React.Component {
                   <li>
                     <strong>Information Provided By Users</strong>
                   </li>
-                  <ul class="ul-class">
+                  <ul className="ul-class">
                     <li>
                       You agree that any material, information, and ideas that
                       you transmit to this site shall become the property of{" "}
@@ -368,7 +363,7 @@ class BlogList extends React.Component {
                   <li>
                     <strong>Indemnity</strong>
                   </li>
-                  <ul class="ul-class">
+                  <ul className="ul-class">
                     <li>
                       In consideration of posting the information sent by users
                       on our website or obtained through the means of a cookie
@@ -389,7 +384,7 @@ class BlogList extends React.Component {
                   <li>
                     <strong>Endorsements</strong>
                   </li>
-                  <ul class="ul-class">
+                  <ul className="ul-class">
                     <li>
                       All Product and Services marks contained herein that are
                       not{" "}
@@ -412,7 +407,7 @@ class BlogList extends React.Component {
                   <li>
                     <strong>Jurisdiction as per Indian Laws</strong>
                   </li>
-                  <ul class="ul-class">
+                  <ul className="ul-class">
                     <li>
                       These conditions shall be governed by and construed in
                       accordance with Indian laws. All disputes are subject to
@@ -455,7 +450,7 @@ class BlogList extends React.Component {
                   <li>
                     <strong>For any issue or query</strong>
                   </li>
-                  <ul class="ul-class">
+                  <ul className="ul-class">
                     <li>
                       In case the customer has any issue/query he/she will
                       contact on <a href="tel:+919987422220">9987422220</a>{" "}
@@ -472,7 +467,6 @@ class BlogList extends React.Component {
             </div>
           </div>
         </div>
-        <Footer />
       </>
     );
   }

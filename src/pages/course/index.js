@@ -1,27 +1,18 @@
 import React from 'react';
 import queryString from "query-string"
-
-import HtmlHeader from '../components/common/HtmlHeader';
-import Header from '../components/common/Header';
-import PageHeading from '../components/common/PageHeading';
-import CourseListFilter from '../components/course/CourseListFilter';
-import CourseListDetail from '../components/course/CourseListDetail';
-
-import CourseAPI from '../api/CourseAPI';
-
-import Constant from "../util/Constants.js";
-import Constants from '../util/Constants';
-import Loader from '../components/common/Loader';
-import ModelAPI from '../api/ModelAPI';
+import PageHeading from '../../components/common/PageHeading';
+import CourseListFilter from '../../components/course/CourseListFilter';
+import CourseListDetail from '../../components/course/CourseListDetail';
+import CourseAPI from '../../api/CourseAPI';
+import Loader from '../../components/common/Loader';
+import ModelAPI from '../../api/ModelAPI';
 import { withRouter } from 'next/router';
+import Constants from '../../util/Constants.js';
 
 class CourseList extends React.Component {
 
   constructor(props) {
     super(props);
-    const sef = props.match.params;
-    // console.log(sef);
-    // this.model = this.props.model;  
     this.model = null;
     this.courses = null;
     this.filter = { status : 1 };
@@ -160,8 +151,6 @@ class CourseList extends React.Component {
     if(this.state.inApiCall) return(<Loader />);
     return (
       <>
-        <HtmlHeader title="Courses" description="description" />
-        <Header />
         <PageHeading headingmain="Find your Courses" />
           
         <div className="section3">

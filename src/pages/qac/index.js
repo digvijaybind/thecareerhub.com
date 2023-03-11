@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Link from "next/link";
 
 class Qac extends React.Component {
@@ -127,15 +126,15 @@ class Qac extends React.Component {
             <div className="col-md-12 mrtp16">
               <div className="step3content justify-content-center">
                 <p className="textstep3h5">Do you agree to share your responses for our further research into enhancing the qualitative benefits of DMIT & Counselling?</p>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" />
-                  <label class="form-check-label" for="defaultCheck1">
+                <div className="form-check">
+                  <input className="form-check-input" type="checkbox" value="" id="defaultCheck1" />
+                  <label className="form-check-label" for="defaultCheck1">
                     Yes, I agree
                   </label>
                 </div>
-                <div class="form-group mt-4">
+                <div className="form-group mt-4">
                   <label for="comment">Client's Signature:</label>
-                  <textarea class="form-control" rows="5" id="comment"></textarea>
+                  <textarea className="form-control" rows="5" id="comment"></textarea>
                 </div>
                 <div className="form-group">
                   <div className="text-center mb-3">

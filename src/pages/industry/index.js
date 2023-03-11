@@ -1,13 +1,13 @@
 import React from "react";
-import HtmlHeader from "../components/common/HtmlHeader";
-import Header from "../components/common/Header";
-import PageHeading from "../components/common/PageHeading";
-import IndustryListFilter from "../components/industry/IndustryListFilter";
-import IndustryListDetail from "../components/industry/IndustryListDetail";
-import ModelAPI from "../api/ModelAPI";
-import IndustryAPI from "../api/IndustryApi";
-import Loader from "../components/common/Loader";
-import Constants from "../util/Constants";
+import HtmlHeader from "../../components/common/HtmlHeader";
+import Header from "../../components/common/Header";
+import PageHeading from "../../components/common/PageHeading";
+import IndustryListFilter from "../../components/industry/IndustryListFilter";
+import IndustryListDetail from "../../components/industry/IndustryListDetail";
+import ModelAPI from "../../api/ModelAPI";
+import IndustryAPI from "../../api/IndustryApi";
+import Loader from "../../components/common/Loader";
+import Constants from "../../util/Constants";
 
 
 class IndustryList extends React.Component {

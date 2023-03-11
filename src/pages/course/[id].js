@@ -1,16 +1,12 @@
 import React from "react";
-
-import HtmlHeader from '../common/HtmlHeader';
-import Header from '../common/Header';
-import PageDetailHeading from '../common/PageDetailHeading';
-import CourseDetailSidebar from './CourseDetailSidebar';
-import BestColleges from './BestColleges';
-import CourseImage from './CourseImage';
-import TypicalDayAtWork from './TypicalDayAtWork';
-import CourseExploreRelated from './CourseExploreRelated';
-
-import Loader from '../common/Loader';
-import CourseExploreRelatedEnd from './CourseExploreRelatedEnd';
+import PageDetailHeading from '../../components/common/PageDetailHeading';
+import CourseDetailSidebar from '../../components/course/CourseDetailSidebar';
+import BestColleges from '../../components/course/BestColleges';
+import CourseImage from '../../components/course/CourseImage';
+import TypicalDayAtWork from '../../components/course/TypicalDayAtWork';
+import CourseExploreRelated from '../../components/course/CourseExploreRelated';
+import Loader from '.../../components/course/common/Loader';
+import CourseExploreRelatedEnd from '../../components/course/CourseExploreRelatedEnd';
 import CourseAPI from '../../api/CourseAPI';
 import ModelAPI from '../../api/ModelAPI';
 
@@ -149,14 +145,9 @@ class CourseDetails extends React.Component {
 
   render() {
     if(this.state.inApiCall) return(<Loader />);
-    const title = "Course Detail - The Career hub";
-    const description = "fdsfsdf";
     return (
       <>
-        <HtmlHeader title={title} description={description} />
-        <Header />
-        <PageDetailHeading model={this.model.course} title={this.pagetitle} course={this.course} />
-          
+        <PageDetailHeading model={this.model.course} title={this.pagetitle} course={this.course} />      
         <div className="section3">
               <div className="container-fluid padding-left-right">
                   <div className="row ">

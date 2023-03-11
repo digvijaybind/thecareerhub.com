@@ -1,19 +1,14 @@
 import React from "react";
 import { withRouter } from "next/router";
-
-import HtmlHeader from "../common/HtmlHeader";
-import Header from "../common/Header";
-import PageDetailHeading from "../common/PageDetailHeading";
-import IndustryDetailSidebar from "./IndustryDetailSidebar";
-import IndustryImage from "./IndustryImage";
-import CareerExploreRelated from "./CareerExploreRelated";
-import WhichCourse from "./WhichCourse";
-import BestColleges from "./BestColleges";
-import Loader from "../common/Loader";
+import PageDetailHeading from "../../components/common/PageDetailHeading";
+import IndustryDetailSidebar from "../../components/industry/IndustryDetailSidebar";
+import IndustryImage from "../../components/industry/IndustryImage";
+import CareerExploreRelated from "../../components/industry/CareerExploreRelated";
+import WhichCourse from "../../components/industry/WhichCourse";
+import BestColleges from "../../components/industry/BestColleges";
+import Loader from "../../components/common/Loader";
 import IndustryAPI from "../../api/IndustryApi";
 import ModelAPI from "../../api/ModelAPI";
-
-
 class IndustryDetail extends React.Component {
   constructor(props) {
     super(props);
@@ -184,8 +179,6 @@ class IndustryDetail extends React.Component {
 
     return (
       <>
-        <HtmlHeader title={title} description={description} />
-        <Header />
         <PageDetailHeading
           model={this.model.industry}
           title={this.pagetitle}

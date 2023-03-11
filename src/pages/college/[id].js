@@ -1,15 +1,12 @@
 import React from "react";
-
-import HtmlHeader from '../common/HtmlHeader';
-import Header from '../common/Header';
-import CollegePageDetailHeading from '../common/CollegePageDetailHeading';
-import CollegeDetailSidebar from './CollegeDetailSidebar';
-import BestColleges from './BestColleges';
-import CollegeImage from './CollegeImage';
-import WhichCourse from './WhichCourse';
-import CollegeContactInfo from './CollegeContactInfo';
+import CollegePageDetailHeading from '../../components/common/CollegePageDetailHeading';
+import CollegeDetailSidebar from '../../components/college/CollegeDetailSidebar';
+import BestColleges from '../../components/college/BestColleges';
+import CollegeImage from '../../components/college/CollegeImage';
+import WhichCourse from '../../components/college/WhichCourse';
+import CollegeContactInfo from '../../components/college/CollegeContactInfo';
 import CollegeAPI from '../../api/CollegeAPI';
-import Loader from '../common/Loader';
+import Loader from '../../components/common/Loader';
 import ModelAPI from '../../api/ModelAPI';
 import { withRouter } from "next/router";
 
@@ -120,8 +117,7 @@ class CollegeDetail extends React.Component {
     
     return (
       <>
-        <HtmlHeader title={title} description={description} />
-        <Header />
+       
         <CollegePageDetailHeading model={this.model.college} title={this.pagetitle} data={this.college} />
           
         <div className="section3">

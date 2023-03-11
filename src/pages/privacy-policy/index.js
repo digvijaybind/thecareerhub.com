@@ -1,9 +1,6 @@
 import React from "react";
-import HtmlHeader from "../components/common/HtmlHeader";
-import Header from "../components/common/Header";
-import Footer from "../components/common/Footer";
-import Loader from "../components/common/Loader";
-import PageHeading from "../components/common/PageHeading";
+import Loader from "../../components/common/Loader";
+import PageHeading from "../../components/common/PageHeading";
 
 
 
@@ -17,20 +14,18 @@ class BlogList extends React.Component {
     if (this.state.inApiCall) return <Loader />;
     return (
       <>
-        <HtmlHeader title="Privacy Policy" description="Privacy Policy" />
-        <Header />
         <PageHeading headingmain="Privacy Policy" />
         <div className="section3 mb-3 mt-3 pt-5 pb-5">
           <div className="container padding-left-right">
             <div className="row ">
-                <div class="col-md-12">
+                <div className="col-md-12">
                     <p>(a) This Privacy Policy (“Policy”) outlines TheCareerHub’s (“TheCareerHub”, “we”, or “us”) practice in relation to the storage, use, processing, and disclosure of personal data that you have chosen to share with us when you access our website <a href="https://www.thecareerhub.com">thecareerhub.com</a>, or personal data that we may have access to in relation to your use of Platform and access to our range of financial products and services (collectively, “Services”).</p>
                     <p>(b) At TheCareerHub, we are committed to protecting your personal data and respecting your privacy. Please read the following terms of the Policy carefully to understand our practices regarding your personal data and how we will treat it. This policy sets out the basis on which any personal data we collect from you or about you, or that you provide to us, will be processed by us.</p>
                     <p>(c) Capitalised words in the Policy shall have the same meaning ascribed to them in the Terms of Service (“Terms”), available at [<a href="https://www.thecareerhub.com/terms-and-services">link</a>] Please read this Policy in consonance with the Terms.</p>
                     <p>(d) By using the Platform, you consent to the collection, storage, use, and disclosure of your personal data, in accordance with, and are agreeing to be bound by this Policy. We will not collect any information from you, except where it is knowingly and explicitly provided by you.</p>
                     <p>(e) This Policy together with any terms of the arrangement we have with you applies to your use of the Services.</p>
                 </div>
-                <div class="col-md-12">
+                <div className="col-md-12">
                     <p>1.&nbsp;<strong>THE DATA WE COLLECT ABOUT YOU</strong></p>
                     <p>(a) Personal data, or personal information, means any information about an individual from which that person can be identified. It does not include data where the identity has been removed – for example, anonymous data.</p>
 
@@ -193,7 +188,6 @@ class BlogList extends React.Component {
             </div>
           </div>
         </div>
-        <Footer />
       </>
     );
   }

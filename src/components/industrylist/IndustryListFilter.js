@@ -29,7 +29,7 @@ class IndustryListFilter extends React.Component {
             <div className="modal-body-filter">
               <div className="leftsidebar ">
                   <div className="row tlpanel">
-                  <div class="col-md-12">
+                  <div className="col-md-12">
                       <div className="align-items-start filtertxt">
                           <span className="f-heading">Filters</span>
                           {/* <span className="text-right clrall span-margin" >

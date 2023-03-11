@@ -14,26 +14,26 @@ class CareerMobileItem extends React.Component {
     const isMobile = window.matchMedia('(max-width: 600px)').matches
     return (
         <div className="row">
-            <div class="col-md-12">
-                <div class="card main-card">
+            <div className="col-md-12">
+                <div className="card main-card">
                   <Link href={"/career/"+this.props.career.sef_url}>
-                    <div class="card-body card-one lightbluemain">
-                        <div class="row">
-                        <div class="col-md-12">
-                            <div class="row">
-                            <div class="col maxw-50">
+                    <div className="card-body card-one lightbluemain">
+                        <div className="row">
+                        <div className="col-md-12">
+                            <div className="row">
+                            <div className="col maxw-50">
                                 <img src={url+this.props.career.media_path} alt="img" width="100%" />
                             </div>
-                            <div class="col maxw-70 p-0">
-                                <h5 class="card-title">
+                            <div className="col maxw-70 p-0">
+                                <h5 className="card-title">
                                 {this.props.career.name}
                                 </h5>
                                 {category}
                             </div>
                             </div>
                         </div>
-                        <div class="col-md-12">
-                            <div class="detail pt-2">
+                        <div className="col-md-12">
+                            <div className="detail pt-2">
                                 {
                                 career.qualification.primary_qualification ? 
                                 <span><img src="/images/career-course.svg" alt="course level"/> &nbsp; 
@@ -54,21 +54,21 @@ class CareerMobileItem extends React.Component {
                         </div>
                     </div>
                     </Link>
-                    <div class="card-body card-two">
-                    <div class="boxwcolor row">
-                        <div class="col-md-12">
+                    <div className="card-body card-two">
+                    <div className="boxwcolor row">
+                        <div className="col-md-12">
                         <Link href="/course">
-                            <div class="btn-detail pointercss lightbluemain">
+                            <div className="btn-detail pointercss lightbluemain">
                             {this.props.career.courseCount}  Courses Options
                             </div>
                         </Link>
                         <Link href="/college">
-                            <div class="btn-detail pointercss lightbluemain">
+                            <div className="btn-detail pointercss lightbluemain">
                             {this.props.career.collegeCount} Colleges Offering
                             </div>
                         </Link>
                         {!isMobile ? <Link href={"/career/"+this.props.career.sef_url}>
-                            <div class="btn-detail bttn-yellow-detail">
+                            <div className="btn-detail bttn-yellow-detail">
                             View Details
                             </div>
                         </Link> : ''}

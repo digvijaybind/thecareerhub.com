@@ -1,49 +1,45 @@
 import React from "react";
 import { withRouter } from "next/router";
-import HtmlHeader from "../components/common/HtmlHeader";
-import Header from "../components/common/Header";
 import queryString from "query-string";
-
-import PageHeading from "../components/common/PageHeading";
-import CollegeListFilter from "../components/college/CollegeListFilter";
-import CollegeListDetail from "../components/college/CollegeListDetail";
-
-import CollegeAPI from "../api/CollegeAPI";
-
-import Constants from "../util/Constants";
-import Loader from "../components/common/Loader";
-import ModelAPI from "../api/ModelAPI";
+import PageHeading from "../../components/common/PageHeading";
+import CareerListFilter from "../../components/career/CareerListFilter";
+import CareerListDetail from "../../components/career/CareerListDetail";
+import Constant from "../../util/Constants.js";
+import CareerAPI from "../../api/CareerAPI";
+import Loader from "../../components/common/Loader";
+import ModelAPI from "../../api/ModelAPI";
 
 
 class CollegeList extends React.Component {
   constructor(props) {
     super(props);
-    // this.model = this.props.model;
-    this.model = null;
-    this.courses = null;
     this.filter = { status: 1 };
+    //this.model = this.props.model;
+    this.model = null;
+    this.career = null;
     this.order_by = 1;
-    this.limit = Constants.LIMIT;
+    this.limit = Constant.LIMIT;
 
     this.state = { filters: [], search: "", inApiCall: true };
   }
 
-  componentDidMount() {
-    ModelAPI.getCollegeModel(
-      this.onModel,
-      this.props.failure,
-      this.props.logout
-    );
-  }
-
   UNSAFE_componentWillReceiveProps(nextProps) {
+    this.model = nextProps.model;
     this.filter = { status: 1 };
-    ModelAPI.getCourseModel(
+    ModelAPI.getCareerModel(
       this.onModel,
       this.props.failure,
       this.props.logout
     );
     this.loadCollegeList();
+  }
+
+  componentDidMount() {
+    ModelAPI.getCareerModel(
+      this.onModel,
+      this.props.failure,
+      this.props.logout
+    );
   }
 
   loadCollegeList = () => {
@@ -53,7 +49,8 @@ class CollegeList extends React.Component {
       offset: 0,
       limit: this.limit,
     };
-    CollegeAPI.list(
+    // console.log('here', page);
+    CareerAPI.list(
       page,
       this.onRecieved,
       this.props.failure,
@@ -62,52 +59,17 @@ class CollegeList extends React.Component {
   };
 
   onModel = (res) => {
-    this.model = res.college;
+    this.model = res.career;
+
     this.setState({ ...this.state, filters: [] });
     const searchParam = queryString.parse(window.location.search);
     if (searchParam && searchParam.category) {
-      const cat =
-        this.model &&
-        this.model.category.find((item) => item.id === searchParam.category);
-      if (cat) this.addFilter(cat);
-
-      this.filter.category = [parseInt(searchParam.category)];
-    }
-
-    if (searchParam && searchParam.studyMode) {
-      const studyMode =
-        this.model &&
-        this.model.study_mode.find(
-          (item) => item.name === searchParam.studyMode
-        );
-      if (studyMode) {
-        this.filter.study_mode = [studyMode.name];
-        this.addFilter(studyMode);
-      }
-    }
-
-    if (searchParam && searchParam.states) {
-      const states = this.model.states.find(
-        (item) => item.name === searchParam.states
+      const cat = this.model.category.find(
+        (item) => item.name === searchParam.category
       );
-      if (states) {
-        this.filter.states = [states.id];
-        this.addFilter(states);
-      }
-    }
-
-    if(searchParam && searchParam.jobid)
-    {
-      this.filter.jobid = parseInt(searchParam.jobid);
-    }
-
-    if (searchParam && searchParam.cities) {
-      const cities = this.model.cities.find(
-        (item) => item.name === searchParam.cities
-      );
-      if (cities) {
-        this.filter.cities = [cities.id];
-        this.addFilter(cities);
+      if (cat) {
+        this.addFilter(cat);
+        this.filter.category = [cat.id];
       }
     }
 
@@ -120,32 +82,60 @@ class CollegeList extends React.Component {
       this.filter.course_level = [parseInt(searchParam.course_level)];
     }
 
+    if (searchParam && searchParam.stream) {
+      const strms = this.model.streams.find(
+        (item) => item.id === searchParam.stream
+      );
+      if (strms) this.addFilter(strms);
+
+      this.filter.streams = [parseInt(searchParam.stream)];
+    }
+
+    if (searchParam && searchParam.fees) {
+      this.filter.expenses = {};
+      const maxfees = parseInt(searchParam.fees);
+      const minfees = 0;
+      this.filter.expenses.max = maxfees;
+      this.filter.expenses.min = minfees;
+    }
+
+    if (searchParam && searchParam.salary) {
+      this.filter.salary = {};
+      const maxsalary = parseInt(searchParam.salary);
+      const minsalary = 0;
+      this.filter.salary.max = maxsalary;
+      this.filter.salary.min = minsalary;
+    }
     this.loadCollegeList();
   };
 
   onRecieved = (res) => {
-    this.courses = res.data;
+    this.career = res.data;
     this.courseCount = res.count;
     this.apiCallStatus();
+    // this.setState({...this.state, inApiCall: false});
   };
 
   apiCallStatus = () => {
-    if (this.courses && this.model)
+    if (this.career && this.model)
       this.setState({ ...this.state, inApiCall: false });
     else this.setState({ ...this.state, inApiCall: true });
   };
 
   clearFilter = () => {
     this.filter = {};
-    this.setState({ ...this.state, filters: [], search: "", inApiCall: false });
+    this.limit = Constant.LIMIT;
+    this.setState({ ...this.state, filters: [], search: "", inApiCall: true });
     this.loadCollegeList();
   };
 
   addFilter = (filter) => {
+    this.limit = Constant.LIMIT;
     if (!this.filter[filter.type]) {
       this.filter[filter.type] = [];
     }
-    if (filter.type === "duration") this.filter[filter.type].push(filter.name);
+    if (filter.type === "duration" || filter.type === "college_type")
+      this.filter[filter.type].push(filter.name);
     else this.filter[filter.type].push(filter.id);
     const filters = [...this.state.filters];
     filters.push(filter);
@@ -153,7 +143,8 @@ class CollegeList extends React.Component {
     this.loadCollegeList();
   };
   removeFilter = (filter) => {
-    if (filter.type === "duration") {
+    this.limit = Constant.LIMIT;
+    if (filter.type === "duration" || filter.type === "college_type") {
       this.filter[filter.type] = this.filter[filter.type].filter(
         (item) => item !== filter.name
       );
@@ -162,7 +153,6 @@ class CollegeList extends React.Component {
         (item) => item !== filter.id
       );
     }
-
     let filters = [...this.state.filters];
     filters = filters.filter(
       (item) => item.type !== filter.type || item.id !== filter.id
@@ -172,7 +162,7 @@ class CollegeList extends React.Component {
   };
 
   rangeFilter = (type, min, max) => {
-    // console.log(this.model[type], min, max);
+    this.limit = Constant.LIMIT;
     this.filter[type] =
       this.model[type].min !== min || this.model[type].max !== max
         ? { min, max }
@@ -182,6 +172,7 @@ class CollegeList extends React.Component {
   };
 
   onSearchValueChange = (field, value) => {
+    this.limit = Constant.LIMIT;
     this.filter[field] = value.length > 0 ? [value] : undefined;
     this.setState({ ...this.state, inApiCall: false, search: value });
     this.loadCollegeList();
@@ -192,8 +183,15 @@ class CollegeList extends React.Component {
     this.loadCollegeList();
   };
 
+  internshipfilter = (value) => {
+    this.limit = Constant.LIMIT;
+    this.filter.internship = value;
+    this.loadCollegeList();
+  };
+
   loadmore = () => {
-    this.limit = this.limit + Constants.LIMIT;
+    this.limit = this.limit + Constant.LIMIT;
+    // this.setState({ ...this.state, inApiCall: false});
     this.loadCollegeList();
   };
 
@@ -201,29 +199,28 @@ class CollegeList extends React.Component {
     if (this.state.inApiCall) return <Loader />;
     return (
       <>
-        <HtmlHeader title="College" description="description" />
-        <Header />
-        <PageHeading headingmain="Find your College" />
+        <PageHeading headingmain="Find your Career" />
 
         <div className="section3">
           <div className="container-fluid padding-left-right">
             <div className="row ">
               <div className="col-md-3 mrtp16">
-                <CollegeListFilter
+                <CareerListFilter
                   model={this.model}
                   filters={this.state.filters}
                   onAddFilter={this.addFilter}
                   onRemoveFilter={this.removeFilter}
                   rangeFilter={this.rangeFilter}
                   onClearFilter={this.clearFilter}
-                  page="college"
+                  internshipfilter={this.internshipfilter}
+                  page="career"
                 />
               </div>
               <div className="col-md-9">
-                <CollegeListDetail
+                <CareerListDetail
                   filters={this.state.filters}
                   onRemoveFilter={this.removeFilter}
-                  data={this.courses}
+                  data={this.career}
                   inApiCall={this.state.inApiCall}
                   count={this.courseCount}
                   search={this.state.search}

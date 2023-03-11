@@ -1,15 +1,12 @@
 import React from "react";
 import { withRouter } from "next/router";
-
-import HtmlHeader from "../common/HtmlHeader";
-import Header from "../common/Header";
-import PageDetailHeading from "../common/PageDetailHeading";
-import ExamDetailSidebar from "./ExamDetailSidebar";
-import Overview from "./Overview";
-import ExamPrep from "./ExamPrep";
-import ExamPattern from "./ExamPattern";
-import ExamDate from "./ExamDate";
-import Loader from "../common/Loader";
+import PageDetailHeading from "../../components/common/PageDetailHeading";
+import ExamDetailSidebar from "../../components/exam/ExamDetailSidebar";
+import Overview from "../../components/exam/Overview";
+import ExamPrep from "../../components/exam/ExamPrep";
+import ExamPattern from "../../components/exam/ExamPattern";
+import ExamDate from "../../components/exam/ExamDate";
+import Loader from "../../components/common/Loader";
 import ExamAPI from "../../api/ExamAPI";
 import ModelAPI from "../../api/ModelAPI";
 
@@ -138,8 +135,6 @@ class ExamDetails extends React.Component {
 
     return (
       <>
-        <HtmlHeader title={title} description={description} />
-        <Header />
         <PageDetailHeading
           model={this.model.exam}
           title={this.pagetitle}
