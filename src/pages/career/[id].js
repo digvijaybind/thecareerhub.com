@@ -19,10 +19,6 @@ import { withRouter } from "next/router";
 class CareerDetails extends React.Component {
   constructor(props) {
     super(props);
-    debugger
-    console.log("props",this.props);
-    const sef = this.props.match.params.id;
-    this.id = parseInt(sef.split(/[- ]+/).pop());
     this.model = {course:null,college:null};
     // this.model = this.props.model;
     this.state = { inApiCall: true, active: 'overview' };
@@ -35,12 +31,14 @@ class CareerDetails extends React.Component {
 
   componentDidMount() { 
     window.addEventListener('scroll', this.onScroll, true);
+    const sef = window.location.pathname.split("/")[2];
+    this.id = parseInt(sef.split(/[- ]+/).pop());
     this.loadCareerDetail();
   }
 
   UNSAFE_componentWillReceiveProps(nextProps) {
     window.addEventListener('scroll', this.onScroll, true);
-    const sef = nextProps.match.params.id;
+    const sef = window.location.pathname.split("/")[2];
     this.id = parseInt(sef.split(/[- ]+/).pop());
     // this.state = { inApiCall: true};
     this.loadCareerDetail();
@@ -184,8 +182,6 @@ class CareerDetails extends React.Component {
     const description = (this.career && this.career.meta && this.career.meta.description) ? this.career.meta.description : 'sdfdskl';
     return (
       <>
-        <HtmlHeader title={title} description={description} />
-        <Header />
         <PageDetailHeading model={this.model.career} title={this.pagetitle}  career={this.career}/>
         <div className="section3">
               <div className="container-fluid padding-left-right">
@@ -216,3 +212,8 @@ class CareerDetails extends React.Component {
   }
 }
 export default withRouter(CareerDetails);
+CareerDetails.getLayout = page => (
+  <>
+    {page}
+  </>
+)

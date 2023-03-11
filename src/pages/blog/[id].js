@@ -12,8 +12,7 @@ import { withRouter } from "next/router";
 class BlogDetails extends React.Component {
   constructor(props) {
     super(props);
-    const sef = props.match.params.id;
-    this.id = parseInt(sef.split(/[- ]+/).pop());
+   
     // this.model = this.props.model;
     this.model = null;
     this.state = { inApiCall: true, active: "overview" };
@@ -21,11 +20,13 @@ class BlogDetails extends React.Component {
   }
 
   componentDidMount() {
+    const sef = window.location.pathname.split("/")[2];
+    this.id = parseInt(sef.split(/[- ]+/).pop());
     this.loadBlogDetail();
   }
 
   UNSAFE_componentWillReceiveProps(nextProps) {
-    const sef = nextProps.match.params.id;
+    const sef = window.location.pathname.split("/")[2];
     this.id = parseInt(sef.split(/[- ]+/).pop());
     this.loadBlogDetail();
   }
@@ -142,9 +143,6 @@ class BlogDetails extends React.Component {
 
     return (
       <>
-        <HtmlHeader title={title} description={description} />
-        <Header />
-
         <div className="section3">
           <div className="container-fluid padding-left-right">
             <div className="row">
@@ -301,9 +299,13 @@ class BlogDetails extends React.Component {
           </div>
         </div>
 
-        <Footer />
       </>
     );
   }
 }
 export default withRouter(BlogDetails);
+BlogDetails.getLayout = page => (
+  <>
+    {page}
+  </>
+)

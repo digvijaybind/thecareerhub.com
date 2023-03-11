@@ -12,8 +12,7 @@ import ModelAPI from "../../api/ModelAPI";
 class IndustryDetail extends React.Component {
   constructor(props) {
     super(props);
-    const sef = props.match.params.id;
-    this.id = parseInt(sef.split(/[- ]+/).pop());
+
     this.model = { industry: null };
     // this.model = this.props.model;
     this.state = { inApiCall: true, active: "overview" };
@@ -25,14 +24,17 @@ class IndustryDetail extends React.Component {
 
   UNSAFE_componentWillReceiveProps(nextProps) {
     window.addEventListener('scroll', this.onScroll, true);
-    const sef = nextProps.match.params.id;
+    const sef = window.location.pathname.split("/")[2];
     this.id = parseInt(sef.split(/[- ]+/).pop());
     this.loadIndustryDetail();
   }
 
   componentDidMount() {
     // window.addEventListener('scroll', this.onScroll, true);
+    
     window.addEventListener('scroll', this.onScroll, true);
+    const sef = window.location.pathname.split("/")[2];
+    this.id = parseInt(sef.split(/[- ]+/).pop());
     this.loadIndustryDetail();
   }
 
@@ -228,3 +230,8 @@ class IndustryDetail extends React.Component {
   }
 }
 export default withRouter(IndustryDetail);
+IndustryDetail.getLayout = page => (
+  <>
+    {page}
+  </>
+)

@@ -76,7 +76,6 @@ class BlogList extends React.Component {
             </div>
           </div>
         </div>
-        <Footer />
       </>
     );
   }

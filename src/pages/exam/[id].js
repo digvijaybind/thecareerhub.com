@@ -14,8 +14,7 @@ import ModelAPI from "../../api/ModelAPI";
 class ExamDetails extends React.Component {
   constructor(props) {
     super(props);
-    const sef = props.match.params.id;
-    this.id = parseInt(sef.split(/[- ]+/).pop());
+   
     this.model = { exam: null };
     // this.model = this.props.model;
     this.state = { inApiCall: true, active: "overview" };
@@ -27,7 +26,7 @@ class ExamDetails extends React.Component {
 
   UNSAFE_componentWillReceiveProps(nextProps) {
     window.addEventListener('scroll', this.onScroll, true);
-    const sef = nextProps.match.params.id;
+    const sef = window.location.pathname.split("/")[2];
     this.id = parseInt(sef.split(/[- ]+/).pop());
     this.loadExamDetail();
   }
@@ -35,6 +34,8 @@ class ExamDetails extends React.Component {
   componentDidMount() {
     // window.addEventListener('scroll', this.onScroll, true);
     window.addEventListener('scroll', this.onScroll, true);
+    const sef = window.location.pathname.split("/")[2];
+    this.id = parseInt(sef.split(/[- ]+/).pop());
     this.loadExamDetail();
   }
 
@@ -169,3 +170,8 @@ class ExamDetails extends React.Component {
   }
 }
 export default withRouter(ExamDetails);
+ExamDetails.getLayout = page => (
+  <>
+    {page}
+  </>
+)

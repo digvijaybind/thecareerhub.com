@@ -29,7 +29,8 @@ export default function MyApp(props) {
       </Head>
       <HtmlHeader title={title} description={description} />
       <Header />
-      <Component {...pageProps} prop={true} />
+      <div style={{minHeight:"1000px"}}>
+      <Component {...pageProps} prop={true} /></div>
       <Footer />
     </>
   );

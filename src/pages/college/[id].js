@@ -14,8 +14,7 @@ class CollegeDetail extends React.Component {
   
   constructor(props) {
     super(props);
-    const sef = props.match.params.id;
-    this.id = parseInt(sef.split(/[- ]+/).pop());
+   
     this.model = {course:null,college:null} 
   
     // this.model = this.props.model;
@@ -29,7 +28,7 @@ class CollegeDetail extends React.Component {
 
   UNSAFE_componentWillReceiveProps(nextProps) {
     window.addEventListener('scroll', this.onScroll, true);
-    const sef = nextProps.match.params.id;
+    const sef = window.location.pathname.split("/")[2];
     this.id = parseInt(sef.split(/[- ]+/).pop());
     this.loadCollegeDetail();
   }
@@ -37,6 +36,8 @@ class CollegeDetail extends React.Component {
   componentDidMount() { 
     // window.addEventListener('scroll', this.onScroll, true);
     window.addEventListener('scroll', this.onScroll, true);
+    const sef = window.location.pathname.split("/")[2];
+    this.id = parseInt(sef.split(/[- ]+/).pop());
     this.loadCollegeDetail();
   }
 
@@ -146,3 +147,8 @@ class CollegeDetail extends React.Component {
   }
 }
 export default withRouter(CollegeDetail);
+CollegeDetail.getLayout = page => (
+  <>
+    {page}
+  </>
+)
