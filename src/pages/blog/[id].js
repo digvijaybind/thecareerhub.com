@@ -8,11 +8,13 @@ import Const from "../../util/Constants";
 import ReactHtmlParser from "react-html-parser";
 import Link from "next/link";
 import { withRouter } from "next/router";
+import config from "../../config/config";
+import Headers from "../../api/Headers";
 
 class BlogDetails extends React.Component {
   constructor(props) {
     super(props);
-   
+    debugger;
     // this.model = this.props.model;
     this.model = null;
     this.state = { inApiCall: true, active: "overview" };
@@ -71,7 +73,7 @@ class BlogDetails extends React.Component {
   };
 
   render() {
-    if (this.state.inApiCall) return <Loader />;
+    if (this.props.router.isFallback) return <Loader />;
     const title = "Blog Detail - The Career hub";
     const description = "fdsfsdf";
     const url = Const.backendLink;
@@ -80,7 +82,7 @@ class BlogDetails extends React.Component {
       this.blog && this.blog.category
         ? Util.multiLabel(this.model, "category", this.blog.category)
         : null;
-    const blogcategory = this.model.category.map((item) => (
+    const blogcategory = this.model?.category?.map((item) => (
       <li>
         {item.name}({item.blog ? item.blog : 0})
       </li>
@@ -298,14 +300,66 @@ class BlogDetails extends React.Component {
             </div>
           </div>
         </div>
-
       </>
     );
   }
 }
 export default withRouter(BlogDetails);
-BlogDetails.getLayout = page => (
-  <>
-    {page}
-  </>
-)
+BlogDetails.getLayout = (page) => <>{page}</>;
+export async function getStaticProps(context) {
+  console.log(`called`);
+  const { params } = context;
+  const id = parseInt(params.id.split(/[- ]+/).pop());
+  console.log(`id`, id);
+  const response = await fetch(config.link + "blog/" + id, {
+    method: "GET",
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Content-Type": "application/json",
+      token: "wdxbXcuJgHfuXxbQ",
+    },
+  });
+  const data = await response.json();
+  console.log("DATA", data.data[0]);
+  if (!data.data[0].id) {
+    return {
+      notFound: true,
+    };
+  }
+  console.log(`Generating page for /blog/${id}`);
+  return {
+    props: {
+      blog: data.data[0],
+    },
+  };
+}
+
+export async function getStaticPaths() {
+  const page = {
+    filter: { status: 1 },
+    limit: 10,
+    offset: 0,
+    order_by: 1,
+    popularfilter: { status: 1, for: "blog_" },
+  };
+  const response = await fetch(config.link + "blog/list", {
+    method: "POST",
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Content-Type": "application/json",
+      token: "wdxbXcuJgHfuXxbQ",
+    },
+    body: JSON.stringify(page),
+  });
+  // console.log("res  ",response);
+
+  const data = await response.json();
+  // console.log("data  ",data.data);
+  const paths = data.data.map((blog) => {
+    return {
+      params: { id: `${blog.sef_url}` },
+    };
+  });
+  // console.log(paths);
+  return { paths: paths, fallback: true };
+}
