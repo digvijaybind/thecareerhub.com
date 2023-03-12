@@ -8,7 +8,8 @@ class Menu extends React.Component {
     const testlink = Const.testlink;
    const {open,setOpen}=this.props;
     return (
-      <div className="collapse navbar-collapse col-md-5" id="navbarScroll"
+      <div className="collapse navbar-collapse col-md-5" 
+      id="navbarScroll"
 
       >
        <ul className="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">

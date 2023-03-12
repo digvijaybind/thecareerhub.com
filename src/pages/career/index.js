@@ -61,7 +61,6 @@ class CollegeList extends React.Component {
 
   onModel = (res) => {
     this.model = res.career;
-
     this.setState({ ...this.state, filters: [] });
     const searchParam = queryString.parse(window.location.search);
     if (searchParam && searchParam.category) {
@@ -107,6 +106,7 @@ class CollegeList extends React.Component {
       this.filter.salary.max = maxsalary;
       this.filter.salary.min = minsalary;
     }
+    debugger
     this.loadCollegeList();
   };
 
@@ -131,6 +131,7 @@ class CollegeList extends React.Component {
   };
 
   addFilter = (filter) => {
+    debugger
     this.limit = Constant.LIMIT;
     if (!this.filter[filter.type]) {
       this.filter[filter.type] = [];
@@ -140,8 +141,7 @@ class CollegeList extends React.Component {
     else this.filter[filter.type].push(filter.id);
     const filters = [...this.state.filters];
     filters.push(filter);
-    this.setState({ ...this.state, inApiCall: false, filters });
-    this.loadCollegeList();
+    this.setState({ ...this.state, inApiCall: false, filters },()=>this.loadCollegeList());
   };
   removeFilter = (filter) => {
     this.limit = Constant.LIMIT;
@@ -168,8 +168,8 @@ class CollegeList extends React.Component {
       this.model[type].min !== min || this.model[type].max !== max
         ? { min, max }
         : undefined;
-    this.setState({ ...this.state, inApiCall: false });
-    this.loadCollegeList();
+    this.setState({ ...this.state, inApiCall: false },()=>{this.loadCollegeList()});
+    ;
   };
 
   onSearchValueChange = (field, value) => {

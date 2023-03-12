@@ -600,8 +600,8 @@ a:hover {
 .checkbox-sec .form-check-input {
     width: 18px;
     height: 18px;
-    opacity: 0.54;
-    background-color: #010101;
+    /* opacity: 0.54; */
+    /* background-color: #010101; */
 }
 
 .checkbox-sec label {
@@ -3440,8 +3440,8 @@ a:hover {
 .checkbox-sec .form-check-input {
     width: 18px;
     height: 18px;
-    opacity: 0.54;
-    background-color: #010101;
+    /* opacity: 0.54; */
+    /* background-color: #010101; */
 }
 
 .checkbox-sec label {
