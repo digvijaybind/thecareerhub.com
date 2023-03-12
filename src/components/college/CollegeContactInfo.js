@@ -14,13 +14,13 @@ class CollegeContactInfo extends React.Component {
           <p className="txt-info"> {college.address && college.address.street + ', ' + college.address.location + ', ' + college.address.city + ', ' + college.address.state}</p></div>
 
             <div className="div-info"><img src="/images/website.png" alt="img" className="img-fluid" /> <span className="small-info-heading">Website</span> 
-            <p className="txt-info"> <Link href={"/"} target="_blank"> {college.social && college.social.website}</Link></p></div>
+            <p className="txt-info"> <Link target="_blank" href={"/"} > {college.social && college.social.website}</Link></p></div>
 {/* college.social.website */}
             <div className="div-info"><img src="/images/number.png" alt="img" className="img-fluid" /> <span className="small-info-heading2">Contact Number</span> 
-              <p className="txt-info"> <Link href={`tel:${college.contact}`} target="_blank"> {college.contact}</Link></p></div>
+              <p className="txt-info"> <Link target="_blank" href={`tel:${college.contact}`} > {college.contact}</Link></p></div>
 
             <div className="div-info"><img src="/images/email.png" alt="img" className="img-fluid" /> <span className="small-info-heading2">Email ID</span> 
-              <p className="txt-info"> <Link href={`mailto:${college.email}`} target="_blank">{college.email}</Link></p></div>
+              <p className="txt-info"> <Link target="_blank" href={`mailto:${college.email}`} >{college.email}</Link></p></div>
 
             <div className="social-div">
               { college.social &&college.social.facebook && college.social.facebook.length > 5 ?  

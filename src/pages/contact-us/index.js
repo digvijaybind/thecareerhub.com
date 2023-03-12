@@ -1,4 +1,5 @@
 import React from "react";
+import HtmlHeader from "../../components/common/HtmlHeader";
 import Loader from "../../components/common/Loader";
 import PageHeading from "../../components/common/PageHeading";
 import Const from '../../util/Constants';
@@ -14,12 +15,14 @@ class BlogList extends React.Component {
     if (this.state.inApiCall) return <Loader />;
     return (
       <>
+      <HtmlHeader title={"Contact Us - The Career Hub"} description={"Contact Us - The Career Hub"} />
+
         <PageHeading headingmain="Contact" />
         <div className="section3 mb-3 mt-3 pt-5 pb-5">
           <div className="container padding-left-right">
             <div className="row">
               <div className="col-md-8">
-                <h3>We'd love to hear from you.</h3>
+                <h3>We&apos;d love to hear from you.</h3>
                 <p>
                   In case of any questions, doubts or feedback, Please fill out
                   the form below and we will reach out back to you at the

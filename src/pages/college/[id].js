@@ -9,6 +9,7 @@ import CollegeAPI from '../../api/CollegeAPI';
 import Loader from '../../components/common/Loader';
 import ModelAPI from '../../api/ModelAPI';
 import { withRouter } from "next/router";
+import HtmlHeader from "../../components/common/HtmlHeader";
 
 class CollegeDetail extends React.Component {
   
@@ -118,6 +119,7 @@ class CollegeDetail extends React.Component {
     
     return (
       <>
+      <HtmlHeader title={"College details - The Career Hub"} description={"College details - The Career Hub"} />
        
         <CollegePageDetailHeading model={this.model.college} title={this.pagetitle} data={this.college} />
           

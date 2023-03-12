@@ -9,6 +9,7 @@ import ExamDate from "../../components/exam/ExamDate";
 import Loader from "../../components/common/Loader";
 import ExamAPI from "../../api/ExamAPI";
 import ModelAPI from "../../api/ModelAPI";
+import HtmlHeader from "../../components/common/HtmlHeader";
 
 
 class ExamDetails extends React.Component {
@@ -136,6 +137,8 @@ class ExamDetails extends React.Component {
 
     return (
       <>
+      <HtmlHeader title={"Exam details - The Career Hub"} description={"Exam details - The Career Hub"} />
+
         <PageDetailHeading
           model={this.model.exam}
           title={this.pagetitle}

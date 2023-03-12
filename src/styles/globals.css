@@ -1756,10 +1756,13 @@ hr {
 
 .footer {
     background-color: #0a1229;
-}
 
-.footer a:hover {
-    color: #fee040;
+}
+.footer .explore-menu-links a{
+    color: #fff !important;
+}
+.footer .explore-menu-links a:hover {
+    color: #fee040 !important;
     background-color: transparent!important;
 }
 
@@ -5141,8 +5144,9 @@ hr {
     line-height: 1.17;
     letter-spacing: normal;
     text-align: left;
-    color: #000;
+    color: #000 !important;
     padding: 6px 0!important;
+    background: transparent !important;
 }
 
 .rowcollege h5 a {

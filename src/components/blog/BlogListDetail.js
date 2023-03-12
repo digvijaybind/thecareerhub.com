@@ -22,7 +22,7 @@ class BlogListDetail extends React.Component {
             </div>
             <div className="row">
               <div className="col-md-12 text-center">
-                <Link href='#' href="/" className="load-more-btn">Load More</Link>
+                <Link target="_blank" href='#' className="load-more-btn">Load More</Link>
               </div>
             </div>
           </>

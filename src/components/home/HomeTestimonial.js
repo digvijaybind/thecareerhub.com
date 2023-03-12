@@ -77,7 +77,7 @@ class HomeTestimonial extends React.Component {
 
                           <div className="carousel-item ">
                               <div className="carousel-content">
-                                  <p className="testimonial-p">One place to go for answers to all of my questions regarding education, along with specific guidance about the course, the colleges it's offered at, and the employment positions and requirements that are most common in that particular profession.</p>
+                                  <p className="testimonial-p">One place to go for answers to all of my questions regarding education, along with specific guidance about the course, the colleges it&apos;s offered at, and the employment positions and requirements that are most common in that particular profession.</p>
                                   <h3 className="testimonial-h">Deepesh Dhillon <span className="testimonial-span"> 6 Months Ago</span></h3>
                                   <div className="rate">
                                     <i className="fa fa-star" aria-hidden="true"></i>
@@ -90,7 +90,7 @@ class HomeTestimonial extends React.Component {
 
                           <div className="carousel-item ">
                               <div className="carousel-content">
-                                  <p className="testimonial-p">The Careerhub website was extremely helpful in providing me with in-depth information regarding my programme. With their assistance, I was able to learn about the various courses, colleges, and the different pathways to the careers, and it also informed me about the programme's potential outcomes.</p>
+                                  <p className="testimonial-p">The Careerhub website was extremely helpful in providing me with in-depth information regarding my programme. With their assistance, I was able to learn about the various courses, colleges, and the different pathways to the careers, and it also informed me about the programme&apos;s potential outcomes.</p>
                                   <h3 className="testimonial-h">Zeeshan Balakrishnan <span className="testimonial-span"> 8 Months Ago</span></h3>
                                   <div className="rate">
                                     <i className="fa fa-star" aria-hidden="true"></i>
@@ -115,12 +115,12 @@ class HomeTestimonial extends React.Component {
                               </div>
                           </div>
 
-                          <a className="testimonial-prev" href="#testimonialCarousel" role="button" data-slide="prev">
+                          <Link target="_blank" className="testimonial-prev" href="#testimonialCarousel" role="button" data-slide="prev">
                           <img src="images/leftfa.png" alt="img" />
-                          </a>
-                          <a className="testimonial-next" href="#testimonialCarousel" role="button" data-slide="next">
+                          </Link>
+                          <Link target="_blank" className="testimonial-next" href="#testimonialCarousel" role="button" data-slide="next">
                           <img src="images/rightfa.png" alt="img" />
-                          </a>
+                          </Link>
                       </div>
                   </div>
               </div>
@@ -132,9 +132,9 @@ class HomeTestimonial extends React.Component {
               <h4 className="c2a-h">Putting yourself first, and foremost</h4>
               <h4 className="c2a-ytxt">Ready to know your success path?</h4>
               <p className="c2a-p">To help you analyse your characteristics, define your aim, and give you the clarity you need to focus on and achieve your dreams!</p>
-              <a href={testlink}>
+              <Link target="_blank" href={testlink}>
                 <button type="button" className="btn btn-take-test">Take A Free Test Now</button>
-              </a>
+              </Link>
             </div>
             <div className="col-md-4 padd-0c2a">
               <img src="images/home/card-image.png" className="img-fluid imgc2a" alt="img" />

@@ -10,6 +10,7 @@ import Link from "next/link";
 import { withRouter } from "next/router";
 import config from "../../config/config";
 import Headers from "../../api/Headers";
+import HtmlHeader from "../../components/common/HtmlHeader";
 
 class BlogDetails extends React.Component {
   constructor(props) {
@@ -82,16 +83,16 @@ class BlogDetails extends React.Component {
       this.blog && this.blog.category
         ? Util.multiLabel(this.model, "category", this.blog.category)
         : null;
-    const blogcategory = this.model?.category?.map((item) => (
-      <li>
+    const blogcategory = this.model?.category?.map((item,i) => (
+      <li key={i}>
         {item.name}({item.blog ? item.blog : 0})
       </li>
     ));
     // console.log('gere', this.relatedpost);
     const relatedpost =
       this.relatedpost &&
-      this.relatedpost.map((item) => (
-        <>
+      this.relatedpost.map((item,i) => (
+        <div key={i}>
           <div className="blogrelated">
             <img
               src={
@@ -117,13 +118,13 @@ class BlogDetails extends React.Component {
               </p>
             </div>
           </div>
-        </>
+        </div>
       ));
 
     const comment =
       this.comment &&
       this.comment.map((item, i) => (
-        <div className="comment  row ">
+        <div className="comment  row " key={i}>
           <div className="col-md-1">
             <img src="/images/career-test-icon.png" alt="blog_image" />
           </div>
@@ -145,6 +146,7 @@ class BlogDetails extends React.Component {
 
     return (
       <>
+      <HtmlHeader title={"Blogs details - The Career Hub"} description={"Blogs details - The Career Hub"} />
         <div className="section3">
           <div className="container-fluid padding-left-right">
             <div className="row">
@@ -152,7 +154,7 @@ class BlogDetails extends React.Component {
                 <div className="detail-list-colright pt-0 mt-3"></div>
                 <p className="mt-4">
                   <u>
-                    <Link href="/blog" className="btb">
+                    <Link target="_blank" href="/blog" className="btb">
                       Back to Blogs
                     </Link>
                   </u>
@@ -198,33 +200,31 @@ class BlogDetails extends React.Component {
                   </div>
                   <div className="blog-social col-md-8">
                     <span>
-                      <a
+                      <Link target="_blank"
                         href="https://www.linkedin.com/in/thecareerhub/"
-                        target="blank"
                       >
                         <img src="/images/social/li.png" alt="social" />
-                      </a>
+                      </Link>
                     </span>
                     <span>
-                      <a
+                      <Link target="_blank"
                         href="https://www.facebook.com/The-Career-Hub-110040528233534/"
-                        target="blank"
+                        
                       >
                         <img src="/images/social/fb.png" alt="social" />
-                      </a>
+                      </Link>
                     </span>
                     <span>
-                      <a
+                      <Link target="_blank"
                         href="https://www.instagram.com/thecareerhubindia/"
-                        target="blank"
                       >
                         <img src="/images/social/ig.png" alt="social" />
-                      </a>
+                      </Link>
                     </span>
                     <span>
-                      <a href="https://twitter.com/TheCareerH" target="blank">
+                      <Link target="_blank" href="https://twitter.com/TheCareerH">
                         <img src="/images/social/tw.png" alt="social" />
-                      </a>
+                      </Link>
                     </span>
                   </div>
                 </div>

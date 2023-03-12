@@ -14,7 +14,7 @@ class BestColleges extends React.Component {
                 <p className="orangetxt">Best Colleges</p>
                 <h4>Which are the  <span className="boldtxt"> best colleges to attend </span>to become an {this.props.career.name}?</h4>
                 {relatedCollege}
-                <div><Link href={`/college?jobid=${jobid}`} className="viewallbtn">View All Related College List</Link></div>
+                <div><Link target="_blank" href={`/college?jobid=${jobid}`} className="viewallbtn">View All Related College List</Link></div>
               </div>
           </div>
       </div>

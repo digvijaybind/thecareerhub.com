@@ -3,7 +3,7 @@ import Link from "next/link";
 
 class DiplomaTab extends React.Component {
   render() {
-   const search = this.props.data && this.props.data.map((item,i) => <Link href={"/course/"+item.sef_url}><li key={i}>{item.name}</li></Link>);
+   const search = this.props.data && this.props.data.map((item,i) => <Link target="_blank" key={i} href={"/course/"+item.sef_url}><li>{item.name}</li></Link>);
     return (
       <>
         <div className="tab-pane fade" id="tab2">

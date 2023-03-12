@@ -14,6 +14,8 @@ class BlogList extends React.Component {
     if (this.state.inApiCall) return <Loader />;
     return (
       <>
+      <HtmlHeader title={"Return and Refund - The Career Hub"} description={"Return and Refund - The Career Hub"} />
+
         <PageHeading headingmain="Refund and Cancellation Policy" />
         <div className="section3 mb-3 mt-3 pt-5 pb-5">
           <div className="container padding-left-right">

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 class CareerDetailSidebar extends React.Component {
@@ -8,59 +9,59 @@ class CareerDetailSidebar extends React.Component {
                <div className="col-md-12 moblistsec">
                   <div className="CareerDetailSidebar list-group">
                      <ul className="moblist">
-                        <a href="#overview" onClick={() => this.props.setActive('overview')}>
+                        <Link target="_blank" href="#overview" onClick={() => this.props.setActive('overview')}>
                            <li className={this.props.active === 'overview' ? 'active' : null}>Overview</li> 
-                        </a>
-                        <a href="#work"  onClick={() => this.props.setActive('work')}>
+                        </Link>
+                        <Link target="_blank" href="#work"  onClick={() => this.props.setActive('work')}>
                            <li className={this.props.active === 'work' ? 'active' : null}>
                               Typical day at work
                            </li>
-                        </a>
-                        <a href="#abilities" onClick={() => this.props.setActive('abilities')}>
+                        </Link>
+                        <Link target="_blank" href="#abilities" onClick={() => this.props.setActive('abilities')}>
                            <li className={this.props.active === 'abilities' ? 'active' : null}>
                               Abilities & aptitude needed
                            </li>
-                        </a>
+                        </Link>
 
-                        <a href="#pathways" onClick={() => this.props.setActive('pathways')}> 
+                        <Link target="_blank" href="#pathways" onClick={() => this.props.setActive('pathways')}> 
                            <li className={this.props.active === 'pathways' ? 'active' : null} >
                                Pathways
                            </li> 
-                        </a> 
+                        </Link> 
 
-                        <a href="#entrance" onClick={() => this.props.setActive('entrance')} >
+                        <Link target="_blank" href="#entrance" onClick={() => this.props.setActive('entrance')} >
                            <li className={this.props.active === 'entrance' ? 'active' : null} >
                               Entrance Exam 
                            </li>
-                        </a>
+                        </Link>
 
-                        <a href="#courses" onClick={() => this.props.setActive('courses')} >
+                        <Link target="_blank" href="#courses" onClick={() => this.props.setActive('courses')} >
                            <li className={this.props.active === 'courses' ? 'active' : null} >
                               Courses
                            </li>
-                        </a>
+                        </Link>
 
-                        <a href="#colleges" onClick={() => this.props.setActive('colleges')} >
+                        <Link target="_blank" href="#colleges" onClick={() => this.props.setActive('colleges')} >
                            <li className={this.props.active === 'colleges' ? 'active' : null} >
                               Best colleges
                            </li>
-                        </a>
-                        <a href="#industries" onClick={() => this.props.setActive('industries')} >
+                        </Link>
+                        <Link target="_blank" href="#industries" onClick={() => this.props.setActive('industries')} >
                            <li className={this.props.active === 'industries' ? 'active' : null} >
                               Industries
                            </li>
-                        </a>
-                        <a href="#internship" onClick={() => this.props.setActive('internship')} >
+                        </Link>
+                        <Link target="_blank" href="#internship" onClick={() => this.props.setActive('internship')} >
                            <li className={this.props.active === 'internship' ? 'active' : null} >
                               Internship
                            </li>
-                        </a>
+                        </Link>
 
-                        <a href="#career" onClick={() => this.props.setActive('career')} >
+                        <Link target="_blank" href="#career" onClick={() => this.props.setActive('career')} >
                            <li className={this.props.active === 'career' ? 'active' : null} > 
                               Career Outlook
                            </li>
-                        </a>
+                        </Link>
 
                         
                      </ul>

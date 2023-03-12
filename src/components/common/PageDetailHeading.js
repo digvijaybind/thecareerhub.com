@@ -33,8 +33,8 @@ class PageDetailHeading extends React.Component {
     let category = cat && Util.multiLabel(model, "category", cat);
 
     if (this.props.industry) {
-      category = category.split(",").map(function (cat, index) {
-        return <span>{cat}</span>;
+      category = category.split(",").map(function (cat, i) {
+        return <span key={i}>{cat}</span>;
       });
     }
 

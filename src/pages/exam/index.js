@@ -6,6 +6,7 @@ import ExamAPI from "../../api/ExamAPI";
 import Loader from "../../components/common/Loader";
 import ModelAPI from "../../api/ModelAPI";
 import Constants from '../../util/Constants';
+import HtmlHeader from "../../components/common/HtmlHeader";
 class ExamList extends React.Component {
   constructor(props) {
     super(props);
@@ -110,6 +111,8 @@ class ExamList extends React.Component {
     if (this.state.inApiCall) return <Loader />;
     return (
       <>
+      <HtmlHeader title={"Exams - The Career Hub"} description={"Exams - The Career Hub"} />
+
         <PageHeading headingmain="Find your Exams" />
 
         <div className="section3">

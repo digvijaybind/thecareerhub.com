@@ -13,7 +13,7 @@ class ExamItem extends React.Component {
     return (
       <div className="col-md-12">
         <div className="card main-card">
-        <Link href={"/exam/"+exam.sef_url}>
+        <Link target="_blank" href={"/exam/"+exam.sef_url}>
           <div className="card-body card-one lightbluemain">
             <div className="row">
               <div className="col-md-12">
@@ -75,13 +75,13 @@ class ExamItem extends React.Component {
           <div className="card-body card-two">
             <div className="boxwcolor row">
               <div className="col-md-12">
-                <Link href={"/college"}>
+                <Link target="_blank" href={"/college"}>
                 <div className="btn-detail lightbluemain">{exam.collegeCount ? exam.collegeCount : 0} Colleges Options</div>
                 </Link>
-                <Link href={"/course"}>
+                <Link target="_blank" href={"/course"}>
                 <div className="btn-detail lightbluemain">{exam.courseCount ? exam.courseCount : 0} Courses Offering</div>
                 </Link>
-                <Link href={"/exam/"+exam.sef_url}>
+                <Link target="_blank" href={"/exam/"+exam.sef_url}>
                 <div className="btn-detail bttn-yellow-detail">
                   View Details
                 </div>

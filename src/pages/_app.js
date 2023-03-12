@@ -6,18 +6,21 @@ import { useState } from "react";
 import HtmlHeader from "../components/common/HtmlHeader";
 import Header from "../components/common/Header";
 import Footer from "../components/common/Footer";
+import Script from "next/script";
 const title = "CareerHub";
 const description = "description";
 export default function MyApp(props) {
   const { Component, pageProps } = props;
-  const [open,setOpen]=useState(false);
-  
+  const [open, setOpen] = useState(false);
+
   return (
-    <div onClick={(e)=>{
-      // e.preventDefault();
-      // e.stopPropagation();
-     setOpen(false);
-   }}>
+    <div
+      onClick={(e) => {
+        // e.preventDefault();
+        // e.stopPropagation();
+        setOpen(false);
+      }}
+    >
       <Head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
         <link
@@ -28,14 +31,15 @@ export default function MyApp(props) {
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
         />
-        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
       </Head>
+      <Script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></Script>
+      <Script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></Script>
+      <Script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></Script>
       <HtmlHeader title={title} description={description} />
-      <Header open={open} setOpen={(val)=>setOpen(val)}/>
-      <div style={{minHeight:"1000px"}}>
-      <Component {...pageProps} prop={true} /></div>
+      <Header open={open} setOpen={(val) => setOpen(val)} />
+      <div style={{ minHeight: "1000px" }}>
+        <Component {...pageProps} prop={true} />
+      </div>
       <Footer />
     </div>
   );

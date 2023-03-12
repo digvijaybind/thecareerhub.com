@@ -14,7 +14,7 @@ class IndustryItem extends React.Component {
       <div className="col-md-12">
         <div className="card main-card">
           <div className="card-body card-one ">
-            <Link href={`/blog/${blog.sef_url}`}>
+            <Link target="_blank" href={`/blog/${blog.sef_url}`}>
             <div className="row">
               <div className="col-md-4 careerimageonlist">
                 <img src={url+blog.banner_image} alt={blog.title}  width="100%"/>

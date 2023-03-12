@@ -8,6 +8,7 @@ import Constant from "../../util/Constants.js";
 import CareerAPI from "../../api/CareerAPI";
 import Loader from "../../components/common/Loader";
 import ModelAPI from "../../api/ModelAPI";
+import HtmlHeader from "../../components/common/HtmlHeader";
 
 
 class CollegeList extends React.Component {
@@ -199,6 +200,8 @@ class CollegeList extends React.Component {
     if (this.state.inApiCall) return <Loader />;
     return (
       <>
+      <HtmlHeader title={"Careers - The Career Hub"} description={"Careers - The Career Hub"} />
+
         <PageHeading headingmain="Find your Career" />
 
         <div className="section3">

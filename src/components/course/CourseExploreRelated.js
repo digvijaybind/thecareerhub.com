@@ -15,7 +15,7 @@ class CourseExploreRelated extends React.Component {
             <div className="row">
                 {relatedCareer}
             </div>
-            <div><Link href="/career" className="viewallbtn">View All Related Career List</Link></div>
+            <div><Link target="_blank" href="/career" className="viewallbtn">View All Related Career List</Link></div>
         </div>
     </div>
     );

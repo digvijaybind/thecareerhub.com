@@ -1,5 +1,6 @@
 import React from 'react';
 import Banner from '../../components/common/Banner';
+import HtmlHeader from '../../components/common/HtmlHeader';
 import HomeContent from '../../components/home/HomeContent';
 import HomeFaq from '../../components/home/HomeFaq';
 class HomePage extends React.Component {
@@ -24,6 +25,8 @@ class HomePage extends React.Component {
   render() {
     return (
       <>
+      <HtmlHeader title={"The Career Hub"} description={"The Career Hub"} />
+      
       <div className="homepage"> 
         
         <Banner />

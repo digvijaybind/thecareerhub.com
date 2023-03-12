@@ -8,6 +8,7 @@ import Loader from '../../components/common/Loader';
 import ModelAPI from '../../api/ModelAPI';
 import { withRouter } from 'next/router';
 import Constants from '../../util/Constants.js';
+import HtmlHeader from '../../components/common/HtmlHeader';
 
 class CourseList extends React.Component {
 
@@ -151,6 +152,8 @@ class CourseList extends React.Component {
     if(this.state.inApiCall) return(<Loader />);
     return (
       <>
+      <HtmlHeader title={"Courses - The Career Hub"} description={"Courses - The Career Hub"} />
+
         <PageHeading headingmain="Find your Courses" />
           
         <div className="section3">

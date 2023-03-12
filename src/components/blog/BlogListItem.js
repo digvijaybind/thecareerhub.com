@@ -16,7 +16,7 @@ class IndustryItem extends React.Component {
       
             
             <div className="col-md-6 mb-4">
-            <Link href={`/blog/${blog.sef_url}`}>
+            <Link target="_blank" href={`/blog/${blog.sef_url}`}>
               <div className="blogrelated">
                 <img
                   src={blog.banner_image ? url+blog.banner_image : `${"/images/2.png"}`} alt={blog.title}

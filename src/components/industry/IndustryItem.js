@@ -16,14 +16,14 @@ class IndustryItem extends React.Component {
     
     const model = this.props.model;
     let category = Util.multiLabel(model,"category",industry.categories);
-    category = category.split(',').map(function (cat, index) {
-        return <span>{ cat }</span>; 
+    category = category.split(',').map(function (cat, i) {
+        return <span key={i}>{ cat }</span>; 
     });
 
     return (
       <div className="col-md-12">
         <div className="card main-card"  >
-        <Link href={"/industry/"+industry.sef_url}>
+        <Link target="_blank" href={"/industry/"+industry.sef_url}>
           <div className="card-body card-one lightbluemain" width="100%">
             <div className="row">
               <div className="col-md-4 careerimageonlist">
@@ -46,13 +46,13 @@ class IndustryItem extends React.Component {
           <div className="card-body card-two">
             <div className="boxwcolor row">
               <div className="col-md-12">
-                <Link href={"/career"}> 
+                <Link target="_blank" href={"/career"}> 
                 <div className="btn-detail" lightbluemain>{industry.careerCount ? industry.careerCount : 0} Career Options</div>
                 </Link>
-                <Link href={"/course"}>
+                <Link target="_blank" href={"/course"}>
                 <div className="btn-detail" lightbluemain>{industry.courseCount ? industry.courseCount : 0} Courses Options</div>
                 </Link>
-                <Link href={"/industry/"+industry.sef_url}>
+                <Link target="_blank" href={"/industry/"+industry.sef_url}>
                 <div className="btn-detail bttn-yellow-detail">
                   View Details
                 </div>

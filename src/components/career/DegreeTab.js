@@ -11,7 +11,7 @@ class DegreeTab extends React.Component {
        <div className="row" key={i}>
           <div className="col-md-12">
              <div className="card main-card">
-             <Link href={"/course/"+item.sef_url}>
+             <Link target="_blank" href={"/course/"+item.sef_url}>
                 <div className="card-body card-one">
                    <h5 className="card-title">{item.name}</h5>
                    <div className="badge job-tags">
@@ -28,7 +28,7 @@ class DegreeTab extends React.Component {
                 <div className="card-body career-card-two">
                    <div className=" row">
                       <div className="col-md-12">
-                         <Link href={"/course/"+item.sef_url}>View Details</Link>
+                         <Link target="_blank" href={"/course/"+item.sef_url}>View Details</Link>
                       </div>
                    </div>
                 </div>
@@ -36,7 +36,7 @@ class DegreeTab extends React.Component {
           </div>
        </div>
     );
-    let viewdetails = courses && courses.length > 0 ? <div><Link href={"/course?jobid="+jobid} className="viewallbtn">View All Related Courses List</Link></div> : null;
+    let viewdetails = courses && courses.length > 0 ? <div><Link target="_blank" href={"/course?jobid="+jobid} className="viewallbtn">View All Related Courses List</Link></div> : null;
     if(courses && courses.length > 0){courses.push(viewdetails)}
      return (
        <>
