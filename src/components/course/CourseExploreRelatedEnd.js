@@ -21,7 +21,7 @@ class CourseExploreRelatedEnd extends React.Component {
           <div className="row">
             {related_course}
           </div>
-          <div><Link href="/course" className="viewallbtn">View All Related Course List</Link></div>
+          <div><Link target="_blank"  href="/course" className="viewallbtn">View All Related Course List</Link></div>
         </div>
       </div>
     

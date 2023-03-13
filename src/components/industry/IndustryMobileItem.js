@@ -22,7 +22,7 @@ class IndustryMobileItem extends React.Component {
         <div className="row">
         <div className="col-md-12">
           <div className="card main-card">
-            <Link href={"/industry/"+industry.sef_url}>
+            <Link target="_blank"  href={"/industry/"+industry.sef_url}>
               <div className="card-body card-one lightbluemain">
                 <div className="row">
                   <div className="col-md-12">
@@ -51,13 +51,13 @@ class IndustryMobileItem extends React.Component {
             <div className="card-body card-two">
               <div className="boxwcolor row">
                 <div className="col-md-12">
-                 <Link href={"/career"}> 
+                 <Link target="_blank"  href={"/career"}> 
                     <div className="btn-detail" lightbluemain>88 Career Options</div>
                  </Link>
-                 <Link href={"/course"}>
+                 <Link target="_blank"  href={"/course"}>
                    <div className="btn-detail" lightbluemain>12 Courses Options</div>
                  </Link>
-                 <Link href={"/industry/"+industry.sef_url}>
+                 <Link target="_blank"  href={"/industry/"+industry.sef_url}>
                    <div className="btn-detail bttn-yellow-detail">
                      View Details
                    </div>
@@ -70,7 +70,7 @@ class IndustryMobileItem extends React.Component {
       </div>
     //   <div className="col-md-12">
     //     <div className="card main-card">
-    //     <Link href={"/industry/"+industry.sef_url}>
+    //     <Link target="_blank"  href={"/industry/"+industry.sef_url}>
     //       <div className="card-body card-one lightbluemain">
     //         <div className="row">
     //           <div className="col-md-4 careerimageonlist">
@@ -95,13 +95,13 @@ class IndustryMobileItem extends React.Component {
     //       <div className="card-body card-two">
     //         <div className="boxwcolor row">
     //           <div className="col-md-12">
-    //             <Link href={"/career"}> 
+    //             <Link target="_blank"  href={"/career"}> 
     //             <div className="btn-detail" lightbluemain>88 Career Options</div>
     //             </Link>
-    //             <Link href={"/course"}>
+    //             <Link target="_blank"  href={"/course"}>
     //             <div className="btn-detail" lightbluemain>12 Courses Options</div>
     //             </Link>
-    //             <Link href={"/industry/"+industry.sef_url}>
+    //             <Link target="_blank"  href={"/industry/"+industry.sef_url}>
     //             <div className="btn-detail bttn-yellow-detail">
     //               View Details
     //             </div>

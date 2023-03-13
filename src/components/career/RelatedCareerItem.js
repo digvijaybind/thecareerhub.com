@@ -17,7 +17,7 @@ class RelatedCareerItem extends React.Component {
         <div className="row">
             <div className="col-md-12">
                 <div className="card main-card">
-                <Link href={"/career/"+this.props.career.sef_url}>    
+                <Link target="_blank"  href={"/career/"+this.props.career.sef_url}>    
                     <div className="card-body card-one ">
                         <div className="row">
                             <div className="col-md-4 careerimageonlist">
@@ -49,13 +49,13 @@ class RelatedCareerItem extends React.Component {
                     <div className="card-body card-two">
                         <div className="boxwcolor row">
                             <div className="col-md-12">
-                                <Link href={"/course?jobid="+jobid}>
+                                <Link target="_blank"  href={"/course?jobid="+jobid}>
                                 <div className="btn btn-detail">{career.courseCount ? career.courseCount : 0} Courses Options</div> 
                                 </Link>
-                                <Link href={"/college?jobid="+jobid}>
+                                <Link target="_blank"  href={"/college?jobid="+jobid}>
                                 <div className="btn btn-detail">{career.collegeCount ? career.collegeCount : 0} Colleges Offering</div>
                                 </Link>
-                                {!isMobile ? <Link href={"/career/"+this.props.career.sef_url}>
+                                {!isMobile ? <Link target="_blank"  href={"/career/"+this.props.career.sef_url}>
                                 <div className="btn btn-detail bttn-yellow-detail">View Details</div></Link> : ''}
                             </div>
                         </div>

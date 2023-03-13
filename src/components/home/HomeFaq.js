@@ -24,23 +24,23 @@ class HomeFaq extends React.Component {
                               <div className="carousel-content">
                                   <h3 className="testimonial-faq-q">How to know which career is right for me?</h3>
                                   <p className="testimonial-p pt-20">My son was confused on what to do after 12 Science, everyday his goal changed. We did counselling with Brain Wonders. The councilling was based on finger prints analysis so it was more scientific. My son goal was cleared after councilling and he studied hard for CET and got admission in Engineering college in Mumbai. Thanks Brainwonders for giving clear vision and confidence.</p>
-                                   <div className="text-center readm-btn pt-20"><Link href="#">Read More</Link></div> 
+                                   <div className="text-center readm-btn pt-20"><Link target="_blank"  href="#">Read More</Link></div> 
                               </div>
                           </div>
                           <div className="carousel-item ">
                               <div className="carousel-content">
                                   <h3 className="testimonial-faq-q">q2How to know which career is right for me?</h3>
                                   <p className="testimonial-p pt-20">My son was confused on what to do after 12 Science, everyday his goal changed. We did counselling with Brain Wonders. The councilling was based on finger prints analysis so it was more scientific. My son goal was cleared after councilling and he studied hard for CET and got admission in Engineering college in Mumbai. Thanks Brainwonders for giving clear vision and confidence.</p>
-                                   <div className="text-center readm-btn pt-20"><Link href="#">Read More</Link></div>
+                                   <div className="text-center readm-btn pt-20"><Link target="_blank"  href="#">Read More</Link></div>
                               </div>
                           </div>
 
-                          <a className="testimonial-prev" href="#faqCarousel" role="button" data-slide="prev">
+                          <Link target="_blank"  className="testimonial-prev" href="#faqCarousel" role="button" data-slide="prev">
                           <img src="images/leftfa.png" alt="img" />
-                          </a>
-                          <a className="testimonial-next" href="#faqCarousel" role="button" data-slide="next">
+                          </Link>
+                          <Link target="_blank"  className="testimonial-next" href="#faqCarousel" role="button" data-slide="next">
                           <img src="images/rightfa.png" alt="img" />
-                          </a>
+                          </Link>
                       </div>
                   </div>
               </div>

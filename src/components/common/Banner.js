@@ -36,9 +36,9 @@ class Banner extends React.Component {
                             </div>
                         </div>
                      </div>
-                     <a href={testlink}>
+                     <Link target="_blank"  href={testlink}>
                         <button type="button" className="btn btn-take-test">Take a free test now</button>
-                      </a>
+                      </Link>
                   </div>
               </div>
            </div>

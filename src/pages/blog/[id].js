@@ -152,7 +152,7 @@ class BlogDetails extends React.Component {
                 <div className="detail-list-colright pt-0 mt-3"></div>
                 <p className="mt-4">
                   <u>
-                    <Link href="/blog" className="btb">
+                    <Link target="_blank"  href="/blog" className="btb">
                       Back to Blogs
                     </Link>
                   </u>
@@ -198,33 +198,33 @@ class BlogDetails extends React.Component {
                   </div>
                   <div className="blog-social col-md-8">
                     <span>
-                      <a
+                      <Link target="_blank" 
                         href="https://www.linkedin.com/in/thecareerhub/"
                         target="blank"
                       >
                         <img src="/images/social/li.png" alt="social" />
-                      </a>
+                      </Link>
                     </span>
                     <span>
-                      <a
+                      <Link target="_blank" 
                         href="https://www.facebook.com/The-Career-Hub-110040528233534/"
                         target="blank"
                       >
                         <img src="/images/social/fb.png" alt="social" />
-                      </a>
+                      </Link>
                     </span>
                     <span>
-                      <a
+                      <Link target="_blank" 
                         href="https://www.instagram.com/thecareerhubindia/"
                         target="blank"
                       >
                         <img src="/images/social/ig.png" alt="social" />
-                      </a>
+                      </Link>
                     </span>
                     <span>
-                      <a href="https://twitter.com/TheCareerH" target="blank">
+                      <Link target="_blank"  href="https://twitter.com/TheCareerH" target="blank">
                         <img src="/images/social/tw.png" alt="social" />
-                      </a>
+                      </Link>
                     </span>
                   </div>
                 </div>

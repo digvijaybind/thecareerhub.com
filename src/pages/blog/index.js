@@ -128,7 +128,7 @@ class BlogList extends React.Component {
           </div>
           <div className="row">
             <div className="col-md-8">
-            <Link href={"/blog/"+this.popularblog[0].sef_url}>
+            <Link target="_blank"  href={"/blog/"+this.popularblog[0].sef_url}>
               <div className="bloglist">
                 <img
                   src={this.popularblog[0].banner_image ? url+this.popularblog[0].banner_image : `${"/images/2.png"}`}
@@ -150,7 +150,7 @@ class BlogList extends React.Component {
               </Link>
             </div>
             <div className="col-md-4">
-            <Link href={"/blog/"+this.popularblog[1].sef_url}>
+            <Link target="_blank"  href={"/blog/"+this.popularblog[1].sef_url}>
               <div className="blogrelated">
                 <img
                   src={this.popularblog[1].banner_image ? url+this.popularblog[1].banner_image : `${"/images/2.png"}`}
@@ -170,7 +170,7 @@ class BlogList extends React.Component {
                 </div>
               </div>
             </Link>
-            <Link href={"/blog/"+this.popularblog[2].sef_url}>
+            <Link target="_blank"  href={"/blog/"+this.popularblog[2].sef_url}>
               <div className="blogrelated">
                 <img
                   src={this.popularblog[2].banner_image ? url+this.popularblog[2].banner_image : `${"/images/2.png"}`}
@@ -202,7 +202,7 @@ class BlogList extends React.Component {
           </div>
           <div className="row">
             <div className="col-md-4">
-            <Link href={"/blog/"+this.recent[0].sef_url}>
+            <Link target="_blank"  href={"/blog/"+this.recent[0].sef_url}>
               <div className="blogrelated">
               <img
                   src={this.recent[0].banner_image ? url+this.recent[0].banner_image : `${"/images/2.png"}`}
@@ -224,7 +224,7 @@ class BlogList extends React.Component {
               </Link>
             </div>
             <div className="col-md-4">
-            <Link href={"/blog/"+this.recent[1].sef_url}>
+            <Link target="_blank"  href={"/blog/"+this.recent[1].sef_url}>
               <div className="blogrelated">
               <img
                   src={this.recent[1].banner_image ? url+this.recent[1].banner_image : `${"/images/2.png"}`}
@@ -246,7 +246,7 @@ class BlogList extends React.Component {
               </Link>
             </div>
             <div className="col-md-4">
-            <Link href={"/blog/"+this.recent[2].sef_url}>
+            <Link target="_blank"  href={"/blog/"+this.recent[2].sef_url}>
               <div className="blogrelated">
               <img
                   src={this.recent[2].banner_image ? url+this.recent[2].banner_image : `${"/images/2.png"}`}

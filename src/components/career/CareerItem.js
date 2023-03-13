@@ -14,7 +14,7 @@ class CourseItem extends React.Component {
     return (
       <div className="col-md-12">
         <div className="card main-card">
-          <Link href={`/career/${this.props.career.sef_url}`}>
+          <Link target="_blank"  href={`/career/${this.props.career.sef_url}`}>
           <div className="card-body card-one lightbluemain">
             <div className="row">
               <div className="col-md-4 careerimageonlist">
@@ -46,13 +46,13 @@ class CourseItem extends React.Component {
           <div className="card-body card-two">
             <div className="boxwcolor row">
               <div className="col-md-12">
-                <Link href={`/course?jobid=${jobid}`}>
+                <Link target="_blank"  href={`/course?jobid=${jobid}`}>
                 <div className="btn-detail pointercss lightbluemain">{this.props.career.courseCount} Courses Options</div>
                 </Link>
-                <Link href={`/college?jobid=${jobid}`}>
+                <Link target="_blank"  href={`/college?jobid=${jobid}`}>
                   <div className="btn-detail pointercss lightbluemain">{this.props.career.collegeCount} College Offering</div>
                 </Link>
-                <Link href={`/career/${this.props.career.sef_url}`}>
+                <Link target="_blank"  href={`/career/${this.props.career.sef_url}`}>
                   <div className="btn-detail bttn-yellow-detail">
                     View Details
                   </div>

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 class Pathways extends React.Component {
@@ -53,11 +54,10 @@ class Pathways extends React.Component {
     );
 
     const pathstab = this.props.career.pathway.map((path,i) => 
-    <>
-    <a className={i!==0? "nav-item nav-link" : "nav-item nav-link show active" } id="nav-home-tab" data-toggle="tab" href={"#pathtab"+i} role="tab" aria-controls="nav-home" aria-selected="true">Pathway-{i+1}</a>
-    </>
+    <div key={i}>
+    <Link  className={i!==0? "nav-item nav-link" : "nav-item nav-link show active" } id="nav-home-tab" data-toggle="tab" href={"#pathtab"+i} role="tab" aria-controls="nav-home" aria-selected="true">Pathway-{i+1}</Link>
+    </div>
     );
-              
 
     return (
       <>

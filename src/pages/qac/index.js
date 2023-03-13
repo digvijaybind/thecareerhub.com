@@ -93,16 +93,16 @@ class Qac extends React.Component {
                 <h5 className="textcounth5">How satisfied are you with the overall analysis of your child?</h5>
                 <nav aria-label="Page navigation example">
                   <ul className="pagination justify-content-center">
-                    <li className="page-item"><Link href="#" className="page-link">1</Link><span className="textli nonemobile">Lowest</span></li>
-                    <li className="page-item"><Link href="#" className="page-link">2</Link></li>
-                    <li className="page-item"><Link href="#" className="page-link">3</Link></li>
-                    <li className="page-item"><Link href="#" className="page-link">4</Link></li>
-                    <li className="page-item"><Link href="#" className="page-link">5</Link></li>
-                    <li className="page-item"><Link href="#" className="page-link">6</Link></li>
-                    <li className="page-item"><Link href="#" className="page-link">7</Link></li>
-                    <li className="page-item"><Link href="#" className="page-link">8</Link></li>
-                    <li className="page-item"><Link href="#" className="page-link">9</Link></li>
-                    <li className="page-item"><Link href="#" className="page-link">10</Link><span className="textli">Highest</span></li>
+                    <li className="page-item"><Link target="_blank"  href="#" className="page-link">1</Link><span className="textli nonemobile">Lowest</span></li>
+                    <li className="page-item"><Link target="_blank"  href="#" className="page-link">2</Link></li>
+                    <li className="page-item"><Link target="_blank"  href="#" className="page-link">3</Link></li>
+                    <li className="page-item"><Link target="_blank"  href="#" className="page-link">4</Link></li>
+                    <li className="page-item"><Link target="_blank"  href="#" className="page-link">5</Link></li>
+                    <li className="page-item"><Link target="_blank"  href="#" className="page-link">6</Link></li>
+                    <li className="page-item"><Link target="_blank"  href="#" className="page-link">7</Link></li>
+                    <li className="page-item"><Link target="_blank"  href="#" className="page-link">8</Link></li>
+                    <li className="page-item"><Link target="_blank"  href="#" className="page-link">9</Link></li>
+                    <li className="page-item"><Link target="_blank"  href="#" className="page-link">10</Link><span className="textli">Highest</span></li>
                   </ul>
                 </nav>
               </div>
@@ -156,7 +156,7 @@ class Qac extends React.Component {
                   <p>We value your feedback and strive to improve your experience.</p>
                 </div>
               </div>
-              <div className="justify-content-center"><p className="tyendtxt">Want to know more about careers, cources ,colleges? Visit <Link href="#"> The Career Hub </Link></p>
+              <div className="justify-content-center"><p className="tyendtxt">Want to know more about careers, cources ,colleges? Visit <Link target="_blank"  href="#"> The Career Hub </Link></p>
               </div>
             </div>
           </div>

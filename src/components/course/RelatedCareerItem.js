@@ -15,7 +15,7 @@ class CourseItem extends React.Component {
     return (
         <div className="col-md-12">
             <div className="card main-card">
-            <Link href={"/career/"+career.sef_url}>
+            <Link target="_blank"  href={"/career/"+career.sef_url}>
                 <div className="card-body card-one ">
                     <div className="row">
                         <div className="col-md-4 careerimageonlist">
@@ -46,7 +46,7 @@ class CourseItem extends React.Component {
                 <div className="card-body career-card-two">
                 <div className=" row">
                     <div className="col-md-12">
-                    <Link href={"/career/"+career.sef_url}>View Details</Link>
+                    <Link target="_blank"  href={"/career/"+career.sef_url}>View Details</Link>
                     </div>
                 </div>
             </div>

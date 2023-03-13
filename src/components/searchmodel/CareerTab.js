@@ -4,7 +4,7 @@ import Link from "next/link";
 
 class DegreeTab extends React.Component {
   render() {
-    const search = this.props.data && this.props.data.map((item,i) => <Link href={"/career/"+item.sef_url}><li key={i}>{item.name}</li></Link> );
+    const search = this.props.data && this.props.data.map((item,i) => <Link target="_blank"  href={"/career/"+item.sef_url}><li key={i}>{item.name}</li></Link> );
     return (
       <>
         <div className="tab-pane fade show active" id="tab1">

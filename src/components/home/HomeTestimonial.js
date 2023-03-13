@@ -115,12 +115,12 @@ class HomeTestimonial extends React.Component {
                               </div>
                           </div>
 
-                          <a className="testimonial-prev" href="#testimonialCarousel" role="button" data-slide="prev">
+                          <Link target="_blank"  className="testimonial-prev" href="#testimonialCarousel" role="button" data-slide="prev">
                           <img src="images/leftfa.png" alt="img" />
-                          </a>
-                          <a className="testimonial-next" href="#testimonialCarousel" role="button" data-slide="next">
+                          </Link>
+                          <Link target="_blank"  className="testimonial-next" href="#testimonialCarousel" role="button" data-slide="next">
                           <img src="images/rightfa.png" alt="img" />
-                          </a>
+                          </Link>
                       </div>
                   </div>
               </div>
@@ -132,9 +132,9 @@ class HomeTestimonial extends React.Component {
               <h4 className="c2a-h">Putting yourself first, and foremost</h4>
               <h4 className="c2a-ytxt">Ready to know your success path?</h4>
               <p className="c2a-p">To help you analyse your characteristics, define your aim, and give you the clarity you need to focus on and achieve your dreams!</p>
-              <a href={testlink}>
+              <Link target="_blank"  href={testlink}>
                 <button type="button" className="btn btn-take-test">Take A Free Test Now</button>
-              </a>
+              </Link>
             </div>
             <div className="col-md-4 padd-0c2a">
               <img src="images/home/card-image.png" className="img-fluid imgc2a" alt="img" />

@@ -20,7 +20,7 @@ class ExamListDetail extends React.Component {
             <div className="row"> {college} </div>
             <div className="row">
               <div className="col-md-12 text-center">
-                <Link href='#' className="load-more-btn" onClick={this.props.loadmore}>Load More</Link>
+                <Link target="_blank"  href='#' className="load-more-btn" onClick={this.props.loadmore}>Load More</Link>
               </div>
             </div>
           </>

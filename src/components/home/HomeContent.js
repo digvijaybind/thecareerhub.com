@@ -22,7 +22,7 @@ class HomeContent extends React.Component {
                   <li><span></span> What your career will offer you (along with a good income, of course), and </li>
                   <li><span></span> Most importantly- your growth chart</li>
               </ul>
-              <Link className="btn btn-take-test" href="/career">Your Career Hub</Link>
+              <Link target="_blank"  className="btn btn-take-test" href="/career">Your Career Hub</Link>
             </div>
             <div className="col-md-5">
               <img src="images/home/career-screen.png" alt="img" className="img-fluid" />
@@ -65,7 +65,7 @@ class HomeContent extends React.Component {
                   <li><span></span> Learn about fees, duration, mode, and features of study </li>
                   <li><span></span> Identify the prospects the course will open up for you</li>
               </ul>
-              <Link className="btn btn-take-test" href="/course">Find Courses</Link>
+              <Link target="_blank"  className="btn btn-take-test" href="/course">Find Courses</Link>
             </div>
             <div className="col-md-5">
               <img src="images/home/career-screen.png" alt="img" className="img-fluid" />
@@ -89,7 +89,7 @@ class HomeContent extends React.Component {
                 <li><span></span> Exposure Provided</li>
                 <li><span></span> Prospects Offered</li>
             </ul>
-            <Link className="btn btn-take-test" href="/college">Find Colleges</Link>
+            <Link target="_blank"  className="btn btn-take-test" href="/college">Find Colleges</Link>
           </div>
           <div className="col-md-5">
             <img src="images/home/college-screen.png" alt="img" className="img-fluid" />
@@ -111,7 +111,7 @@ class HomeContent extends React.Component {
                 <li><span></span> Inertia </li>
                 <li><span></span> Innovations</li>
             </ul>
-            <Link className="btn btn-take-test" href="/industry">Find Industries</Link>
+            <Link target="_blank"  className="btn btn-take-test" href="/industry">Find Industries</Link>
           </div>
           <div className="col-md-5">
             <img src="images/home/industry-screen.png" alt="img" className="img-fluid" />
@@ -132,9 +132,9 @@ class HomeContent extends React.Component {
                 <li><span></span> Understand how to enhance your abilities</li>
                 <li><span></span>  Explore the best of your options</li>
             </ul>
-            <a href={testlink}>
+            <Link target="_blank"  href={testlink}>
               <button type="button" className="btn btn-take-test">Take a free test now</button>
-              </a>
+              </Link>
           </div>
           <div className="col-md-5">
             <img src="images/home/test-screen.png" alt="img" className="img-fluid" />

@@ -12,7 +12,7 @@ class CourseItem extends React.Component {
     return (
       <div className="col-md-12 col-md-12p">
         <div className="card main-card">
-        <Link href={"/course/"+this.props.course.sef_url}>
+        <Link target="_blank"  href={"/course/"+this.props.course.sef_url}>
           <div className="card-body card-one lightbluemain">
             <div className="row">
               <div className="col-md-12">
@@ -45,13 +45,13 @@ class CourseItem extends React.Component {
           <div className="card-body card-two">
             <div className="boxwcolor row">
               <div className="col-md-12 btn-listpage">
-                <Link href="/college">
+                <Link target="_blank"  href="/college">
                 <div className="btn-detail lightbluemain">{this.props.course.collegeCount} Colleges Offering</div>
                 </Link>
-                <Link href="/career">
+                <Link target="_blank"  href="/career">
                 <div className="btn-detail lightbluemain">{this.props.course.careerCount} Careers Options</div> 
                 </Link>
-                {!isMobile ? <Link href={"/course/"+this.props.course.sef_url}>
+                {!isMobile ? <Link target="_blank"  href={"/course/"+this.props.course.sef_url}>
                 <div className="btn-detail bttn-yellow-detail">
                 View Details
                 </div>

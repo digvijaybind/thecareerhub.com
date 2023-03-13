@@ -15,7 +15,7 @@ class CourseItem extends React.Component {
     return (
         <div className="col-md-12">
             <div className="card main-card">
-            <Link href={"/course/"+course.sef_url}>
+            <Link target="_blank"  href={"/course/"+course.sef_url}>
             <div className="card-body card-one">
             <h5 className="card-title">{course.name}</h5>
                 {category}
@@ -30,7 +30,7 @@ class CourseItem extends React.Component {
             <div className="card-body career-card-two">
                 <div className=" row">
                     <div className="col-md-12">
-                    <Link href={"/course/"+course.sef_url} onClick={this.onCourseViewDetails} >View Details</Link>
+                    <Link target="_blank"  href={"/course/"+course.sef_url} onClick={this.onCourseViewDetails} >View Details</Link>
                     </div>
                 </div>
             </div>
@@ -92,7 +92,7 @@ export default CourseItem;
                     <div className="card-body career-card-two">
                        <div className=" row">
                           <div className="col-md-12">
-                             <Link href="#"  className="">View Details</Link>
+                             <Link target="_blank"  href="#"  className="">View Details</Link>
                           </div>
                        </div>
                     </div>

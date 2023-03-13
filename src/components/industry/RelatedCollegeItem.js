@@ -23,7 +23,7 @@ class RelatedCollegeItem extends React.Component {
     <div className="row">
         <div className="col-md-12">
             <div className="card main-card">
-            <Link href={"/college/"+this.props.college.sef_url}>
+            <Link target="_blank"  href={"/college/"+this.props.college.sef_url}>
                 <div className="card-body card-one ">
                     <div className="row">
                         <div className="col-md-2">
@@ -36,7 +36,7 @@ class RelatedCollegeItem extends React.Component {
                                 <span>{location}</span>
                                 <span><i className="fa fa-university" aria-hidden="true"></i> {college.approved_by}</span>
                                 <span>{nirf}</span>
-                                {/* <Link href="#" className="viewbtnorange"> View More </Link> */}
+                                {/* <Link target="_blank"  href="#" className="viewbtnorange"> View More </Link> */}
                             </div>
                         </div>
                     </div>
@@ -45,7 +45,7 @@ class RelatedCollegeItem extends React.Component {
                 <div className="card-body career-card-two">
                     <div className=" row">
                     <div className="col-md-12">
-                        <Link href={"/college/"+this.props.college.sef_url}>View Details</Link>
+                        <Link target="_blank"  href={"/college/"+this.props.college.sef_url}>View Details</Link>
                     </div>
                     </div>
                 </div>

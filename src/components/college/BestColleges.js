@@ -16,7 +16,7 @@ class BestColleges extends React.Component {
                 <h4 className="pb-2">Explore related Colleges</h4>
                 {relatedCollege}
               </div>
-              <div><Link href="/college" className="viewallbtn">View All Related College List</Link></div>
+              <div><Link target="_blank"  href="/college" className="viewallbtn">View All Related College List</Link></div>
           </div>
       </div>
     );

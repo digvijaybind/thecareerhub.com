@@ -95,7 +95,7 @@ class ExamListDetail extends React.Component {
                                   <div className="col-md-12">
                                       <div className="btn-detail">12 Colleges Options</div> 
                                       <div className="btn-detail">88 Courses Offering</div>
-                                      <div className="btn-detail bttn-yellow-detail"><Link href="#">View Details</Link></div>
+                                      <div className="btn-detail bttn-yellow-detail"><Link target="_blank"  href="#">View Details</Link></div>
                                   </div>
                               </div>
                           </div>
@@ -104,7 +104,7 @@ class ExamListDetail extends React.Component {
               </div>
               <div className="row">
                       <div className="col-md-12 text-center">
-                          <Link href='#' className="load-more-btn">Load More</Link>
+                          <Link target="_blank"  href='#' className="load-more-btn">Load More</Link>
                       </div>
                   </div>
           </div>

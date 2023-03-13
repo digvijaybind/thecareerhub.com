@@ -16,7 +16,7 @@ class CareerMobileItem extends React.Component {
         <div className="row">
             <div className="col-md-12">
                 <div className="card main-card">
-                  <Link href={"/career/"+this.props.career.sef_url}>
+                  <Link target="_blank"  href={"/career/"+this.props.career.sef_url}>
                     <div className="card-body card-one lightbluemain">
                         <div className="row">
                         <div className="col-md-12">
@@ -57,17 +57,17 @@ class CareerMobileItem extends React.Component {
                     <div className="card-body card-two">
                     <div className="boxwcolor row">
                         <div className="col-md-12">
-                        <Link href="/course">
+                        <Link target="_blank"  href="/course">
                             <div className="btn-detail pointercss lightbluemain">
                             {this.props.career.courseCount}  Courses Options
                             </div>
                         </Link>
-                        <Link href="/college">
+                        <Link target="_blank"  href="/college">
                             <div className="btn-detail pointercss lightbluemain">
                             {this.props.career.collegeCount} Colleges Offering
                             </div>
                         </Link>
-                        {!isMobile ? <Link href={"/career/"+this.props.career.sef_url}>
+                        {!isMobile ? <Link target="_blank"  href={"/career/"+this.props.career.sef_url}>
                             <div className="btn-detail bttn-yellow-detail">
                             View Details
                             </div>
@@ -81,7 +81,7 @@ class CareerMobileItem extends React.Component {
         </div>
     //   <div className="col-md-12">
     //     <div className="card main-card">
-    //       <Link href={"/career/"+this.props.career.sef_url}>
+    //       <Link target="_blank"  href={"/career/"+this.props.career.sef_url}>
     //       <div className="card-body card-one lightbluemain">
     //         <div className="row">
     //           <div className="col-md-4 careerimageonlist">
@@ -113,13 +113,13 @@ class CareerMobileItem extends React.Component {
     //       <div className="card-body card-two">
     //         <div className="boxwcolor row">
     //           <div className="col-md-12">
-    //             <Link href={"/course"}>
+    //             <Link target="_blank"  href={"/course"}>
     //             <div className="btn-detail pointercss lightbluemain">{this.props.career.courseCount} Courses Options</div>
     //             </Link>
-    //             <Link href={"/college"}>
+    //             <Link target="_blank"  href={"/college"}>
     //               <div className="btn-detail pointercss lightbluemain">122 Colleges Offering</div>
     //             </Link>
-    //             <Link href={"/career/"+this.props.career.sef_url}>
+    //             <Link target="_blank"  href={"/career/"+this.props.career.sef_url}>
     //               <div className="btn-detail bttn-yellow-detail">
     //                 View Details
     //               </div>

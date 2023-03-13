@@ -165,7 +165,7 @@ class Header extends React.Component {
                     className="toggler"
                   />
                 </button>
-                <Link href="/" className="navbar-brand">
+                <Link target="_blank"  href="/" className="navbar-brand">
                   <img src="/images/logo.png" alt="img" />
                 </Link>
               </div>

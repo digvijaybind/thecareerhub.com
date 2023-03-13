@@ -3,7 +3,7 @@ import Link from "next/link";
 
 class OthersTab extends React.Component {
   render() {
-   const search = this.props.data && this.props.data.map((item,i) => <Link href={"/industry/"+item.sef_url}><li key={i}>{item.name}</li></Link>);
+   const search = this.props.data && this.props.data.map((item,i) => <Link target="_blank"  href={"/industry/"+item.sef_url}><li key={i}>{item.name}</li></Link>);
     return (
       <>
         <div className="tab-pane fade" id="tab5">

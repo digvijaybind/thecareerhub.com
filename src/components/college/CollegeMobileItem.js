@@ -18,7 +18,7 @@ class CollegeMobileItem extends React.Component {
         <div className="row">
             <div className="col-md-12">
             <div className="card main-card">
-                <Link href={"/college/"+this.props.college.sef_url}>
+                <Link target="_blank"  href={"/college/"+this.props.college.sef_url}>
                 <div className="card-body card-one lightbluemain">
                     <div className="row">
                     <div className="col-md-12">
@@ -50,7 +50,7 @@ class CollegeMobileItem extends React.Component {
                 <div className="card-body card-two">
                 <div className="boxwcolor row">
                     <div className="col-md-12">
-                    <Link href={"/course"}>
+                    <Link target="_blank"  href={"/course"}>
                         <div className="btn-detail lightbluemain">{this.props.college.courseCount} Courses Options</div>
                     </Link> 
                     </div>
