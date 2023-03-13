@@ -8,7 +8,7 @@ class MasterTab extends React.Component {
    const jobid =  this.props.jobid;
    const model = this.props.model.course;
    const masterCourse = this.props.course;
-   const courses = masterCourse.map( (item,i) =>
+   const courses = masterCourse?.map( (item,i) =>
       <div className="row" key={i}>
          <div className="col-md-12">
             <div className="card main-card">

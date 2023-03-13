@@ -5,7 +5,7 @@ class CareerExploreRelated extends React.Component {
   render() {
     const relatedCareer =
       this.props.relatedCareer &&
-      this.props.relatedCareer.map((item, i) => (
+      this.props.relatedCareer?.map((item, i) => (
         <RelatedCareerItem
           key={`career_item_${i}`}
           career={item}

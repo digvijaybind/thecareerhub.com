@@ -4,7 +4,7 @@ import React from "react";
 class Pathways extends React.Component {
   render() {
     const course = this.props.courseLevel;
-    const paths = this.props.career.pathway.map((path,i) => 
+    const paths = this.props.career.pathway?.map((path,i) => 
     <div key={i}>   
       <div className={i!==0? "tab-pane fade" : "tab-pane fade show active"} id={"pathtab"+i}>
         <div className="row" >
@@ -31,7 +31,7 @@ class Pathways extends React.Component {
                     </span>
                   </div>
                 </div>
-                {Object.values(path).filter(item => typeof item !== "string").map((step,j, {length}) =>
+                {Object.values(path).filter(item => typeof item !== "string")?.map((step,j, {length}) =>
                   <div className="swiper-slide swiper-slide3" key={j}>
                     <div className="timestamp">
                       <span className="date">{course.find(item => item.id === parseInt(step.level))? course.find(item => item.id === parseInt(step.level))['name']: "Degree"}</span>
@@ -53,7 +53,7 @@ class Pathways extends React.Component {
       </div>
     );
 
-    const pathstab = this.props.career.pathway.map((path,i) => 
+    const pathstab = this.props.career.pathway?.map((path,i) => 
     <>
     <Link target="_blank" className={i!==0? "nav-item nav-link" : "nav-item nav-link show active" } id="nav-home-tab" data-toggle="tab" href={"#pathtab"+i} role="tab" aria-controls="nav-home" aria-selected="true">Pathway-{i+1}</Link>
     </>

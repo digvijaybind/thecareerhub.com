@@ -8,7 +8,7 @@ import BlogItem from './BlogItem';
 class BlogListDetail extends React.Component {
   
   render() {
-    const blog = this.props.data.map((item,i) => <BlogItem key={`industry_item_${i}`} blog={item} />);
+    const blog = this.props.data?.map((item,i) => <BlogItem key={`industry_item_${i}`} blog={item} />);
     return (
       <div className="list-colright">
         <ListDetail title="Blog" count={this.props.count} filters={this.props.filters}

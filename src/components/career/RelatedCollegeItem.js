@@ -19,7 +19,7 @@ class RelatedCollegeItem extends React.Component {
     category = category && <div className="badge job-tags">{category}</div>;
     let location = Util.address(model, this.props.college.address);
     location = location && <><img src="/images/location2.png" alt="location" /> &nbsp;{location} </>;
-    const nirfrank = this.props.college.nirf_rank.filter(item => item.rank>0).map(item => 
+    const nirfrank = this.props.college.nirf_rank.filter(item => item.rank>0)?.map(item => 
         <>
         <img src="/images/rank.png" alt="rank" /> &nbsp; NIRF Rank- {item.rank}
         </>

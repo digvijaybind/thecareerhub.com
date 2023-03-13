@@ -106,6 +106,7 @@ class CollegeList extends React.Component {
       this.filter.salary.max = maxsalary;
       this.filter.salary.min = minsalary;
     }
+    debugger
     this.loadCollegeList();
   };
 

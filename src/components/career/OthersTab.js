@@ -8,7 +8,7 @@ class OthersTab extends React.Component {
    const jobid =  this.props.jobid;
    const model = this.props.model;
    const otherCourse = this.props.course;
-   const courses = otherCourse.map( (item,i) =>
+   const courses = otherCourse?.map( (item,i) =>
       <div className="row" key={i}>
          <div className="col-md-12">
             <div className="card main-card">
