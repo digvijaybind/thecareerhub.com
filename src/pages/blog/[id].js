@@ -15,7 +15,6 @@ import HtmlHeader from "../../components/common/HtmlHeader";
 class BlogDetails extends React.Component {
   constructor(props) {
     super(props);
-    debugger;
     // this.model = this.props.model;
     this.model = null;
     this.state = { inApiCall: true, active: "overview" };

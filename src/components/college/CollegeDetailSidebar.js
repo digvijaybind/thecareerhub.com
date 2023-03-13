@@ -9,7 +9,7 @@ class CourseDetailSidebar extends React.Component {
           <div className="col-md-12 moblistsec">
             <div className="CareerDetailSidebar list-group">
               <ul className="moblist">
-                <Link target="_blank"
+                <Link
                   href="#coursesoffered"
                   onClick={() => this.props.setActive("coursesoffered")}
                 >
@@ -22,7 +22,7 @@ class CourseDetailSidebar extends React.Component {
                   </li>
                 </Link>
 
-                <Link target="_blank"
+                <Link
                   href="#contact"
                   onClick={() => this.props.setActive("contact")}
                 >
@@ -35,7 +35,7 @@ class CourseDetailSidebar extends React.Component {
                   </li>
                 </Link>
 
-                <Link target="_blank"
+                <Link
                   href="#similarcollege"
                   onClick={() => this.props.setActive("similarcollege")}
                 >
