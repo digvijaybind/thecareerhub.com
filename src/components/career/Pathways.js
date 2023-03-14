@@ -5,8 +5,7 @@ class Pathways extends React.Component {
   render() {
     const course = this.props.courseLevel;
     const paths = this.props.career.pathway?.map((path,i) => 
-    <div key={i}>   
-      <div className={i!==0? "tab-pane fade" : "tab-pane fade show active"} id={"pathtab"+i}>
+      <div className={i!==0? "tab-pane fade" : "tab-pane fade show active"} id={"pathtab"+i} key={i}>
         <div className="row" >
           <div className="col-md-12">
             <div className="pathway-container">
@@ -49,7 +48,6 @@ class Pathways extends React.Component {
             </div>
           </div>
         </div>
-      </div>
       </div>
     );
 

@@ -62,7 +62,7 @@ class CollegeList extends React.Component {
     if (searchParam && searchParam.category) {
       const cat =
         this.model &&
-        this.model?.category.find((item) => item.id === searchParam.category);
+        this.model?.category.find((item) => item.id == searchParam.category);
       if (cat) this.addFilter(cat);
 
       this.filter.category = [parseInt(searchParam.category)];
@@ -72,7 +72,7 @@ class CollegeList extends React.Component {
       const studyMode =
         this.model &&
         this.model?.study_mode.find(
-          (item) => item.name === searchParam.studyMode
+          (item) => item.name == searchParam.studyMode
         );
       if (studyMode) {
         this.filter.study_mode = [studyMode.name];
@@ -82,7 +82,7 @@ class CollegeList extends React.Component {
 
     if (searchParam && searchParam.states) {
       const states = this.model?.states.find(
-        (item) => item.name === searchParam.states
+        (item) => item.name == searchParam.states
       );
       if (states) {
         this.filter.states = [states.id];
@@ -97,7 +97,7 @@ class CollegeList extends React.Component {
 
     if (searchParam && searchParam.cities) {
       const cities = this.model?.cities.find(
-        (item) => item.name === searchParam.cities
+        (item) => item.name == searchParam.cities
       );
       if (cities) {
         this.filter.cities = [cities.id];
@@ -107,7 +107,7 @@ class CollegeList extends React.Component {
 
     if (searchParam && searchParam.course_level) {
       const levl = this.model?.course_level.find(
-        (item) => item.id === searchParam.course_level
+        (item) => item.id == searchParam.course_level
       );
       if (levl) this.addFilter(levl);
 
@@ -141,8 +141,9 @@ class CollegeList extends React.Component {
     }
     if (filter.type === "duration") this.filter[filter.type].push(filter.name);
     else this.filter[filter.type].push(filter.id);
-    const filters = [...this.state.filters];
+    let filters = [...this.state.filters];
     filters.push(filter);
+    filters = filters.filter((e, i) => filters.findIndex(a => a.id === e.id) === i);
     this.setState({ ...this.state, inApiCall: false, filters });
     this.loadCollegeList();
   };

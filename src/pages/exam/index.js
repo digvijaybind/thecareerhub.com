@@ -64,8 +64,9 @@ class ExamList extends React.Component {
       this.filter[filter.type] = [];
     }
     this.filter[filter.type].push(filter.id);
-    const filters = [...this.state.filters];
+    let filters = [...this.state.filters];
     filters.push(filter);
+    filters = filters.filter((e, i) => filters.findIndex(a => a.id === e.id) === i);
     this.setState({ ...this.state, inApiCall: false, filters });
     this.loadExamList();
   };
