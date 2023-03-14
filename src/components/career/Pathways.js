@@ -52,12 +52,9 @@ class Pathways extends React.Component {
     );
 
     const pathstab = this.props.career.pathway?.map((path,i) => 
-    <>
-    <Link target="_blank" className={i!==0? "nav-item nav-link" : "nav-item nav-link show active" } id="nav-home-tab" data-toggle="tab" href={"#pathtab"+i} role="tab" aria-controls="nav-home" aria-selected="true">Pathway-{i+1}</Link>
-    </>
+    <Link key={i} className={i!==0? "nav-item nav-link" : "nav-item nav-link show active" } id="nav-home-tab" data-toggle="tab" href={"#pathtab"+i} role="tab" aria-controls="nav-home" aria-selected="true">Pathway-{i+1}</Link>
     );
-              
-
+          
     return (
       <>
         <div className="row" id="pathways">

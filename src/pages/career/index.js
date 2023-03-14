@@ -9,6 +9,7 @@ import CareerAPI from "../../api/CareerAPI";
 import Loader from "../../components/common/Loader";
 import ModelAPI from "../../api/ModelAPI";
 import HtmlHeader from "../../components/common/HtmlHeader";
+import Constants from "../../util/Constants";
 
 class CollegeList extends React.Component {
   constructor(props) {
@@ -18,7 +19,7 @@ class CollegeList extends React.Component {
     this.model = null;
     this.career = null;
     this.order_by = 1;
-    this.limit = Constant.LIMIT;
+    this.limit = Constants.LIMIT;
 
     this.state = { filters: [], search: "", inApiCall: true };
   }
@@ -121,13 +122,13 @@ class CollegeList extends React.Component {
 
   clearFilter = () => {
     this.filter = {};
-    this.limit = Constant.LIMIT;
+    this.limit = Constants.LIMIT;
     this.setState({ ...this.state, filters: [], search: "", inApiCall: true });
     this.loadCollegeList();
   };
 
   addFilter = (filter) => {
-    this.limit = Constant.LIMIT;
+    this.limit = Constants.LIMIT;
     if (!this.filter[filter.type]) {
       this.filter[filter.type] = [];
     }
@@ -145,7 +146,7 @@ class CollegeList extends React.Component {
     );
   };
   removeFilter = (filter) => {
-    this.limit = Constant.LIMIT;
+    this.limit = Constants.LIMIT;
     if (filter.type === "duration" || filter.type === "college_type") {
       this.filter[filter.type] = this.filter[filter.type].filter(
         (item) => item !== filter.name
@@ -164,7 +165,7 @@ class CollegeList extends React.Component {
   };
 
   rangeFilter = (type, min, max) => {
-    this.limit = Constant.LIMIT;
+    this.limit = Constants.LIMIT;
     this.filter[type] =
       this.model[type].min !== min || this.model[type].max !== max
         ? { min, max }
@@ -175,7 +176,7 @@ class CollegeList extends React.Component {
   };
 
   onSearchValueChange = (field, value) => {
-    this.limit = Constant.LIMIT;
+    this.limit = Constants.LIMIT;
     this.filter[field] = value.length > 0 ? [value] : undefined;
     this.setState({ ...this.state, inApiCall: false, search: value });
     this.loadCollegeList();
@@ -187,13 +188,13 @@ class CollegeList extends React.Component {
   };
 
   internshipfilter = (value) => {
-    this.limit = Constant.LIMIT;
+    this.limit = Constants.LIMIT;
     this.filter.internship = value;
     this.loadCollegeList();
   };
 
   loadmore = () => {
-    this.limit = this.limit + Constant.LIMIT;
+    this.limit = this.limit + Constants.LIMIT;
     // this.setState({ ...this.state, inApiCall: false});
     this.loadCollegeList();
   };

@@ -133,7 +133,7 @@ class CourseList extends React.Component {
   }
 
   onSearchValueChange = (field, value) => {
-    this.limit = Constant.LIMIT;
+    this.limit = Constants.LIMIT;
     this.filter[field] = value.length > 0 ? [ value ] : undefined;
     this.setState({ ...this.state, inApiCall: false, search: value });
     this.loadCourseList();
