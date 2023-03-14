@@ -8,14 +8,18 @@ import Util from "../../util/Util";
 import Const from "../../util/Constants";
 import BlogListItem from '../../components/blog/BlogListItem';
 import Link from "next/link";
-
-
+import HtmlHeader from "../../components/common/HtmlHeader";
+import config from "../../config/config";
 class BlogList extends React.Component {
   constructor(props) {
     super(props);
+    debugger
+    const {data}=props;
     // this.model = this.props.model;
     this.model = null;
-    this.blog = null;
+    this.blog = data.data || [];
+    this.recent=data.recentlyadded || [];
+    this.popularblog =data.mostpopular?.data || [];
     this.filter = { status: 1 };
     this.PopularFilter =  { status: 1, "for": "blog_" }
     this.order_by = 1;
@@ -109,12 +113,13 @@ class BlogList extends React.Component {
 
   render() {
     const url = Const.backendLink;
-    if (this.state.inApiCall) return <Loader />;
+    if (this.props.router?.isFallback) return <Loader />;
     const blogitem = this.blog && this.blog.map((item,i) => 
-      <BlogListItem key={`blog_item_${i}`} blog={item} model = {this.model} />);
-    const blogcategory = this.model.category.map((item) => <li>{item.name}({item.blog ? item.blog :0})</li>);
+      <BlogListItem key={i} blog={item} model = {this.model} />);
+    const blogcategory = this.model?.category?.map((item,i) => <li key={i}>{item.name}({item.blog ? item.blog :0})</li>);
     return (
       <>
+      <HtmlHeader title={"Blogs - The Career Hub"} description={"Blogs - The Career Hub"} />
       <BlogPageHeading
         headingmain="Blogs"
         subheading="Discover about a variety of topics related to careers, courses and industries and get useful in-depth information"
@@ -128,7 +133,7 @@ class BlogList extends React.Component {
           </div>
           <div className="row">
             <div className="col-md-8">
-            <Link href={"/blog/"+this.popularblog[0].sef_url}>
+            <Link target="_blank" href={"/blog/"+this.popularblog[0].sef_url}>
               <div className="bloglist">
                 <img
                   src={this.popularblog[0].banner_image ? url+this.popularblog[0].banner_image : `${"/images/2.png"}`}
@@ -150,7 +155,7 @@ class BlogList extends React.Component {
               </Link>
             </div>
             <div className="col-md-4">
-            <Link href={"/blog/"+this.popularblog[1].sef_url}>
+            <Link target="_blank" href={"/blog/"+this.popularblog[1].sef_url}>
               <div className="blogrelated">
                 <img
                   src={this.popularblog[1].banner_image ? url+this.popularblog[1].banner_image : `${"/images/2.png"}`}
@@ -170,7 +175,7 @@ class BlogList extends React.Component {
                 </div>
               </div>
             </Link>
-            <Link href={"/blog/"+this.popularblog[2].sef_url}>
+            <Link target="_blank" href={"/blog/"+this.popularblog[2].sef_url}>
               <div className="blogrelated">
                 <img
                   src={this.popularblog[2].banner_image ? url+this.popularblog[2].banner_image : `${"/images/2.png"}`}
@@ -202,7 +207,7 @@ class BlogList extends React.Component {
           </div>
           <div className="row">
             <div className="col-md-4">
-            <Link href={"/blog/"+this.recent[0].sef_url}>
+            <Link target="_blank" href={"/blog/"+this.recent[0].sef_url}>
               <div className="blogrelated">
               <img
                   src={this.recent[0].banner_image ? url+this.recent[0].banner_image : `${"/images/2.png"}`}
@@ -224,7 +229,7 @@ class BlogList extends React.Component {
               </Link>
             </div>
             <div className="col-md-4">
-            <Link href={"/blog/"+this.recent[1].sef_url}>
+            <Link target="_blank" href={"/blog/"+this.recent[1].sef_url}>
               <div className="blogrelated">
               <img
                   src={this.recent[1].banner_image ? url+this.recent[1].banner_image : `${"/images/2.png"}`}
@@ -246,7 +251,7 @@ class BlogList extends React.Component {
               </Link>
             </div>
             <div className="col-md-4">
-            <Link href={"/blog/"+this.recent[2].sef_url}>
+            <Link target="_blank" href={"/blog/"+this.recent[2].sef_url}>
               <div className="blogrelated">
               <img
                   src={this.recent[2].banner_image ? url+this.recent[2].banner_image : `${"/images/2.png"}`}
@@ -297,3 +302,26 @@ class BlogList extends React.Component {
   }
 }
 export default BlogList;
+export async function getStaticProps(context) {
+  const page = {
+    filter: { status: 1 },
+    limit: 10,
+    offset: 0,
+    order_by: 1,
+    popularfilter: { status: 1, for: "blog_" },
+  };
+  const response = await fetch(config.link + "blog/list", {
+    method: "POST",
+    headers:config.Api_headers,
+    body: JSON.stringify(page),
+  });
+  const data = await response.json();
+
+  console.log(`Res`,data);
+
+  return {
+    props: {
+      data: data,
+    },
+  };
+}

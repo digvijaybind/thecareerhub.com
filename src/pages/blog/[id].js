@@ -8,15 +8,17 @@ import Const from "../../util/Constants";
 import ReactHtmlParser from "react-html-parser";
 import Link from "next/link";
 import { withRouter } from "next/router";
+import config from "../../config/config";
+import HtmlHeader from "../../components/common/HtmlHeader";
+import Image from "next/image";
 
 class BlogDetails extends React.Component {
   constructor(props) {
     super(props);
-   
     // this.model = this.props.model;
     this.model = null;
     this.state = { inApiCall: true, active: "overview" };
-    this.blog = {};
+    this.blog = this.props.blog || {};
   }
 
   componentDidMount() {
@@ -71,7 +73,7 @@ class BlogDetails extends React.Component {
   };
 
   render() {
-    if (this.state.inApiCall) return <Loader />;
+    if (this.props.router.isFallback && !this.blog) return <Loader />;
     const title = "Blog Detail - The Career hub";
     const description = "fdsfsdf";
     const url = Const.backendLink;
@@ -80,24 +82,25 @@ class BlogDetails extends React.Component {
       this.blog && this.blog.category
         ? Util.multiLabel(this.model, "category", this.blog.category)
         : null;
-    const blogcategory = this.model.category.map((item) => (
-      <li>
+    const blogcategory = this.model?.category?.map((item,i) => (
+      <li key={i}>
         {item.name}({item.blog ? item.blog : 0})
       </li>
     ));
     // console.log('gere', this.relatedpost);
     const relatedpost =
       this.relatedpost &&
-      this.relatedpost.map((item) => (
-        <>
+      this.relatedpost.map((item,i) => (
+        <div key={i}>
           <div className="blogrelated">
-            <img
+          <Image
               src={
                 item.banner_image
                   ? url + item.banner_image
                   : `${"/images/2.png"}`
               }
-              width="100%"
+              width={403}
+              height={206}
               alt="img"
               className="bloglist-image"
             />
@@ -115,13 +118,13 @@ class BlogDetails extends React.Component {
               </p>
             </div>
           </div>
-        </>
+        </div>
       ));
 
     const comment =
       this.comment &&
       this.comment.map((item, i) => (
-        <div className="comment  row ">
+        <div className="comment  row " key={i}>
           <div className="col-md-1">
             <img src="/images/career-test-icon.png" alt="blog_image" />
           </div>
@@ -143,6 +146,7 @@ class BlogDetails extends React.Component {
 
     return (
       <>
+      <HtmlHeader title={"Blogs details - The Career Hub"} description={"Blogs details - The Career Hub"} />
         <div className="section3">
           <div className="container-fluid padding-left-right">
             <div className="row">
@@ -150,7 +154,7 @@ class BlogDetails extends React.Component {
                 <div className="detail-list-colright pt-0 mt-3"></div>
                 <p className="mt-4">
                   <u>
-                    <Link href="/blog" className="btb">
+                    <Link target="_blank" href="/blog" className="btb">
                       Back to Blogs
                     </Link>
                   </u>
@@ -172,14 +176,15 @@ class BlogDetails extends React.Component {
                     : null}
                 </p>
                 <div className="blogimg mt-3 mb-2">
-                  <img
+                  <Image
                     src={
                       this.blog && this.blog.banner_image
                         ? url + this.blog.banner_image
                         : `${"/images/2.png"}`
                     }
                     alt="blog_image"
-                    width="100%"
+                    width={830}
+                    height={406}
                   />
                 </div>
                 <div className="blog-detail-content ptserif mb-4">
@@ -196,33 +201,31 @@ class BlogDetails extends React.Component {
                   </div>
                   <div className="blog-social col-md-8">
                     <span>
-                      <a
+                      <Link target="_blank"
                         href="https://www.linkedin.com/in/thecareerhub/"
-                        target="blank"
                       >
                         <img src="/images/social/li.png" alt="social" />
-                      </a>
+                      </Link>
                     </span>
                     <span>
-                      <a
+                      <Link target="_blank"
                         href="https://www.facebook.com/The-Career-Hub-110040528233534/"
-                        target="blank"
+                        
                       >
                         <img src="/images/social/fb.png" alt="social" />
-                      </a>
+                      </Link>
                     </span>
                     <span>
-                      <a
+                      <Link target="_blank"
                         href="https://www.instagram.com/thecareerhubindia/"
-                        target="blank"
                       >
                         <img src="/images/social/ig.png" alt="social" />
-                      </a>
+                      </Link>
                     </span>
                     <span>
-                      <a href="https://twitter.com/TheCareerH" target="blank">
+                      <Link target="_blank" href="https://twitter.com/TheCareerH">
                         <img src="/images/social/tw.png" alt="social" />
-                      </a>
+                      </Link>
                     </span>
                   </div>
                 </div>
@@ -298,14 +301,51 @@ class BlogDetails extends React.Component {
             </div>
           </div>
         </div>
-
       </>
     );
   }
 }
 export default withRouter(BlogDetails);
-BlogDetails.getLayout = page => (
-  <>
-    {page}
-  </>
-)
+BlogDetails.getLayout = (page) => <>{page}</>;
+export async function getStaticProps(context) {
+  const { params } = context;
+  const id = parseInt(params.id.split(/[- ]+/).pop());
+  const response = await fetch(config.link + "blog/" + id, {
+    method: "GET",
+    headers: Const.Api_headers,
+  });
+  const data = await response.json();
+  if (!data.data[0].id) {
+    return {
+      notFound: true,
+    };
+  }
+  return {
+    props: {
+      blog: data.data[0],
+    },
+  };
+}
+
+export async function getStaticPaths() {
+  const page = {
+    filter: { status: 1 },
+    limit: 10,
+    offset: 0,
+    order_by: 1,
+    popularfilter: { status: 1, for: "blog_" },
+  };
+  const response = await fetch(config.link + "blog/list", {
+    method: "POST",
+    headers:config.Api_headers,
+    body: JSON.stringify(page),
+  });
+
+  const data = await response.json();
+  const paths = data.data.map((blog) => {
+    return {
+      params: { id: `${blog.sef_url}` },
+    };
+  });
+  return { paths: paths, fallback: true };
+}

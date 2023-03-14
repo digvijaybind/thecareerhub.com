@@ -6,6 +6,7 @@ import ModelAPI from "../../api/ModelAPI";
 import IndustryAPI from "../../api/IndustryApi";
 import Loader from "../../components/common/Loader";
 import Constants from "../../util/Constants";
+import HtmlHeader from "../../components/common/HtmlHeader";
 
 
 class IndustryList extends React.Component {
@@ -75,8 +76,9 @@ class IndustryList extends React.Component {
     if (filter.type === "duration" || filter.type === "college_type")
       this.filter[filter.type].push(filter.name);
     else this.filter[filter.type].push(filter.id);
-    const filters = [...this.state.filters];
+    let filters = [...this.state.filters];
     filters.push(filter);
+    filters = filters.filter((e, i) => filters.findIndex(a => a.id === e.id) === i);
     this.setState({ ...this.state, inApiCall: false, filters });
     this.loadIndustryList();
   };
@@ -128,6 +130,8 @@ class IndustryList extends React.Component {
     if (this.state.inApiCall) return <Loader />;
     return (
       <>
+      <HtmlHeader title={"Industry Details - The Career Hub"} description={"Industry Details - The Career Hub"} />
+
         <PageHeading headingmain="Find your Industry" />
 
         <div className="section3">

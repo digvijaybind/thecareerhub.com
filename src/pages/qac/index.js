@@ -1,10 +1,13 @@
 import React from 'react';
 import Link from "next/link";
+import HtmlHeader from '../../components/common/HtmlHeader';
 
 class Qac extends React.Component {
   render() {
     return (
       <>
+      <HtmlHeader title={"Feedback - The Career Hub"} description={"Feedback - The Career Hub"} />
+
       <div className="qac">
         <div className="form-1-conatiner">
           <div className="row ">
@@ -18,7 +21,7 @@ class Qac extends React.Component {
             <div className="col-md-12 headingwacform">
               <h3>Give us your feedback</h3>
               <p className="m-0">By completing this form, you will validate your experiences of the Dermatoglyphics Multiple Intelligence Test</p>
-              <p>(DMIT) analysis and counselling based on the ridges and patterns of all of your child's fingerprints.</p>
+              <p>(DMIT) analysis and counselling based on the ridges and patterns of all of your child&apos;s fingerprints.</p>
             </div>
           </div>
           <hr />
@@ -73,7 +76,7 @@ class Qac extends React.Component {
             <div className="col-md-8 headingwacform nonemobile">
               <h3>Give us your feedback</h3>
               <p className="m-0">By completing this form, you will validate your experiences of the Dermatoglyphics Multiple Intelligence Test</p>
-              <p>(DMIT) analysis and counselling based on the ridges and patterns of all of your child's fingerprints.</p>
+              <p>(DMIT) analysis and counselling based on the ridges and patterns of all of your child&apos;s fingerprints.</p>
             </div>
             <div className="col-md-4">
               <h5>Step 2</h5>
@@ -93,16 +96,16 @@ class Qac extends React.Component {
                 <h5 className="textcounth5">How satisfied are you with the overall analysis of your child?</h5>
                 <nav aria-label="Page navigation example">
                   <ul className="pagination justify-content-center">
-                    <li className="page-item"><Link href="#" className="page-link">1</Link><span className="textli nonemobile">Lowest</span></li>
-                    <li className="page-item"><Link href="#" className="page-link">2</Link></li>
-                    <li className="page-item"><Link href="#" className="page-link">3</Link></li>
-                    <li className="page-item"><Link href="#" className="page-link">4</Link></li>
-                    <li className="page-item"><Link href="#" className="page-link">5</Link></li>
-                    <li className="page-item"><Link href="#" className="page-link">6</Link></li>
-                    <li className="page-item"><Link href="#" className="page-link">7</Link></li>
-                    <li className="page-item"><Link href="#" className="page-link">8</Link></li>
-                    <li className="page-item"><Link href="#" className="page-link">9</Link></li>
-                    <li className="page-item"><Link href="#" className="page-link">10</Link><span className="textli">Highest</span></li>
+                    <li className="page-item"><Link target="_blank" href="#" className="page-link">1</Link><span className="textli nonemobile">Lowest</span></li>
+                    <li className="page-item"><Link target="_blank" href="#" className="page-link">2</Link></li>
+                    <li className="page-item"><Link target="_blank" href="#" className="page-link">3</Link></li>
+                    <li className="page-item"><Link target="_blank" href="#" className="page-link">4</Link></li>
+                    <li className="page-item"><Link target="_blank" href="#" className="page-link">5</Link></li>
+                    <li className="page-item"><Link target="_blank" href="#" className="page-link">6</Link></li>
+                    <li className="page-item"><Link target="_blank" href="#" className="page-link">7</Link></li>
+                    <li className="page-item"><Link target="_blank" href="#" className="page-link">8</Link></li>
+                    <li className="page-item"><Link target="_blank" href="#" className="page-link">9</Link></li>
+                    <li className="page-item"><Link target="_blank" href="#" className="page-link">10</Link><span className="textli">Highest</span></li>
                   </ul>
                 </nav>
               </div>
@@ -115,7 +118,7 @@ class Qac extends React.Component {
             <div className="col-md-8 headingwacform nonemobile">
               <h3>Give us your feedback</h3>
               <p className="m-0">By completing this form, you will validate your experiences of the Dermatoglyphics Multiple Intelligence Test</p>
-              <p>(DMIT) analysis and counselling based on the ridges and patterns of all of your child's fingerprints.</p>
+              <p>(DMIT) analysis and counselling based on the ridges and patterns of all of your child&apos;s fingerprints.</p>
             </div>
             <div className="col-md-4">
              <h5>Step 3</h5>
@@ -133,7 +136,7 @@ class Qac extends React.Component {
                   </label>
                 </div>
                 <div className="form-group mt-4">
-                  <label for="comment">Client's Signature:</label>
+                  <label for="comment">Client&apos;s Signature:</label>
                   <textarea className="form-control" rows="5" id="comment"></textarea>
                 </div>
                 <div className="form-group">
@@ -156,7 +159,7 @@ class Qac extends React.Component {
                   <p>We value your feedback and strive to improve your experience.</p>
                 </div>
               </div>
-              <div className="justify-content-center"><p className="tyendtxt">Want to know more about careers, cources ,colleges? Visit <Link href="#"> The Career Hub </Link></p>
+              <div className="justify-content-center"><p className="tyendtxt">Want to know more about careers, cources ,colleges? Visit <Link target="_blank" href="#"> The Career Hub </Link></p>
               </div>
             </div>
           </div>

@@ -15,6 +15,7 @@ import CareerAPI from '../../api/CareerAPI';
 import ModelAPI from '../../api/ModelAPI';
 
 import { withRouter } from "next/router";
+import HtmlHeader from "../../components/common/HtmlHeader";
 
 class CareerDetails extends React.Component {
   constructor(props) {
@@ -182,6 +183,7 @@ class CareerDetails extends React.Component {
     const description = (this.career && this.career.meta && this.career.meta.description) ? this.career.meta.description : 'sdfdskl';
     return (
       <>
+      <HtmlHeader title={"Career details - The Career Hub"} description={"Career details - The Career Hub"} />
         <PageDetailHeading model={this.model.career} title={this.pagetitle}  career={this.career}/>
         <div className="section3">
               <div className="container-fluid padding-left-right">

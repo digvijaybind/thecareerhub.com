@@ -15,7 +15,7 @@ class Footer extends React.Component {
                 <div className="row">
                   <div className="col-md-3">
                     <ul className="footer-ul">
-                      <li><a href={testlink}> Career Test </a></li>
+                      <li><Link href={testlink}> Career Test </Link></li>
                       <li><Link href="/career"> Careers </Link></li>
                       <li><Link href="/college"> Colleges </Link></li>
                       <li><Link href="/course"> Courses </Link></li>
@@ -33,9 +33,9 @@ class Footer extends React.Component {
                   </div>
                   <div className="col-md-3">
                     <ul className="footer-ul">
-                      <li><a href="/terms-and-services"> Terms & Services </a></li>
-                      <li><a href="/return-and-refund"> Return & Refund </a></li>
-                      <li><a href="/privacy-policy"> Privacy Policy </a></li>
+                      <li><Link href="/terms-and-services"> Terms & Services </Link></li>
+                      <li><Link href="/return-and-refund"> Return & Refund </Link></li>
+                      <li><Link href="/privacy-policy"> Privacy Policy </Link></li>
                     </ul>
                   </div>
                 </div>
@@ -48,12 +48,12 @@ class Footer extends React.Component {
                   <p><span><i className="fa fa-envelope" aria-hidden="true"></i></span><Link href="mailto:support@thecareerhub.com"> support@thecareerhub.com </Link></p>
                   <p className="social-img">
                   <span>Follow us</span>
-                  <a href="https://www.facebook.com/The-Career-Hub-110040528233534/"><img src="/images/social/fb.png" alt="img" /></a> 
-                  <a href="https://www.instagram.com/thecareerhubindia/"><img src="/images/social/ig.png" alt="img" /></a> 
-                  <a href="https://www.linkedin.com/in/thecareerhub/"><img src="/images/social/li.png" alt="img" /></a> 
-                  <a href="https://in.pinterest.com/thecareerhubcom"><img src="/images/social/pt.png" alt="img" /></a> 
-                  <a href="https://twitter.com/TheCareerH"><img src="/images/social/tw.png" alt="img" /></a> 
-                  <a href="#"><img src="/images/social/yt.png" alt="img" /></a> 
+                  <Link href="https://www.facebook.com/The-Career-Hub-110040528233534/"><img src="/images/social/fb.png" alt="img" /></Link> 
+                  <Link href="https://www.instagram.com/thecareerhubindia/"><img src="/images/social/ig.png" alt="img" /></Link> 
+                  <Link href="https://www.linkedin.com/in/thecareerhub/"><img src="/images/social/li.png" alt="img" /></Link> 
+                  <Link href="https://in.pinterest.com/thecareerhubcom"><img src="/images/social/pt.png" alt="img" /></Link> 
+                  <Link href="https://twitter.com/TheCareerH"><img src="/images/social/tw.png" alt="img" /></Link> 
+                  <Link href="#"><img src="/images/social/yt.png" alt="img" /></Link> 
                   </p>
                 </div>
               </div> 

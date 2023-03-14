@@ -1,4 +1,6 @@
+import Link from "next/link";
 import React from "react";
+import HtmlHeader from "../../components/common/HtmlHeader";
 import Loader from "../../components/common/Loader";
 import PageHeading from "../../components/common/PageHeading";
 
@@ -14,14 +16,16 @@ class BlogList extends React.Component {
     if (this.state.inApiCall) return <Loader />;
     return (
       <>
+      <HtmlHeader title={"Privacy Policy - The Career Hub"} description={"Privacy Policy - The Career Hub"} />
+
         <PageHeading headingmain="Privacy Policy" />
         <div className="section3 mb-3 mt-3 pt-5 pb-5">
           <div className="container padding-left-right">
             <div className="row ">
                 <div className="col-md-12">
-                    <p>(a) This Privacy Policy (“Policy”) outlines TheCareerHub’s (“TheCareerHub”, “we”, or “us”) practice in relation to the storage, use, processing, and disclosure of personal data that you have chosen to share with us when you access our website <a href="https://www.thecareerhub.com">thecareerhub.com</a>, or personal data that we may have access to in relation to your use of Platform and access to our range of financial products and services (collectively, “Services”).</p>
+                    <p>(a) This Privacy Policy (“Policy”) outlines TheCareerHub’s (“TheCareerHub”, “we”, or “us”) practice in relation to the storage, use, processing, and disclosure of personal data that you have chosen to share with us when you access our website <Link target="_blank" href="https://www.thecareerhub.com">thecareerhub.com</Link>, or personal data that we may have access to in relation to your use of Platform and access to our range of financial products and services (collectively, “Services”).</p>
                     <p>(b) At TheCareerHub, we are committed to protecting your personal data and respecting your privacy. Please read the following terms of the Policy carefully to understand our practices regarding your personal data and how we will treat it. This policy sets out the basis on which any personal data we collect from you or about you, or that you provide to us, will be processed by us.</p>
-                    <p>(c) Capitalised words in the Policy shall have the same meaning ascribed to them in the Terms of Service (“Terms”), available at [<a href="https://www.thecareerhub.com/terms-and-services">link</a>] Please read this Policy in consonance with the Terms.</p>
+                    <p>(c) Capitalised words in the Policy shall have the same meaning ascribed to them in the Terms of Service (“Terms”), available at [<Link target="_blank" href="https://www.thecareerhub.com/terms-and-services">link</Link>] Please read this Policy in consonance with the Terms.</p>
                     <p>(d) By using the Platform, you consent to the collection, storage, use, and disclosure of your personal data, in accordance with, and are agreeing to be bound by this Policy. We will not collect any information from you, except where it is knowingly and explicitly provided by you.</p>
                     <p>(e) This Policy together with any terms of the arrangement we have with you applies to your use of the Services.</p>
                 </div>
@@ -180,10 +184,10 @@ class BlogList extends React.Component {
 
                     <p>12.&nbsp;<strong>GRIEVANCE OFFICER</strong></p>
 
-                    <p>You may contact us at <a href="mailto:support@thecareerhub.com">support@thecareerhub.com</a>. with any enquiry relating to this Policy or an enquiry relating to your personal information (including reviewing or updating). You can also do so by writing to our Grievance Officer, established in accordance with the Information Technology Act, 2000 and rules made thereunder, at the address provided below:</p>
+                    <p>You may contact us at <Link target="_blank" href="mailto:support@thecareerhub.com">support@thecareerhub.com</Link>. with any enquiry relating to this Policy or an enquiry relating to your personal information (including reviewing or updating). You can also do so by writing to our Grievance Officer, established in accordance with the Information Technology Act, 2000 and rules made thereunder, at the address provided below:</p>
                     <p>Name: [_Manish Naidu_]</p>
                     <p>Address: [_TheCareerHub Head office: A 101, Suchita Enclave, Jai Maharashtra Nagar, Off Chandavarkar Road, Borivali West, Mumbai, Maharashtra (400092)</p>
-                    <p>Email Address: [_<a href="mailto:support@thecareerhub.com">support@thecareerhub.com</a>_]</p>
+                    <p>Email Address: [_<Link target="_blank" href="mailto:support@thecareerhub.com">support@thecareerhub.com</Link>_]</p>
                 </div>
             </div>
           </div>

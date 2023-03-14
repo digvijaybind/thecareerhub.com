@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 class IndustryDetailSidebar extends React.Component {
@@ -8,27 +9,27 @@ class IndustryDetailSidebar extends React.Component {
                <div className="col-md-12 moblistsec">
                   <div className="CareerDetailSidebar list-group">
                      <ul className="moblist">
-                        <a href="#overview" onClick={() => this.props.setActive('overview')}>
+                        <Link href="#overview" onClick={() => this.props.setActive('overview')}>
                            <li className={this.props.active === 'overview' ? 'active' : null}>Description</li> 
-                        </a>
+                        </Link>
 
-                        <a href="#career" onClick={() => this.props.setActive('career')}> 
+                        <Link href="#career" onClick={() => this.props.setActive('career')}> 
                            <li className={this.props.active === 'career' ? 'active' : null} >
                            Careers
                            </li> 
-                        </a> 
+                        </Link> 
 
-                        <a href="#coursesoffered" onClick={() => this.props.setActive('coursesoffered')} >
+                        <Link href="#coursesoffered" onClick={() => this.props.setActive('coursesoffered')} >
                            <li className={this.props.active === 'coursesoffered' ? 'active' : null} >
                            Courses
                            </li>
-                        </a>
+                        </Link>
 
-                        <a href="#colleges" onClick={() => this.props.setActive('colleges')} >
+                        <Link href="#colleges" onClick={() => this.props.setActive('colleges')} >
                            <li className={this.props.active === 'colleges' ? 'active' : null} >
                            Colleges
                            </li>
-                        </a>
+                        </Link>
                      </ul>
                   </div>
                </div>

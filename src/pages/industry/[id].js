@@ -9,6 +9,7 @@ import BestColleges from "../../components/industry/BestColleges";
 import Loader from "../../components/common/Loader";
 import IndustryAPI from "../../api/IndustryApi";
 import ModelAPI from "../../api/ModelAPI";
+import HtmlHeader from "../../components/common/HtmlHeader";
 class IndustryDetail extends React.Component {
   constructor(props) {
     super(props);
@@ -181,6 +182,8 @@ class IndustryDetail extends React.Component {
 
     return (
       <>
+      <HtmlHeader title={"Industry details - The Career Hub"} description={"Industry details - The Career Hub"} />
+
         <PageDetailHeading
           model={this.model.industry}
           title={this.pagetitle}

@@ -24,23 +24,23 @@ class HomeFaq extends React.Component {
                               <div className="carousel-content">
                                   <h3 className="testimonial-faq-q">How to know which career is right for me?</h3>
                                   <p className="testimonial-p pt-20">My son was confused on what to do after 12 Science, everyday his goal changed. We did counselling with Brain Wonders. The councilling was based on finger prints analysis so it was more scientific. My son goal was cleared after councilling and he studied hard for CET and got admission in Engineering college in Mumbai. Thanks Brainwonders for giving clear vision and confidence.</p>
-                                   <div className="text-center readm-btn pt-20"><Link href="#">Read More</Link></div> 
+                                   <div className="text-center readm-btn pt-20"><Link target="_blank" href="#">Read More</Link></div> 
                               </div>
                           </div>
                           <div className="carousel-item ">
                               <div className="carousel-content">
                                   <h3 className="testimonial-faq-q">q2How to know which career is right for me?</h3>
                                   <p className="testimonial-p pt-20">My son was confused on what to do after 12 Science, everyday his goal changed. We did counselling with Brain Wonders. The councilling was based on finger prints analysis so it was more scientific. My son goal was cleared after councilling and he studied hard for CET and got admission in Engineering college in Mumbai. Thanks Brainwonders for giving clear vision and confidence.</p>
-                                   <div className="text-center readm-btn pt-20"><Link href="#">Read More</Link></div>
+                                   <div className="text-center readm-btn pt-20"><Link target="_blank" href="#">Read More</Link></div>
                               </div>
                           </div>
 
-                          <a className="testimonial-prev" href="#faqCarousel" role="button" data-slide="prev">
+                          <Link target="_blank" className="testimonial-prev" href="#faqCarousel" role="button" data-slide="prev">
                           <img src="images/leftfa.png" alt="img" />
-                          </a>
-                          <a className="testimonial-next" href="#faqCarousel" role="button" data-slide="next">
+                          </Link>
+                          <Link target="_blank" className="testimonial-next" href="#faqCarousel" role="button" data-slide="next">
                           <img src="images/rightfa.png" alt="img" />
-                          </a>
+                          </Link>
                       </div>
                   </div>
               </div>
@@ -70,7 +70,7 @@ class HomeFaq extends React.Component {
                       <span className="float-right"><img src="images/arrow-down.png" alt="img" /></span>
                    </div>
                    <div id="faq2" className="faq-ans collapse">
-                          <p>The time-tested phrase 'Earlier, the better' stands true for initiating your professional journey as well. You can use our career test to get acquainted with your career options, and beginning early will give you ample space and time to explore the various pathways open to you, and help you navigate the industry trends without much stress in the process.</p>
+                          <p>The time-tested phrase &apos;Earlier, the better&apos; stands true for initiating your professional journey as well. You can use our career test to get acquainted with your career options, and beginning early will give you ample space and time to explore the various pathways open to you, and help you navigate the industry trends without much stress in the process.</p>
                    </div>
                 </div>
                 <hr/>
@@ -103,7 +103,7 @@ class HomeFaq extends React.Component {
                       <span className="float-right"><img src="images/arrow-down.png" alt="img" /></span>
                    </div>
                    <div id="faq5" className="faq-ans collapse">
-                          <p>Your college campus will be open the doors to your career's growth, so naturally, it must be chosen wisely. While there are many things that define the right college for you, make a special note of what your college offers in terms of courses, mentors & faculty, and placements. Also, based on your personal preference, you can take a look at the education fees and location of the institute. You can hop on to colleges to find your future alma mater.</p>
+                          <p>Your college campus will be open the doors to your career&apos;s growth, so naturally, it must be chosen wisely. While there are many things that define the right college for you, make a special note of what your college offers in terms of courses, mentors & faculty, and placements. Also, based on your personal preference, you can take a look at the education fees and location of the institute. You can hop on to colleges to find your future alma mater.</p>
                    </div>
                 </div>
                 <hr/>
@@ -136,7 +136,7 @@ class HomeFaq extends React.Component {
                       <span className="float-right"><img src="images/arrow-down.png" alt="img" /></span>
                    </div>
                    <div id="faq8" className="faq-ans collapse">
-                          <p>Kudos to you if 'learn and earn' is the way you wish to walk. Explore a plethora of internships, scholarships, distance/ part-time courses on our site and carve out the combinations that meet your goals and schedule.</p>
+                          <p>Kudos to you if &apos;learn and earn&apos; is the way you wish to walk. Explore a plethora of internships, scholarships, distance/ part-time courses on our site and carve out the combinations that meet your goals and schedule.</p>
                    </div>
                 </div>
                 <hr/>
@@ -158,7 +158,7 @@ class HomeFaq extends React.Component {
                       <span className="float-right"><img src="images/arrow-down.png" alt="img" /></span>
                    </div>
                    <div id="faq10" className="faq-ans collapse">
-                          <p>That's great to know- and we are excited to keep you going. You can: subscribe to newsletters, attend our empowering workshops, take regular counselling with our experts, and use the career test periodically to track progress. And, you are always welcome to visit our website as we keep it constantly updated.</p>
+                          <p>That&apos;s great to know- and we are excited to keep you going. You can: subscribe to newsletters, attend our empowering workshops, take regular counselling with our experts, and use the career test periodically to track progress. And, you are always welcome to visit our website as we keep it constantly updated.</p>
                    </div>
                 </div>
                 <hr/>
@@ -178,7 +178,7 @@ class HomeFaq extends React.Component {
                       <span className="float-right"><img src="images/arrow-down.png" alt="img" /></span>
                    </div>
                    <div id="faq12" className="faq-ans collapse">
-                          <p>Our team of psychologists, career experts and researchers continuously consult and filter through a lot of data, news, updates, facts, figures, surveys, industry professionals' feedback and regularly review it to present only the best, suitable, relevant, and correct information to you. So build your career with confidence!</p>
+                          <p>Our team of psychologists, career experts and researchers continuously consult and filter through a lot of data, news, updates, facts, figures, surveys, industry professionals&apos; feedback and regularly review it to present only the best, suitable, relevant, and correct information to you. So build your career with confidence!</p>
                    </div>
                 </div>
                 <hr/>

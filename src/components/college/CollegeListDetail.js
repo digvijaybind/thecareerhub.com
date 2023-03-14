@@ -11,9 +11,9 @@ import CollegeMobileItem from './CollegeMobileItem';
 class CollegeListDetail extends React.Component {
   
   render() {
-    const college = this.props.data.map((item,i) => 
+    const college = this.props.data?.map((item,i) => 
       <CollegeItem key={`course_item_${i}`} college={item} model = {this.props.model} />);
-    const CollegeMobile = this.props.data.map((item,i) => 
+    const CollegeMobile = this.props.data?.map((item,i) => 
       <CollegeMobileItem key={`course_item_${i}`} college={item} model = {this.props.model} />);
 
     return (

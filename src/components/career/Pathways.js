@@ -1,12 +1,12 @@
+import Link from "next/link";
 import React from "react";
 
 class Pathways extends React.Component {
   render() {
     const course = this.props.courseLevel;
-    const paths = this.props.career.pathway.map((path,i) => 
-    <>   
-      <div className={i!==0? "tab-pane fade" : "tab-pane fade show active"} id={"pathtab"+i}>
-        <div className="row" key={i}>
+    const paths = this.props.career.pathway?.map((path,i) => 
+      <div className={i!==0? "tab-pane fade" : "tab-pane fade show active"} id={"pathtab"+i} key={i}>
+        <div className="row" >
           <div className="col-md-12">
             <div className="pathway-container">
               <div className="swiper-wrapper timeline">
@@ -30,8 +30,8 @@ class Pathways extends React.Component {
                     </span>
                   </div>
                 </div>
-                {Object.values(path).filter(item => typeof item !== "string").map((step,j, {length}) =>
-                  <div className="swiper-slide swiper-slide3">
+                {Object.values(path).filter(item => typeof item !== "string")?.map((step,j, {length}) =>
+                  <div className="swiper-slide swiper-slide3" key={j}>
                     <div className="timestamp">
                       <span className="date">{course.find(item => item.id === parseInt(step.level))? course.find(item => item.id === parseInt(step.level))['name']: "Degree"}</span>
                     </div>
@@ -49,16 +49,12 @@ class Pathways extends React.Component {
           </div>
         </div>
       </div>
-      </>
     );
 
-    const pathstab = this.props.career.pathway.map((path,i) => 
-    <>
-    <a className={i!==0? "nav-item nav-link" : "nav-item nav-link show active" } id="nav-home-tab" data-toggle="tab" href={"#pathtab"+i} role="tab" aria-controls="nav-home" aria-selected="true">Pathway-{i+1}</a>
-    </>
+    const pathstab = this.props.career.pathway?.map((path,i) => 
+    <Link key={i} className={i!==0? "nav-item nav-link" : "nav-item nav-link show active" } id="nav-home-tab" data-toggle="tab" href={"#pathtab"+i} role="tab" aria-controls="nav-home" aria-selected="true">Pathway-{i+1}</Link>
     );
-              
-
+          
     return (
       <>
         <div className="row" id="pathways">

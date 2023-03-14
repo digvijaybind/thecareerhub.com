@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 class CourseDetailSidebar extends React.Component {
@@ -8,7 +9,7 @@ class CourseDetailSidebar extends React.Component {
           <div className="col-md-12 moblistsec">
             <div className="CareerDetailSidebar list-group">
               <ul className="moblist">
-                <a
+                <Link
                   href="#coursesoffered"
                   onClick={() => this.props.setActive("coursesoffered")}
                 >
@@ -19,9 +20,9 @@ class CourseDetailSidebar extends React.Component {
                   >
                     Courses Offered
                   </li>
-                </a>
+                </Link>
 
-                <a
+                <Link
                   href="#contact"
                   onClick={() => this.props.setActive("contact")}
                 >
@@ -32,9 +33,9 @@ class CourseDetailSidebar extends React.Component {
                   >
                     Contact Details
                   </li>
-                </a>
+                </Link>
 
-                <a
+                <Link
                   href="#similarcollege"
                   onClick={() => this.props.setActive("similarcollege")}
                 >
@@ -45,7 +46,7 @@ class CourseDetailSidebar extends React.Component {
                   >
                     Similar Colleges
                   </li>
-                </a>
+                </Link>
               </ul>
             </div>
           </div>

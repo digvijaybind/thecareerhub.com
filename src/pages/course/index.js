@@ -8,6 +8,7 @@ import Loader from '../../components/common/Loader';
 import ModelAPI from '../../api/ModelAPI';
 import { withRouter } from 'next/router';
 import Constants from '../../util/Constants.js';
+import HtmlHeader from '../../components/common/HtmlHeader';
 
 class CourseList extends React.Component {
 
@@ -42,7 +43,7 @@ class CourseList extends React.Component {
     this.setState({...this.state, filters:[]});
     const searchParam = queryString.parse(window.location.search);
     if(searchParam && searchParam.category) {
-      const cat = this.model && this.model.category.find(item => item.name === searchParam.category );
+      const cat = this.model && this.model.category.find(item => item.name == searchParam.category );
       if(cat)
       {
         this.addFilter(cat);
@@ -53,7 +54,7 @@ class CourseList extends React.Component {
 
     if(searchParam && searchParam.course_level)
     {
-      const levl = this.model.course_level.find(item => item.id === searchParam.course_level );
+      const levl = this.model.course_level.find(item => item.id == searchParam.course_level );
       if(levl)
       this.addFilter(levl);
       
@@ -67,7 +68,7 @@ class CourseList extends React.Component {
     }
 
     if(searchParam && searchParam.studyMode) {
-      const stdmode = this.model.study_mode.find(item => item.id === searchParam.studyMode );
+      const stdmode = this.model.study_mode.find(item => item.id == searchParam.studyMode );
       if(stdmode)
       this.addFilter(stdmode);
       
@@ -110,8 +111,9 @@ class CourseList extends React.Component {
       this.filter[filter.type] = [ ];
     }
     this.filter[filter.type].push(filter.id);
-    const filters = [ ...this.state.filters ];
+    let filters = [...this.state.filters];
     filters.push(filter);
+    filters = filters.filter((e, i) => filters.findIndex(a => a.id === e.id) === i);
     this.setState({ ...this.state, inApiCall: false, filters });
     this.loadCourseList();
   }
@@ -131,7 +133,7 @@ class CourseList extends React.Component {
   }
 
   onSearchValueChange = (field, value) => {
-    this.limit = Constant.LIMIT;
+    this.limit = Constants.LIMIT;
     this.filter[field] = value.length > 0 ? [ value ] : undefined;
     this.setState({ ...this.state, inApiCall: false, search: value });
     this.loadCourseList();
@@ -151,6 +153,8 @@ class CourseList extends React.Component {
     if(this.state.inApiCall) return(<Loader />);
     return (
       <>
+      <HtmlHeader title={"Courses - The Career Hub"} description={"Courses - The Career Hub"} />
+
         <PageHeading headingmain="Find your Courses" />
           
         <div className="section3">

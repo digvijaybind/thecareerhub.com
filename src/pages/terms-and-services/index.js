@@ -1,6 +1,8 @@
+import Link from "next/link";
 import React from "react";
 import Loader from "../../components/common/Loader";
 import PageHeading from "../../components/common/PageHeading";
+import HtmlHeader from '../../components/common/HtmlHeader';
 
 
 
@@ -14,6 +16,8 @@ class BlogList extends React.Component {
     if (this.state.inApiCall) return <Loader />;
     return (
       <>
+      <HtmlHeader title={"Terms and Conditions - The Career Hub"} description={"Terms and Conditions - The Career Hub"} />
+
         <PageHeading headingmain="Terms and Conditions" />
         <div className="section3 mb-3 mt-3 pt-5 pb-5">
           <div className="container padding-left-right">
@@ -23,9 +27,9 @@ class BlogList extends React.Component {
                   By accessing any part of this website you agree to be bound by
                   the following terms and conditions which you should read
                   carefully.{" "}
-                  <a href="https://www.thecareerhub.com">
+                  <Link target="_blank" href="https://www.thecareerhub.com">
                     https://www.thecareerhub.com
-                  </a>{" "}
+                  </Link>{" "}
                   may change these conditions at any time without any prior
                   notice. By your continued access and use of this website, you
                   agree to be bound by the latest version of the site terms and
@@ -41,17 +45,17 @@ class BlogList extends React.Component {
                       {" "}
                       We use our reasonable endeavors to ensure the accuracy of
                       the information provided on the{" "}
-                      <a href="https://www.thecareerhub.com">
+                      <Link target="_blank" href="https://www.thecareerhub.com">
                         thecareerhub.com
-                      </a>{" "}
+                      </Link>{" "}
                       service.
                     </li>
                     <li>
                       We do not warrant or guarantee the accuracy, reliability
                       or legality of any of the information contained in the{" "}
-                      <a href="https://www.thecareerhub.com">
+                      <Link target="_blank" href="https://www.thecareerhub.com">
                         thecareerhub.com
-                      </a>
+                      </Link>
                       .
                     </li>
                     <li>
@@ -62,29 +66,29 @@ class BlogList extends React.Component {
                     <li>
                       We reserve the right, at its discretion, from time to time
                       to make changes to the information provided on the{" "}
-                      <a href="https://www.thecareerhub.com">
+                      <Link target="_blank" href="https://www.thecareerhub.com">
                         thecareerhub.com
-                      </a>{" "}
+                      </Link>{" "}
                       service, or to alter the nature of the{" "}
-                      <a href="https://www.thecareerhub.com">
+                      <Link target="_blank" href="https://www.thecareerhub.com">
                         thecareerhub.com
-                      </a>{" "}
+                      </Link>{" "}
                       service.
                     </li>
                     <li>
                       Will not be liable to you / user under any circumstances
                       whatsoever for any direct, indirect, consequential,
                       punitive or special damages arising from your use of the{" "}
-                      <a href="https://www.thecareerhub.com">
+                      <Link target="_blank" href="https://www.thecareerhub.com">
                         thecareerhub.com
-                      </a>{" "}
+                      </Link>{" "}
                       service.
                     </li>
                     <li>
                       It will not guarantee the availability of the{" "}
-                      <a href="https://www.thecareerhub.com">
+                      <Link target="_blank" href="https://www.thecareerhub.com">
                         thecareerhub.com
-                      </a>{" "}
+                      </Link>{" "}
                       service during the maintenance of the website. Will not be
                       responsible for the site content provided by advertisers
                       including product/service performance claims,
@@ -92,13 +96,13 @@ class BlogList extends React.Component {
                       responsibility of such advertisers and they alone shall be
                       liable for all disputes and liabilities arising therefrom
                       and{" "}
-                      <a href="https://www.thecareerhub.com">
+                      <Link target="_blank" href="https://www.thecareerhub.com">
                         thecareerhub.com
-                      </a>{" "}
+                      </Link>{" "}
                       will in no way be responsible for it.{" "}
-                      <a href="https://www.thecareerhub.com">
+                      <Link target="_blank" href="https://www.thecareerhub.com">
                         thecareerhub.com
-                      </a>{" "}
+                      </Link>{" "}
                       and its affiliates, associates, agents or employees shall
                       not be liable, at any time for any damages (including,
                       damages for loss of profits or loss of business) arising
@@ -117,9 +121,9 @@ class BlogList extends React.Component {
                       website and reserves the right, in its sole discretion, to
                       correct any errors or omissions in any portion of the
                       site.{" "}
-                      <a href="https://www.thecareerhub.com">
+                      <Link target="_blank" href="https://www.thecareerhub.com">
                         thecareerhub.com
-                      </a>{" "}
+                      </Link>{" "}
                       may make any other changes to the site, the materials, and
                       the products, programs, services or prices (if any)
                       described in the site at any time without notice.
@@ -127,19 +131,19 @@ class BlogList extends React.Component {
                     <li>
                       You are therefore advised to check the information
                       provided to you through the{" "}
-                      <a href="https://www.thecareerhub.com">
+                      <Link target="_blank" href="https://www.thecareerhub.com">
                         thecareerhub.com
-                      </a>{" "}
+                      </Link>{" "}
                       service as any reliance that you place on the accuracy of
                       that information is at your own risk. While users are
                       offered free access to{" "}
-                      <a href="https://www.thecareerhub.com">
+                      <Link target="_blank" href="https://www.thecareerhub.com">
                         thecareerhub.com
-                      </a>{" "}
+                      </Link>{" "}
                       service,{" "}
-                      <a href="https://www.thecareerhub.com">
+                      <Link target="_blank" href="https://www.thecareerhub.com">
                         thecareerhub.com
-                      </a>{" "}
+                      </Link>{" "}
                       reserves the right to discontinue these free promotions at
                       any time and with no notice given.
                     </li>
@@ -148,9 +152,9 @@ class BlogList extends React.Component {
                   <li>
                     <strong>
                       Restriction on use of the TheCareerHub and{" "}
-                      <a href="https://www.thecareerhub.com">
+                      <Link target="_blank" href="https://www.thecareerhub.com">
                         thecareerhub.com
-                      </a>{" "}
+                      </Link>{" "}
                       Service
                     </strong>
                   </li>
@@ -166,9 +170,9 @@ class BlogList extends React.Component {
                     </li>
                     <li>
                       You may not integrate the{" "}
-                      <a href="https://www.thecareerhub.com">
+                      <Link target="_blank" href="https://www.thecareerhub.com">
                         thecareerhub.com
-                      </a>{" "}
+                      </Link>{" "}
                       service into another internet/extranet except through our
                       permission in writing from our customer relations
                       department. Unauthorized access, redistribution,
@@ -178,36 +182,36 @@ class BlogList extends React.Component {
                       strict legal action will be initiated against such users.
                       You may not use automated scripts, software, spiders or
                       any other automated means to perform searches on{" "}
-                      <a href="https://www.thecareerhub.com">
+                      <Link target="_blank" href="https://www.thecareerhub.com">
                         thecareerhub.com
-                      </a>
+                      </Link>
                       . Any attempt to extract or download significant amounts
                       of data from{" "}
-                      <a href="https://www.thecareerhub.com">
+                      <Link target="_blank" href="https://www.thecareerhub.com">
                         thecareerhub.com
-                      </a>{" "}
+                      </Link>{" "}
                       or to compile a database from data obtained from{" "}
-                      <a href="https://www.thecareerhub.com">
+                      <Link target="_blank" href="https://www.thecareerhub.com">
                         thecareerhub.com
-                      </a>{" "}
+                      </Link>{" "}
                       is strictly forbidden. Please call our customer relations
-                      department on <a href="tel:+919987422220">9987422220</a>{" "}
+                      department on <Link target="_blank" href="tel:+919987422220">9987422220</Link>{" "}
                       or e-mail:{" "}
-                      <a href="mailto:support@thecareerhub.com">
+                      <Link target="_blank" href="mailto:support@thecareerhub.com">
                         support@thecareerhub.com
-                      </a>{" "}
+                      </Link>{" "}
                       for more information about such access. You are only
                       entitled to use the information provided on the{" "}
-                      <a href="https://www.thecareerhub.com">
+                      <Link target="_blank" href="https://www.thecareerhub.com">
                         thecareerhub.com
-                      </a>{" "}
+                      </Link>{" "}
                       service in responsible ways and this information may not
                       be used in any malicious, illegal or anti-social activity.
                       We reserve the right to suspend any accounts where a user
                       has supplied{" "}
-                      <a href="https://www.thecareerhub.com">
+                      <Link target="_blank" href="https://www.thecareerhub.com">
                         thecareerhub.com
-                      </a>{" "}
+                      </Link>{" "}
                       with false information.
                     </li>
                   </ul>{" "}
@@ -218,29 +222,29 @@ class BlogList extends React.Component {
                   <ul className="ul-class">
                     <li>
                       The data and information contained on the{" "}
-                      <a href="https://www.thecareerhub.com">
+                      <Link target="_blank" href="https://www.thecareerhub.com">
                         thecareerhub.com
-                      </a>{" "}
+                      </Link>{" "}
                       service, the software used to operate it and the trade
                       marks, logos and other intellectual property used in
                       connection with it are the property of{" "}
-                      <a href="https://www.thecareerhub.com">
+                      <Link target="_blank" href="https://www.thecareerhub.com">
                         thecareerhub.com
-                      </a>
+                      </Link>
                       . No license of any such intellectual property rights is
                       granted to you as a result of your use of the{" "}
-                      <a href="https://www.thecareerhub.com">
+                      <Link target="_blank" href="https://www.thecareerhub.com">
                         thecareerhub.com
-                      </a>{" "}
+                      </Link>{" "}
                       service. All the information on the website{" "}
-                      <a href="https://www.thecareerhub.com">
+                      <Link target="_blank" href="https://www.thecareerhub.com">
                         thecareerhub.com
-                      </a>{" "}
+                      </Link>{" "}
                       like careers data, colleges data, assessment tests,
                       assessment reports etc are proprietary of{" "}
-                      <a href="https://www.thecareerhub.com">
+                      <Link target="_blank" href="https://www.thecareerhub.com">
                         thecareerhub.com
-                      </a>{" "}
+                      </Link>{" "}
                       (TheCareerHub) and hence any infringement of copyright
                       would be liable for civil action.
                     </li>
@@ -249,9 +253,9 @@ class BlogList extends React.Component {
                   <li>
                     <strong>
                       The Rights of{" "}
-                      <a href="https://www.thecareerhub.com">
+                      <Link target="_blank" href="https://www.thecareerhub.com">
                         thecareerhub.com
-                      </a>
+                      </Link>
                     </strong>
                   </li>
                   <ul className="ul-class">
@@ -279,33 +283,33 @@ class BlogList extends React.Component {
                   </li>
                   <ul className="ul-class">
                     <li>
-                      <a href="https://www.thecareerhub.com">
+                      <Link target="_blank" href="https://www.thecareerhub.com">
                         thecareerhub.com
-                      </a>{" "}
+                      </Link>{" "}
                       may provide, through this Site, links to Web sites
                       operated by others. If you decide to visit any linked
                       site, you will be doing so at your sole risk and it is
                       your responsibility to take all protective measures to
                       guard against viruses or other destructive elements.{" "}
-                      <a href="https://www.thecareerhub.com">
+                      <Link target="_blank" href="https://www.thecareerhub.com">
                         thecareerhub.com
-                      </a>{" "}
+                      </Link>{" "}
                       makes no warranty or representation regarding, and does
                       not endorse, any linked Web sites or the information
                       appearing thereon or any of the products or services
                       described thereon. Links do not imply that{" "}
-                      <a href="https://www.thecareerhub.com">
+                      <Link target="_blank" href="https://www.thecareerhub.com">
                         thecareerhub.com
-                      </a>{" "}
+                      </Link>{" "}
                       or this Site sponsors, endorses, is affiliated or
                       associated with, or is legally authorized to use any
                       trademark, trade name, logo or copyright symbol displayed
                       in or accessible through the links, or that any linked
                       site is authorized to use any trademark, trade name, logo
                       or copyright symbol of{" "}
-                      <a href="https://www.thecareerhub.com">
+                      <Link target="_blank" href="https://www.thecareerhub.com">
                         thecareerhub.com
-                      </a>
+                      </Link>
                       .
                     </li>
                   </ul>
@@ -317,26 +321,26 @@ class BlogList extends React.Component {
                     <li>
                       You agree that any material, information, and ideas that
                       you transmit to this site shall become the property of{" "}
-                      <a href="https://www.thecareerhub.com">
+                      <Link target="_blank" href="https://www.thecareerhub.com">
                         thecareerhub.com
-                      </a>{" "}
+                      </Link>{" "}
                       No Transmissions shall be treated as confidential and
                       proprietary and{" "}
-                      <a href="https://www.thecareerhub.com">
+                      <Link target="_blank" href="https://www.thecareerhub.com">
                         thecareerhub.com
-                      </a>{" "}
+                      </Link>{" "}
                       shall be under no obligation with regard to such
                       information and shall be free to use, disclose, reproduce
                       or distribute it to others without restriction.{" "}
-                      <a href="https://www.thecareerhub.com">
+                      <Link target="_blank" href="https://www.thecareerhub.com">
                         thecareerhub.com
-                      </a>{" "}
+                      </Link>{" "}
                       shall also be free to use any ideas, concepts, know-how,
                       or techniques contained in such information for any
                       purpose whatsoever. You further agree that{" "}
-                      <a href="https://www.thecareerhub.com">
+                      <Link target="_blank" href="https://www.thecareerhub.com">
                         thecareerhub.com
-                      </a>{" "}
+                      </Link>{" "}
                       may use information about your demographics and use of
                       this site in any manner. You agree, and are hereby put on
                       notice, that you are prohibited from posting or
@@ -346,15 +350,15 @@ class BlogList extends React.Component {
                       that could give rise to any civil or criminal liability
                       under the law. You are solely responsible for the content
                       of any comments you make.{" "}
-                      <a href="https://www.thecareerhub.com">
+                      <Link target="_blank" href="https://www.thecareerhub.com">
                         thecareerhub.com
-                      </a>{" "}
+                      </Link>{" "}
                       does not solicit information from you for hosting on the
                       website. Any information you send is sent so by you
                       voluntarily and so{" "}
-                      <a href="https://www.thecareerhub.com">
+                      <Link target="_blank" href="https://www.thecareerhub.com">
                         thecareerhub.com
-                      </a>{" "}
+                      </Link>{" "}
                       is not liable to pay you any consideration for hosting the
                       information sent.
                     </li>
@@ -368,15 +372,15 @@ class BlogList extends React.Component {
                       In consideration of posting the information sent by users
                       on our website or obtained through the means of a cookie
                       or sent by users; Users undertake to indemnify{" "}
-                      <a href="https://www.thecareerhub.com">
+                      <Link target="_blank" href="https://www.thecareerhub.com">
                         thecareerhub.com
-                      </a>{" "}
+                      </Link>{" "}
                       and keep it indemnified against all proceedings, claims,
                       expenses and liabilities whatsoever which may be taken or
                       made against or incurred by{" "}
-                      <a href="https://www.thecareerhub.com">
+                      <Link target="_blank" href="https://www.thecareerhub.com">
                         thecareerhub.com
-                      </a>{" "}
+                      </Link>{" "}
                       or by reasons of the premises.
                     </li>
                   </ul>
@@ -388,13 +392,13 @@ class BlogList extends React.Component {
                     <li>
                       All Product and Services marks contained herein that are
                       not{" "}
-                      <a href="https://www.thecareerhub.com">
+                      <Link target="_blank" href="https://www.thecareerhub.com">
                         thecareerhub.com
-                      </a>{" "}
+                      </Link>{" "}
                       or{" "}
-                      <a href="https://www.thecareerhub.com">
+                      <Link target="_blank" href="https://www.thecareerhub.com">
                         thecareerhub.com
-                      </a>{" "}
+                      </Link>{" "}
                       marks are the trademarks of their respective owners.
                       References that we make to any names, marks, products or
                       services of third parties or information do not, unless
@@ -420,17 +424,17 @@ class BlogList extends React.Component {
                       places outside of India acknowledge that they do so
                       voluntarily and are responsible for complying with local
                       laws.{" "}
-                      <a href="https://www.thecareerhub.com">
+                      <Link target="_blank" href="https://www.thecareerhub.com">
                         thecareerhub.com
-                      </a>{" "}
+                      </Link>{" "}
                       reserves the right at all times to disclose any
                       information as necessary to satisfy any applicable law,
                       regulation, legal process or governmental request, or to
                       edit, refuse to post or to remove any information or
                       materials, in whole or in part, at the sole discretion of{" "}
-                      <a href="https://www.thecareerhub.com">
+                      <Link target="_blank" href="https://www.thecareerhub.com">
                         thecareerhub.com
-                      </a>
+                      </Link>
                       .
                     </li>
                     <li>
@@ -453,11 +457,11 @@ class BlogList extends React.Component {
                   <ul className="ul-class">
                     <li>
                       In case the customer has any issue/query he/she will
-                      contact on <a href="tel:+919987422220">9987422220</a>{" "}
+                      contact on <Link target="_blank" href="tel:+919987422220">9987422220</Link>{" "}
                       number Or send mail on email id{" "}
-                      <a href="mailto:support@thecareerhub.com">
+                      <Link target="_blank" href="mailto:support@thecareerhub.com">
                         support@thecareerhub.com
-                      </a>{" "}
+                      </Link>{" "}
                       and will be resolved on basis of severability of the
                       complaint.
                     </li>

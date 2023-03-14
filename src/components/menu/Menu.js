@@ -8,7 +8,8 @@ class Menu extends React.Component {
     const testlink = Const.testlink;
    const {open,setOpen}=this.props;
     return (
-      <div className="collapse navbar-collapse col-md-5" id="navbarScroll"
+      <div className="collapse navbar-collapse col-md-5" 
+      id="navbarScroll"
 
       >
        <ul className="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
@@ -156,13 +157,13 @@ class Menu extends React.Component {
                 </div>
              </ul>
           </li>
-          <li className="nav-item"><a href = {testlink} className="nav-link">Career Test</a></li>
+          <li className="nav-item"><Link href = {testlink} className="nav-link">Career Test</Link></li>
           <li className="nav-item"><Link href='/blog' className="nav-link">Blog</Link></li>
           <li className="nav-item"><Link href='#' className="nav-link login-menu">Login</Link></li>
           <li className="nav-item">
-            <a href={testlink}>
+            <Link href={testlink}>
                 <button type="button" className="btn hdbtn">Take A Free Test Now</button>
-            </a>
+            </Link>
           </li>
        </ul>
     </div>

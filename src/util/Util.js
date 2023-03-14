@@ -22,8 +22,8 @@ class Util {
   static multiLabelDiv = (model, type, fields) => {
     if(!model || !model[type]) return '';
     let label = '';
-    label = model[type].filter(item => fields.indexOf(item.id) !== -1 ).map(field =>
-      <span>{field.name}</span>
+    label = model[type].filter(item => fields.indexOf(item.id) !== -1 ).map((field,i) =>
+      <span key={i}>{field.name}</span>
     )
     
     return label ;
