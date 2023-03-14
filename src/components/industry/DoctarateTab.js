@@ -38,7 +38,7 @@ class DoctarateTab extends React.Component {
       </div>
 
    );
-   let viewdetails = courses && courses.length > 0 ? <div><Link target="_blank" href="/course" className="viewallbtn">View More</Link></div> : null;
+   let viewdetails = courses && courses.length > 0 ? <div><Link target="_blank" href="/course?course_level=4" className="viewallbtn">View More</Link></div> : null;
     if(courses && courses.length > 0){courses.push(viewdetails)}
     return (
       <>
