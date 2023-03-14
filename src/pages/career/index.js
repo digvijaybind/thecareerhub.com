@@ -250,6 +250,7 @@ class CollegeList extends React.Component {
 
 export default withRouter(CollegeList);
 export async function getStaticProps(context) {
+  
   const page = {
     filter: { status: 1 },
     limit: 10,
