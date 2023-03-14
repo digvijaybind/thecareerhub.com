@@ -11,7 +11,7 @@ class Util {
   static multiLabel = (model, type, fields) => {
     if(!model || !model[type]) return '';
     let label = '';
-    fields.map(item => {
+    fields?.map(item => {
       const option = model[type].find(opt => opt.id === item);
       label = option ? (label === '' ? option.name : label + ', ' + option.name) : '';
       return item;
@@ -29,7 +29,7 @@ class Util {
     return label ;
   }
 
-  static convertToMoney = number => number.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+  static convertToMoney = number => number?.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
 
   static address = (model, field) => {
     if(model)

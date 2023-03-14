@@ -23,7 +23,6 @@ class BlogList extends React.Component {
     this.PopularFilter =  { status: 1, "for": "blog_" }
     this.order_by = 1;
     this.state = { filters: [], search: "", inApiCall: true };
-    debugger
   }
 
   componentDidMount() {

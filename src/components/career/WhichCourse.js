@@ -55,6 +55,7 @@ class WhichCourse extends React.Component {
                     <OthersTab model={this.props.model} jobid={this.props.jobid} course={this.otherCourse && this.otherCourse}/>
                 </div>
               </div>
+              
           </div>
       </div>
     );
