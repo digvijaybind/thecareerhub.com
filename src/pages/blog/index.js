@@ -9,14 +9,17 @@ import Const from "../../util/Constants";
 import BlogListItem from '../../components/blog/BlogListItem';
 import Link from "next/link";
 import HtmlHeader from "../../components/common/HtmlHeader";
-
-
+import config from "../../config/config";
 class BlogList extends React.Component {
   constructor(props) {
     super(props);
+    debugger
+    const {data}=props;
     // this.model = this.props.model;
     this.model = null;
-    this.blog = null;
+    this.blog = data.data || [];
+    this.recent=data.recentlyadded || [];
+    this.popularblog =data.mostpopular?.data || [];
     this.filter = { status: 1 };
     this.PopularFilter =  { status: 1, "for": "blog_" }
     this.order_by = 1;
@@ -110,10 +113,10 @@ class BlogList extends React.Component {
 
   render() {
     const url = Const.backendLink;
-    if (this.state.inApiCall) return <Loader />;
+    if (this.props.router?.isFallback) return <Loader />;
     const blogitem = this.blog && this.blog.map((item,i) => 
       <BlogListItem key={i} blog={item} model = {this.model} />);
-    const blogcategory = this.model.category.map((item,i) => <li key={i}>{item.name}({item.blog ? item.blog :0})</li>);
+    const blogcategory = this.model?.category?.map((item,i) => <li key={i}>{item.name}({item.blog ? item.blog :0})</li>);
     return (
       <>
       <HtmlHeader title={"Blogs - The Career Hub"} description={"Blogs - The Career Hub"} />
@@ -299,3 +302,26 @@ class BlogList extends React.Component {
   }
 }
 export default BlogList;
+export async function getStaticProps(context) {
+  const page = {
+    filter: { status: 1 },
+    limit: 10,
+    offset: 0,
+    order_by: 1,
+    popularfilter: { status: 1, for: "blog_" },
+  };
+  const response = await fetch(config.link + "blog/list", {
+    method: "POST",
+    headers:Const.Api_headers,
+    body: JSON.stringify(page),
+  });
+  const data = await response.json();
+
+  console.log(`Res`,data);
+
+  return {
+    props: {
+      data: data,
+    },
+  };
+}

@@ -14,6 +14,13 @@ class Constants {
   static OldUrl = "https://alt.thecareerhub.com/";
   static backendLink = "https://backend.thecareerhub.com/";
   static testlink = "https://test.thecareerhub.com/";
+  static Api_headers={
+    "Access-Control-Allow-Origin": "*",
+    "Content-Type": "application/json",
+    token: "wdxbXcuJgHfuXxbQ",
+  }
 }
 
+
 export default Constants;
+

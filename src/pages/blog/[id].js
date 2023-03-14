@@ -9,8 +9,8 @@ import ReactHtmlParser from "react-html-parser";
 import Link from "next/link";
 import { withRouter } from "next/router";
 import config from "../../config/config";
-import Headers from "../../api/Headers";
 import HtmlHeader from "../../components/common/HtmlHeader";
+import Image from "next/image";
 
 class BlogDetails extends React.Component {
   constructor(props) {
@@ -18,7 +18,7 @@ class BlogDetails extends React.Component {
     // this.model = this.props.model;
     this.model = null;
     this.state = { inApiCall: true, active: "overview" };
-    this.blog = {};
+    this.blog = this.props.blog || {};
   }
 
   componentDidMount() {
@@ -73,7 +73,7 @@ class BlogDetails extends React.Component {
   };
 
   render() {
-    if (this.props.router.isFallback) return <Loader />;
+    if (this.props.router.isFallback && !this.blog) return <Loader />;
     const title = "Blog Detail - The Career hub";
     const description = "fdsfsdf";
     const url = Const.backendLink;
@@ -93,13 +93,14 @@ class BlogDetails extends React.Component {
       this.relatedpost.map((item,i) => (
         <div key={i}>
           <div className="blogrelated">
-            <img
+          <Image
               src={
                 item.banner_image
                   ? url + item.banner_image
                   : `${"/images/2.png"}`
               }
-              width="100%"
+              width={403}
+              height={206}
               alt="img"
               className="bloglist-image"
             />
@@ -175,14 +176,15 @@ class BlogDetails extends React.Component {
                     : null}
                 </p>
                 <div className="blogimg mt-3 mb-2">
-                  <img
+                  <Image
                     src={
                       this.blog && this.blog.banner_image
                         ? url + this.blog.banner_image
                         : `${"/images/2.png"}`
                     }
                     alt="blog_image"
-                    width="100%"
+                    width={830}
+                    height={406}
                   />
                 </div>
                 <div className="blog-detail-content ptserif mb-4">
@@ -306,26 +308,18 @@ class BlogDetails extends React.Component {
 export default withRouter(BlogDetails);
 BlogDetails.getLayout = (page) => <>{page}</>;
 export async function getStaticProps(context) {
-  console.log(`called`);
   const { params } = context;
   const id = parseInt(params.id.split(/[- ]+/).pop());
-  console.log(`id`, id);
   const response = await fetch(config.link + "blog/" + id, {
     method: "GET",
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Content-Type": "application/json",
-      token: "wdxbXcuJgHfuXxbQ",
-    },
+    headers: Const.Api_headers,
   });
   const data = await response.json();
-  console.log("DATA", data.data[0]);
   if (!data.data[0].id) {
     return {
       notFound: true,
     };
   }
-  console.log(`Generating page for /blog/${id}`);
   return {
     props: {
       blog: data.data[0],
@@ -343,22 +337,15 @@ export async function getStaticPaths() {
   };
   const response = await fetch(config.link + "blog/list", {
     method: "POST",
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Content-Type": "application/json",
-      token: "wdxbXcuJgHfuXxbQ",
-    },
+    headers:Const.Api_headers,
     body: JSON.stringify(page),
   });
-  // console.log("res  ",response);
 
   const data = await response.json();
-  // console.log("data  ",data.data);
   const paths = data.data.map((blog) => {
     return {
       params: { id: `${blog.sef_url}` },
     };
   });
-  // console.log(paths);
   return { paths: paths, fallback: true };
 }
