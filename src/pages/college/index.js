@@ -9,12 +9,13 @@ import Constants from "../../util/Constants";
 import Loader from "../../components/common/Loader";
 import ModelAPI from "../../api/ModelAPI";
 import HtmlHeader from "../../components/common/HtmlHeader";
+import config from "../../config/config";
 class CollegeList extends React.Component {
   constructor(props) {
     super(props);
     // this.model = this.props.model;
     this.model = null;
-    this.courses = null;
+    this.courses =props.data?.data || [];
     this.filter = { status: 1 };
     this.order_by = 1;
     this.limit = Constants.LIMIT;
@@ -237,3 +238,23 @@ class CollegeList extends React.Component {
 }
 
 export default withRouter(CollegeList);
+export async function getStaticProps(context) {
+
+  const page = {
+    filter: { status: 1 },
+    order_by: 1,
+    offset: 0,
+    limit: Constants.LIMIT,
+  };
+  const response = await fetch(config.link +"college/list", {
+    method: "POST",
+    headers:config.Api_headers,
+    body: JSON.stringify(page),
+  });
+  const data = await response.json();
+  return {
+    props: {
+      data: data,
+    },
+  };
+}

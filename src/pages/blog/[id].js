@@ -73,7 +73,7 @@ class BlogDetails extends React.Component {
   };
 
   render() {
-    if (this.props.router.isFallback && !this.blog) return <Loader />;
+    if (this.props.router.isFallback) return <Loader />;
     const title = "Blog Detail - The Career hub";
     const description = "fdsfsdf";
     const url = Const.backendLink;

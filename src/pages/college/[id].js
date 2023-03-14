@@ -10,17 +10,18 @@ import Loader from '../../components/common/Loader';
 import ModelAPI from '../../api/ModelAPI';
 import { withRouter } from "next/router";
 import HtmlHeader from "../../components/common/HtmlHeader";
+import Constants from "../../util/Constants";
+import config from "../../config/config";
 
 class CollegeDetail extends React.Component {
   
   constructor(props) {
     super(props);
-   
+   const {data}=props;
     this.model = {course:null,college:null} 
-  
     // this.model = this.props.model;
     this.state = { inApiCall: true, active: 'overview' };
-    this.college = {};
+    this.college = data || {};
     this.relatedCareer = [];
     this.related_course = [];
     this.relatedCollege = [];
@@ -154,3 +155,46 @@ CollegeDetail.getLayout = page => (
     {page}
   </>
 )
+export async function getStaticProps(context) {
+  const { params } = context;
+  const id = parseInt(params.id.split(/[- ]+/).pop());
+  console.log(id)
+  const response = await fetch(config.link + "college/" + id, {
+    method: "GET",
+    headers: config.Api_headers,
+  });
+  const data = await response.json();
+  console.log(data)
+  if (!data[0].id) {
+    return {
+      notFound: true,
+    };
+  }
+  return {
+    props: {
+      data: data[0],
+    },
+  };
+}
+
+export async function getStaticPaths() {
+  const page = {
+    filter: { status: 1 },
+    order_by: 1,
+    offset: 0,
+    limit: Constants.LIMIT,
+  };
+  const response = await fetch(config.link + "college/list", {
+    method: "POST",
+    headers:config.Api_headers,
+    body: JSON.stringify(page),
+  });
+
+  const data = await response.json();
+  const paths = data.data.map((item) => {
+    return {
+      params: { id: `${item.sef_url}` },
+    };
+  });
+  return { paths: paths, fallback: true };
+}

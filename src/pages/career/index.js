@@ -4,7 +4,6 @@ import queryString from "query-string";
 import PageHeading from "../../components/common/PageHeading";
 import CareerListFilter from "../../components/career/CareerListFilter";
 import CareerListDetail from "../../components/career/CareerListDetail";
-import Constant from "../../util/Constants.js";
 import CareerAPI from "../../api/CareerAPI";
 import Loader from "../../components/common/Loader";
 import ModelAPI from "../../api/ModelAPI";
@@ -18,10 +17,9 @@ class CollegeList extends React.Component {
     this.filter = { status: 1 };
     //this.model = this.props.model;
     this.model = null;
-    this.career = null;
+    this.career = props.data?.data || [];
     this.order_by = 1;
     this.limit = Constants.LIMIT;
-
     this.state = { filters: [], search: "", inApiCall: true };
   }
 
@@ -250,22 +248,20 @@ class CollegeList extends React.Component {
 
 export default withRouter(CollegeList);
 export async function getStaticProps(context) {
-  
+
   const page = {
     filter: { status: 1 },
-    limit: 10,
-    offset: 0,
     order_by: 1,
-    popularfilter: { status: 1, for: "blog_" },
+    offset: 0,
+    limit: Constants.LIMIT,
   };
-  const response = await fetch(config.link + "blog/list", {
+  const response = await fetch(config.link +"career/list", {
     method: "POST",
     headers:config.Api_headers,
     body: JSON.stringify(page),
   });
   const data = await response.json();
 
-  console.log(`Res`,data);
 
   return {
     props: {

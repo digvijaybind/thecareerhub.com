@@ -12,21 +12,21 @@ import ModelAPI from '../../api/ModelAPI';
 import { withRouter } from "next/router";
 import Loader from "../../components/common/Loader";
 import HtmlHeader from "../../components/common/HtmlHeader";
+import config from "../../config/config";
+import Constants from "../../util/Constants";
 
 class CourseDetails extends React.Component {
 
   constructor(props) {
     super(props);
-    
+    const {data}=props;
     this.model = {course:null,college:null, career:null} 
     // this.model = this.props.model;
     this.state = { inApiCall: true, active: 'overview' };
-    this.course = null;
-    
+    this.course = data || {};
     this.relatedCareer = null;
     this.related_course = null;
     this.relatedCollege = null;
-    
   }
 
   UNSAFE_componentWillReceiveProps(nextProps) {
@@ -182,3 +182,46 @@ CourseDetails.getLayout = page => (
     {page}
   </>
 )
+export async function getStaticProps(context) {
+  const { params } = context;
+  const id = parseInt(params.id.split(/[- ]+/).pop());
+  console.log(id)
+  const response = await fetch(config.link + "course/" + id, {
+    method: "GET",
+    headers: config.Api_headers,
+  });
+  const data = await response.json();
+  console.log(data)
+  if (!data[0].id) {
+    return {
+      notFound: true,
+    };
+  }
+  return {
+    props: {
+      data: data[0],
+    },
+  };
+}
+
+export async function getStaticPaths() {
+  const page = {
+    filter: { status: 1 },
+    order_by: 1,
+    offset: 0,
+    limit: Constants.LIMIT,
+  };
+  const response = await fetch(config.link + "course/list", {
+    method: "POST",
+    headers:config.Api_headers,
+    body: JSON.stringify(page),
+  });
+
+  const data = await response.json();
+  const paths = data.data.map((item) => {
+    return {
+      params: { id: `${item.sef_url}` },
+    };
+  });
+  return { paths: paths, fallback: true };
+}
