@@ -337,7 +337,7 @@ export async function getStaticPaths() {
   };
   const response = await fetch(config.link + "blog/list", {
     method: "POST",
-    headers:Const.Api_headers,
+    headers:config.Api_headers,
     body: JSON.stringify(page),
   });
 

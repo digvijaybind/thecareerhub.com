@@ -10,6 +10,7 @@ import Loader from "../../components/common/Loader";
 import ModelAPI from "../../api/ModelAPI";
 import HtmlHeader from "../../components/common/HtmlHeader";
 import Constants from "../../util/Constants";
+import config from "../../config/config";
 
 class CollegeList extends React.Component {
   constructor(props) {
@@ -248,3 +249,26 @@ class CollegeList extends React.Component {
 }
 
 export default withRouter(CollegeList);
+export async function getStaticProps(context) {
+  const page = {
+    filter: { status: 1 },
+    limit: 10,
+    offset: 0,
+    order_by: 1,
+    popularfilter: { status: 1, for: "blog_" },
+  };
+  const response = await fetch(config.link + "blog/list", {
+    method: "POST",
+    headers:config.Api_headers,
+    body: JSON.stringify(page),
+  });
+  const data = await response.json();
+
+  console.log(`Res`,data);
+
+  return {
+    props: {
+      data: data,
+    },
+  };
+}

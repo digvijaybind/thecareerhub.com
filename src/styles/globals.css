@@ -248,7 +248,7 @@ a:hover {
   right: 0px;
   margin: 5px auto;
   min-width: 1000px;
-  left: -428px;
+  left: -428px !important;
   padding: 30px;
   height: 560px;
   overflow-y: scroll;
