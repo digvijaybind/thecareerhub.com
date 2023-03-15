@@ -15,7 +15,9 @@ class BlogList extends React.Component {
     if (this.state.inApiCall) return <Loader />;
     return (
       <>
-      <HtmlHeader title={"Contact Us - The Career Hub"} description={"Contact Us - The Career Hub"} />
+      <HtmlHeader title={"Contact Us - The Career Hub"} description={"Contact Us - The Career Hub"} 
+       keywords={"Contact Us - The Career Hub"}
+      />
 
         <PageHeading headingmain="Contact" />
         <div className="section3 mb-3 mt-3 pt-5 pb-5">

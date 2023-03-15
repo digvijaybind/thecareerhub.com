@@ -154,7 +154,9 @@ class CourseList extends React.Component {
     if(this.state.inApiCall) return(<Loader />);
     return (
       <>
-      <HtmlHeader title={"Courses - The Career Hub"} description={"Courses - The Career Hub"} />
+      <HtmlHeader title={"Courses - The Career Hub"} description={"Courses - The Career Hub"} 
+       keywords={"Courses - The Career Hub"}
+      />
 
         <PageHeading headingmain="Find your Courses" />
           

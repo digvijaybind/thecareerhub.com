@@ -197,7 +197,9 @@ class CollegeList extends React.Component {
     if (this.state.inApiCall) return <Loader />;
     return (
       <>
-      <HtmlHeader title={"Colleges - The Career Hub"} description={"Colleges - The Career Hub"} />
+      <HtmlHeader title={"Colleges - The Career Hub"} description={"Colleges - The Career Hub"} 
+       keywords={"Colleges - The Career Hub"}
+      />
 
         <PageHeading headingmain="Find your College" />
 

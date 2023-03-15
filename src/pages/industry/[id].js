@@ -184,6 +184,7 @@ class IndustryDetail extends React.Component {
       <>
        <HtmlHeader title={this.industry?.meta?.title || "Industry details - The Career Hub"} 
       description={this.industry?.meta?.description || "Industry details - The Career Hub"}
+      keywords={this.industry?.meta?.keywords}
       />
 
         <PageDetailHeading

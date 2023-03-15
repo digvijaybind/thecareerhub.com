@@ -119,7 +119,8 @@ class BlogList extends React.Component {
     const blogcategory = this.model?.category?.map((item,i) => <li key={i}>{item.name}({item.blog ? item.blog :0})</li>);
     return (
       <>
-      <HtmlHeader title={"Blogs - The Career Hub"} description={"Blogs - The Career Hub"} />
+      <HtmlHeader title={"Blogs - The Career Hub"} description={"Blogs - The Career Hub"} 
+      keywords={"Blogs - The Career Hub"}/>
       <BlogPageHeading
         headingmain="Blogs"
         subheading="Discover about a variety of topics related to careers, courses and industries and get useful in-depth information"

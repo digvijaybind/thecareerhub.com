@@ -151,6 +151,7 @@ class CourseDetails extends React.Component {
       <>
        <HtmlHeader title={this.course?.meta?.title || "Course details - The Career Hub"} 
       description={this.course?.meta?.description || "Course details - The Career Hub"}
+      keywords={this.course?.meta?.keywords}
       />
 
         <PageDetailHeading model={this.model.course} title={this.pagetitle} course={this.course} />      

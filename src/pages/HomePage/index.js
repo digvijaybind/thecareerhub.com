@@ -25,7 +25,9 @@ class HomePage extends React.Component {
   render() {
     return (
       <>
-      <HtmlHeader title={"The Career Hub"} description={"The Career Hub"} />
+      <HtmlHeader title={"The Career Hub"} description={"The Career Hub"}
+        keywords={"The Career Hub"}
+      />
       
       <div className="homepage"> 
         

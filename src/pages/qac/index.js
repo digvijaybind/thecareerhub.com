@@ -7,7 +7,9 @@ class Qac extends React.Component {
   render() {
     return (
       <>
-      <HtmlHeader title={"Feedback - The Career Hub"} description={"Feedback - The Career Hub"} />
+      <HtmlHeader title={"Feedback - The Career Hub"} description={"Feedback - The Career Hub"} 
+      keywords={"Feedback - The Career Hub"}
+      />
 
       <div className="qac">
         <div className="form-1-conatiner">

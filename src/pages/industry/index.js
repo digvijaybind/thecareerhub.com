@@ -131,7 +131,9 @@ class IndustryList extends React.Component {
     if (this.state.inApiCall) return <Loader />;
     return (
       <>
-      <HtmlHeader title={"Industry Details - The Career Hub"} description={"Industry Details - The Career Hub"} />
+      <HtmlHeader title={"Industry Details - The Career Hub"} description={"Industry Details - The Career Hub"}
+      keywords={"Industry Details - The Career Hub"}
+      />
 
         <PageHeading headingmain="Find your Industry" />
 

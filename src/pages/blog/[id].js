@@ -148,6 +148,7 @@ class BlogDetails extends React.Component {
       <>
       <HtmlHeader title={this.blog?.meta?.title || "Blogs details - The Career Hub"} 
       description={this.blog?.meta?.description || "Blogs details - The Career Hub"}
+      keywords={this.blog?.meta?.keywords}
       />
         <div className="section3">
           <div className="container-fluid padding-left-right">
@@ -312,13 +313,11 @@ BlogDetails.getLayout = (page) => <>{page}</>;
 export async function getStaticProps(context) {
   const { params } = context;
   const id = parseInt(params.id.split(/[- ]+/).pop());
-  console.log("id",id)
   const response = await fetch(config.link + "blog/" + id, {
     method: "GET",
     headers: config.Api_headers,
   });
   const data = await response.json();
-  console.log("blog data",data)
   if (!data.data || !data.data[0].id) {
     return {
       notFound: true,

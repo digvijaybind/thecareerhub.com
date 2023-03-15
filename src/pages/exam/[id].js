@@ -140,6 +140,7 @@ class ExamDetails extends React.Component {
       <>
        <HtmlHeader title={this.exam?.meta?.title || "Exam details - The Career Hub"} 
       description={this.exam?.meta?.description || "Exam details - The Career Hub"}
+      keywords={this.exam?.meta?.keywords}
       />
 
         <PageDetailHeading

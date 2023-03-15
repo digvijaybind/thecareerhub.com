@@ -112,7 +112,9 @@ class ExamList extends React.Component {
     if (this.state.inApiCall) return <Loader />;
     return (
       <>
-      <HtmlHeader title={"Exams - The Career Hub"} description={"Exams - The Career Hub"} />
+      <HtmlHeader title={"Exams - The Career Hub"} description={"Exams - The Career Hub"} 
+      keywords={"Exams - The Career Hub"}
+      />
 
         <PageHeading headingmain="Find your Exams" />
 

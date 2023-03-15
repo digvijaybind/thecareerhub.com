@@ -205,6 +205,7 @@ class CollegeList extends React.Component {
         <HtmlHeader
           title={"Careers - The Career Hub"}
           description={"Careers - The Career Hub"}
+          keywords={"Careers - The Career Hub"}
         />
 
         <PageHeading headingmain="Find your Career" />

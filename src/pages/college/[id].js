@@ -118,7 +118,9 @@ class CollegeDetail extends React.Component {
     return (
       <>
       <HtmlHeader title={this.college?.meta?.title || "College details - The Career Hub"} 
-      description={this.college?.meta?.description || "College details - The Career Hub"} />
+      description={this.college?.meta?.description || "College details - The Career Hub"} 
+      keywords={this.college?.meta?.keywords}
+      />
        
         <CollegePageDetailHeading model={this.model.college} title={this.pagetitle} data={this.college} />
           
