@@ -182,11 +182,9 @@ class CareerDetails extends React.Component {
 
   render() {
     if(this.state.inApiCall) return(<Loader />);
-    const title = (this.career && this.career.meta && this.career.meta.title) ? this.career.meta.title : "Career Detail - The Career hub";
-    const description = (this.career && this.career.meta && this.career.meta.description) ? this.career.meta.description : 'sdfdskl';
     return (
       <>
-      <HtmlHeader title={"Career details - The Career Hub"} description={"Career details - The Career Hub"} />
+      <HtmlHeader title={this.career?.meta?.title || "Career details - The Career Hub"} description={this.career?.meta?.description || "Career details - The Career Hub"} />
         <PageDetailHeading model={this.model.career} title={this.pagetitle}  career={this.career}/>
         <div className="section3">
               <div className="container-fluid padding-left-right">

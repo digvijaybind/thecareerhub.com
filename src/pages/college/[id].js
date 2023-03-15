@@ -114,13 +114,11 @@ class CollegeDetail extends React.Component {
   
    
   render() {
-    if(this.state.inApiCall) return(<Loader />);
-    const title = "College Detail - The Career hub";
-    const description = "fdsfsdf";
-    
+    if(this.state.inApiCall) return(<Loader />);  
     return (
       <>
-      <HtmlHeader title={"College details - The Career Hub"} description={"College details - The Career Hub"} />
+      <HtmlHeader title={this.college?.meta?.title || "College details - The Career Hub"} 
+      description={this.college?.meta?.description || "College details - The Career Hub"} />
        
         <CollegePageDetailHeading model={this.model.college} title={this.pagetitle} data={this.college} />
           

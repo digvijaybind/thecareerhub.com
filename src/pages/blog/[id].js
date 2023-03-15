@@ -146,7 +146,9 @@ class BlogDetails extends React.Component {
 
     return (
       <>
-      <HtmlHeader title={"Blogs details - The Career Hub"} description={"Blogs details - The Career Hub"} />
+      <HtmlHeader title={this.blog?.meta?.title || "Blogs details - The Career Hub"} 
+      description={this.blog?.meta?.description || "Blogs details - The Career Hub"}
+      />
         <div className="section3">
           <div className="container-fluid padding-left-right">
             <div className="row">

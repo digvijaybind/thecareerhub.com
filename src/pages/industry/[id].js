@@ -179,12 +179,12 @@ class IndustryDetail extends React.Component {
 
   render() {
     if (this.state.inApiCall) return <Loader />;
-    const title = "Industry Detail - The Career hub";
-    const description = "fdsfsdf";
 
     return (
       <>
-      <HtmlHeader title={"Industry details - The Career Hub"} description={"Industry details - The Career Hub"} />
+       <HtmlHeader title={this.industry?.meta?.title || "Industry details - The Career Hub"} 
+      description={this.industry?.meta?.description || "Industry details - The Career Hub"}
+      />
 
         <PageDetailHeading
           model={this.model.industry}

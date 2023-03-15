@@ -134,12 +134,13 @@ class ExamDetails extends React.Component {
 
   render() {
     if (this.state.inApiCall) return <Loader />;
-    const title = "Exam Detail - The Career hub";
-    const description = "fdsfsdf";
+
 
     return (
       <>
-      <HtmlHeader title={"Exam details - The Career Hub"} description={"Exam details - The Career Hub"} />
+       <HtmlHeader title={this.exam?.meta?.title || "Exam details - The Career Hub"} 
+      description={this.exam?.meta?.description || "Exam details - The Career Hub"}
+      />
 
         <PageDetailHeading
           model={this.model.exam}

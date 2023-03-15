@@ -149,7 +149,9 @@ class CourseDetails extends React.Component {
     if(this.state.inApiCall) return(<Loader />);
     return (
       <>
-      <HtmlHeader title={"Course Details - The Career Hub"} description={"Course Details - The Career Hub"} />
+       <HtmlHeader title={this.course?.meta?.title || "Course details - The Career Hub"} 
+      description={this.course?.meta?.description || "Course details - The Career Hub"}
+      />
 
         <PageDetailHeading model={this.model.course} title={this.pagetitle} course={this.course} />      
         <div className="section3">
