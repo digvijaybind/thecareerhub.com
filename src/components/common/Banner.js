@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Const from "../../util/Constants";
+import Image from "next/image";
 
 class Banner extends React.Component {
   render() {
@@ -24,15 +25,15 @@ class Banner extends React.Component {
                         <div className="col-md-12 secg">
                             <div className="banner-mdtxt growth2">
                               <span>4 Min</span>
-                              <div className="banner-small"><img src="images/duration.png" alt="img" /> Time Taken </div>
+                              <div className="banner-small"><Image width={20} height={20} src="images/duration.png" alt="img" /> Time Taken </div>
                             </div>
                             <div className="banner-mdtxt growth2">
                               <span>2 Min</span>
-                              <div className="banner-small"><img src="images/duration.png" alt="img" /> Report Generated </div>
+                              <div className="banner-small"><Image width={20} height={20} src="images/duration.png" alt="img" /> Report Generated </div>
                             </div>
                             <div className="banner-mdtxt">
                               <span>1500+</span>
-                              <div className="banner-small"><img src="images/duration.png" alt="img" /> Course & Colleges </div>
+                              <div className="banner-small"><Image width={20} height={20} src="images/duration.png" alt="img" /> Course & Colleges </div>
                             </div>
                         </div>
                      </div>

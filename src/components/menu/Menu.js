@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import Const from "../../util/Constants";
@@ -27,7 +28,7 @@ class Menu extends React.Component {
              <ul className={`dropdown-menu ${open && "show"}`} aria-labelledby="navbarScrollingDropdown">
                 <div className="row rowcareer submenu-col">
                     <div className="col-md-12 explore-menu-title">
-                        <h5><Link href='/career'><img src="/images/g3.png" alt="img" className="img-fluid" /> &nbsp; Careers</Link></h5>
+                        <h5><Link href='/career'><Image width={20} height={20} src="/images/g3.png" alt="img" className="img-fluid" /> &nbsp; Careers</Link></h5>
                     </div>
                         <div className="col-md-2">
                         <h6 className="explore-menu-subtitle"><span>Top Categories</span></h6>
@@ -69,13 +70,13 @@ class Menu extends React.Component {
                         
                         </div>
                         <div className="col-md-2">
-                            <h4><Link href='/exam' style={{color: "#f24890"}}><img src="/images/career-test-icon.png" alt="img" className="img-fluid" /> &nbsp; Exam</Link></h4>
-                            <h4><Link href='/industry' style={{color: "rgb(243 113 40)"}}><img src="/images/pathways-icon.png" alt="img" className="img-fluid" /> &nbsp; Industry</Link></h4>
+                            <h4><Link href='/exam' style={{color: "#f24890"}}><Image width={20} height={20} src="/images/career-test-icon.png" alt="img" className="img-fluid" /> &nbsp; Exam</Link></h4>
+                            <h4><Link href='/industry' style={{color: "rgb(243 113 40)"}}><Image width={20} height={20} src="/images/pathways-icon.png" alt="img" className="img-fluid" /> &nbsp; Industry</Link></h4>
                         </div>
                 </div> 
                 <div className="row rowcourse submenu-col">
                     <div className="col-md-12 explore-menu-title">
-                        <h5><Link href='/course'><img src="/images/career-stream.svg" alt="img" className="img-fluid" /> &nbsp; Courses</Link></h5>
+                        <h5><Link href='/course'><Image width={20} height={20} src="/images/career-stream.svg" alt="img" className="img-fluid" /> &nbsp; Courses</Link></h5>
                     </div>
                     <div className="col-md-2">
                        <h6 className="explore-menu-subtitle"><span>Top Categories</span></h6>
@@ -110,7 +111,7 @@ class Menu extends React.Component {
                 </div>
                 <div className="row rowcollege submenu-col">
                     <div className="col-md-12 explore-menu-title">
-                        <h5><Link href='/college'><img src="/images/career-course.svg" alt="img" className="img-fluid" /> &nbsp; Colleges</Link></h5>
+                        <h5><Link href='/college'><Image width={20} height={20} src="/images/career-course.svg" alt="img" className="img-fluid" /> &nbsp; Colleges</Link></h5>
                     </div>
                     <div className="col-md-2">
                        <h6 className="explore-menu-subtitle"><span>Top Categories</span></h6>

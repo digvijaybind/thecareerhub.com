@@ -184,13 +184,11 @@ ExamDetails.getLayout = page => (
 export async function getStaticProps(context) {
   const { params } = context;
   const id = parseInt(params.id.split(/[- ]+/).pop());
-  console.log(id)
   const response = await fetch(config.link + "exam/" + id, {
     method: "GET",
     headers: config.Api_headers,
   });
   const data = await response.json();
-  console.log(data)
   if (!data[0].id) {
     return {
       notFound: true,

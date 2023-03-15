@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 
 import FilterChip from './FilterChip';
+import Image from "next/image";
 
 class IndustryListDetail extends React.Component {
 
@@ -61,7 +62,7 @@ class IndustryListDetail extends React.Component {
                           <div className="card-body card-one ">
                               <div className="row">
                                   <div className="col-md-3">
-                                      <img src="./images/cs.png" alt="img" />
+                                      <Image width={246} height={138} src="./images/cs.png" alt="img" />
                                   </div>
                                   <div className="col-md-9">
                                       <h5 className="card-title">Information Technology Company</h5>

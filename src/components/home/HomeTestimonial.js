@@ -1,6 +1,7 @@
 import React from "react";
 import Const from "../../util/Constants";
 import Link from "next/link";
+import Image from "next/image";
 
 
 class HomeTestimonial extends React.Component {
@@ -116,10 +117,10 @@ class HomeTestimonial extends React.Component {
                           </div>
 
                           <Link target="_blank" className="testimonial-prev" href="#testimonialCarousel" role="button" data-slide="prev">
-                          <img src="images/leftfa.png" alt="img" />
+                          <Image width={20} height={20} src="images/leftfa.png" alt="img" />
                           </Link>
                           <Link target="_blank" className="testimonial-next" href="#testimonialCarousel" role="button" data-slide="next">
-                          <img src="images/rightfa.png" alt="img" />
+                          <Image width={20} height={20} src="images/rightfa.png" alt="img" />
                           </Link>
                       </div>
                   </div>
@@ -137,7 +138,7 @@ class HomeTestimonial extends React.Component {
               </Link>
             </div>
             <div className="col-md-4 padd-0c2a">
-              <img src="images/home/card-image.png" className="img-fluid imgc2a" alt="img" />
+              <Image width={380} height={305} src="images/home/card-image.png" className="img-fluid imgc2a" alt="img" />
             </div>
           </div>
         </div>

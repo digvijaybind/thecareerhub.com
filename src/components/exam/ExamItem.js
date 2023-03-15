@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Util from "../../util/Util";
+import Image from "next/image";
 
 class ExamItem extends React.Component {
   render() {
@@ -29,7 +30,7 @@ class ExamItem extends React.Component {
                     <div className="main-text">
                       {exam.exam_frequency ? <>
                         <div className="fade-text">EXAM FREQUENCY</div>
-                        <img src="/images/exam-frequency.svg" alt="frequency"/> 
+                        <Image width={20} height={20} src="/images/exam-frequency.svg" alt="frequency"/> 
                         {Util.singleLabel(model, 'exam_frequency', exam.exam_frequency)}
                       </> : ""}
                     </div>
@@ -38,7 +39,7 @@ class ExamItem extends React.Component {
                     <div className="main-text">
                       {exam.language ? <>
                         <div className="fade-text">LANGUAGE</div>
-                        <img src="/images/exam-language.svg" alt="language"/>{" "}
+                        <Image width={20} height={20} src="/images/exam-language.svg" alt="language"/>{" "}
                         {Util.multiLabel(model, 'exam_lang', exam.language)}
                       </> : ""}
                     </div>
@@ -61,7 +62,7 @@ class ExamItem extends React.Component {
                       Online */}
                       {exam.exam_mode ? <>
                         <div className="fade-text">EXAM TYPE</div>
-                        {exam.exam_mode === 1 ? <img src="/images/exam-written.svg" alt="exam_mode"/> : exam.exam_mode === 2 ? <img src="/images/exam-online.svg" alt="exam_mode"/> : <><img src="/images/offlineexam.webp" alt="exam_mode"/> | <img src="/images/onlineexam.webp" alt="exam_mode"/></>  } 
+                        {exam.exam_mode === 1 ? <Image width={20} height={20} src="/images/exam-written.svg" alt="exam_mode"/> : exam.exam_mode === 2 ? <Image width={20} height={20} src="/images/exam-online.svg" alt="exam_mode"/> : <><Image width={20} height={20} src="/images/offlineexam.webp" alt="exam_mode"/> | <Image width={20} height={20} src="/images/onlineexam.webp" alt="exam_mode"/></>  } 
                         {Util.singleLabel(model, 'exam_mode', exam.exam_mode)}
                       </> : ""}
                       

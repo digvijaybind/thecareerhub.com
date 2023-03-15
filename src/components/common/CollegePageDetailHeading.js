@@ -1,6 +1,7 @@
 import React from "react";
 import Util from '../../util/Util';
 import Const from "../../util/Constants";
+import Image from "next/image";
 class CollegePageDetailHeading extends React.Component {
   render() {
    const url = Const.OldUrl+"assets/imagelogo/logo/logo";
@@ -17,7 +18,7 @@ class CollegePageDetailHeading extends React.Component {
             <div className="col-md-9 text-left">
                <div className="Mask row">
                   <div className="col-md-2">
-                     <img src={url+college.logo} alt="img" className="img-fluid " style={{width:'100%'}}/> 
+                     <Image width={100} height={100} src={url+college.logo} alt="img" className="img-fluid " style={{width:'100%'}}/> 
                   </div>
                   <div className="col-md-10">
                      <h1 className="bntitle dt-heading">{college.name}</h1> 

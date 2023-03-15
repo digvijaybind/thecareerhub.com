@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import Util from "../../util/Util";
 import Const from "../../util/Constants";
+import Image from "next/image";
 
 class IndustryMobileItem extends React.Component {
   render() {
@@ -28,7 +29,7 @@ class IndustryMobileItem extends React.Component {
                   <div className="col-md-12">
                     <div className="row">
                       <div className="col maxw-50">
-                        <img src={url+industry.image_path} alt={industry.imgalt} width="100%"/>
+                        <Image width={210} height={118} src={url+industry.image_path} alt={industry.imgalt}/>
                       </div>
                       <div className="col maxw-50 p-0">
                         <h5 className="card-title">{industry.name}</h5>
@@ -74,7 +75,7 @@ class IndustryMobileItem extends React.Component {
     //       <div className="card-body card-one lightbluemain">
     //         <div className="row">
     //           <div className="col-md-4 careerimageonlist">
-    //             <img src={url+industry.image_path}  width="100%"/>
+    //             <Image width={210} height={118} src={url+industry.image_path}  width="100%"/>
     //           </div>
     //           <div className="col-md-8">
     //             <h5 className="card-title">{industry.name}</h5>

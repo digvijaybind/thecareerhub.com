@@ -2,6 +2,7 @@ import React from 'react';
 import Link from "next/link";
 import Util from '../../util/Util';
 import Const from "../../util/Constants";
+import Image from 'next/image';
 
 class CourseItem extends React.Component {
   render() {
@@ -10,9 +11,9 @@ class CourseItem extends React.Component {
     let category = Util.multiLabelDiv(model, 'category', this.props.college.college_categories);
     category = category && <div className="badge job-tags">{category}</div>;
     let location = Util.address(model, this.props.college.address);
-    location = location && <><img src="/images/college-location.svg" alt="location" /> &nbsp;{location} </>;
+    location = location && <><Image width={20} height={20} src="/images/college-location.svg" alt="location" /> &nbsp;{location} </>;
     const nirf = this.props.college.nirf_rank[0] && this.props.college.nirf_rank[0].rank ? <>
-    <img src="/images/college-rank.svg" alt="rank" /> &nbsp; Nirf- {this.props.college.nirf_rank[0].rank}</> :''; 
+    <Image width={20} height={20} src="/images/college-rank.svg" alt="rank" /> &nbsp; Nirf- {this.props.college.nirf_rank[0].rank}</> :''; 
     return (
       <div className="row">
         <div className="col-md-12">
@@ -21,7 +22,7 @@ class CourseItem extends React.Component {
                 <div className="card-body card-one lightbluemain">
                     <div className="row">
                         <div className="col-md-2">
-                          <img src= {url+this.props.college.logo} alt="img" className="img-fluid" />
+                          <Image width={210} height={118} src= {url+this.props.college.logo} alt="img" className="img-fluid" />
                         </div>
                         <div className="col-md-10">
                           <h5 className="card-title">{this.props.college.name}</h5>
@@ -30,7 +31,7 @@ class CourseItem extends React.Component {
                               <span>{location}</span>
                               <span>
                                 {this.props.college.approved_by ? <>
-                                  <img src="/images/college-approval.svg" alt="approval" /> &nbsp; 
+                                  <Image width={20} height={20} src="/images/college-approval.svg" alt="approval" /> &nbsp; 
                                 {this.props.college.approved_by}
                                 </> : ""}
                               </span>

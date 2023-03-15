@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Util from "../../util/Util";
 import Const from "../../util/Constants";
+import Image from "next/image";
 
 class RelatedCollegeItem extends React.Component {
     onCourseViewDetails = () => {
@@ -15,8 +16,8 @@ class RelatedCollegeItem extends React.Component {
     let category = Util.multiLabelDiv(model, 'category', college.college_categories);
     category = category && <div className="badge job-tags">{category}</div>;
     let location = Util.address(model, college.address);
-    location = location && <><img src="/images/location2.png" alt="img" className="img-fluid" />&nbsp;{location} </>;
-    const nirf = college.nirf_rank && college.nirf_rank[0] && college.nirf_rank[0].rank ? <> <img src="/images/rank2.png" alt="img" className="img-fluid" />Nirf- {college.nirf_rank[0].rank}/250</> :''; 
+    location = location && <><Image width={20} height={20} src="/images/location2.png" alt="img" className="img-fluid" />&nbsp;{location} </>;
+    const nirf = college.nirf_rank && college.nirf_rank[0] && college.nirf_rank[0].rank ? <> <Image width={20} height={20} src="/images/rank2.png" alt="img" className="img-fluid" />Nirf- {college.nirf_rank[0].rank}/250</> :''; 
     return (
         <div className="row">
             <div className="col-md-12">
@@ -25,14 +26,14 @@ class RelatedCollegeItem extends React.Component {
                     <div className="card-body card-one ">
                         <div className="row">
                             <div className="col-md-2">
-                                <img src= {url+college.logo} alt="img" className="img-fluid" />
+                                <Image width={218} height={118} src= {url+college.logo} alt="img" className="img-fluid" />
                             </div>
                             <div className="col-md-10">
                                 <h5 className="card-title">{college.name}</h5>
                                 {category}
                                 <div className="detail pt-2">
                                     <span>{location}</span>
-                                    <span><img src="/images/approval.png" alt="img" className="img-fluid" /> &nbsp;{college.approved_by}</span>
+                                    <span><Image width={20} height={20} src="/images/approval.png" alt="img" className="img-fluid" /> &nbsp;{college.approved_by}</span>
                                     <span> {nirf} </span>
                                     {/* <Link target="_blank" href="#" className="viewbtnorange"> View More </Link> */}
                                 </div>

@@ -9,6 +9,7 @@ import CareerAPI from "../../api/CareerAPI";
 import ExamAPI from "../../api/ExamAPI";
 import IndustryAPI from "../../api/IndustryApi";
 import ClickAwayListener from 'react-click-away-listener';
+import Image from "next/image";
 
 class Header extends React.Component {
   constructor(props) {
@@ -159,14 +160,14 @@ class Header extends React.Component {
                   aria-expanded="false"
                   aria-label="Toggle navigation"
                 >
-                  <img
+                  <Image width={30} height={30}
                     src="/images/toggler.png"
                     alt="img"
                     className="toggler"
                   />
                 </button>
                 <Link target="_blank" href="/" className="navbar-brand">
-                  <img src="/images/logo.png" alt="img" />
+                  <Image width={171} height={25} src="/images/logo.png" alt="img" className="logoImg"/>
                 </Link>
               </div>
               <ClickAwayListener onClickAway={this.handleClickAway}>
