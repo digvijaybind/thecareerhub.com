@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from "next/link";
 import Util from '../../util/Util';
+import Image from 'next/image';
 
 class CourseItem extends React.Component {
   render() {
@@ -20,20 +21,20 @@ class CourseItem extends React.Component {
                 {categorydiv}
                 <div className="detail pt-2">
                   <span>
-                    <img src="/images/course-salary.svg" alt="img" /> &nbsp; 
+                    <Image width={20} height={20} src="/images/course-salary.svg" alt="img" /> &nbsp; 
                     {Util.convertToMoney(this.props.course.min_fees)} - {Util.convertToMoney(this.props.course.max_fees)}
                     <small>&nbsp;fees/year</small>
                   </span> 
                     {course.course_level_id ?
-                     <span><img src="/images/course-type.svg" alt="img" /> &nbsp; 
+                     <span><Image width={20} height={20} src="/images/course-type.svg" alt="img" /> &nbsp; 
                      {Util.singleLabel(model, 'course_level', course.course_level_id)}</span> 
                      : null}
                     {course.duration ? <span>
-                      <img src="/images/course-duration.svg" alt="img" /> &nbsp; 
+                      <Image width={20} height={20} src="/images/course-duration.svg" alt="img" /> &nbsp; 
                       {Util.singleLabel(model, 'duration', course.duration)}
                     </span> : null}
                     {course.study_mode && course.study_mode.length > 0 ? <span>
-                      <img src="/images/course-time.svg" alt="img" /> &nbsp; 
+                      <Image width={20} height={20} src="/images/course-time.svg" alt="img" /> &nbsp; 
                       {Util.multiLabel(model, 'study_mode', this.props.course.study_mode)}
                     </span> 
                     : null}

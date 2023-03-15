@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Util from "../../util/Util";
 import Const from "../../util/Constants";
+import Image from "next/image";
 
 class CourseItem extends React.Component {
   render() {
@@ -12,9 +13,9 @@ class CourseItem extends React.Component {
     let category = Util.multiLabel(model, 'category', college.college_categories);
     category = category && <div className="badge job-tags"><span>{category}</span></div>;
     let location = Util.address(model, college.address);
-    location = location && <><img src="/images/location2.png" alt="img" className="img-fluid" />&nbsp;{location} </>;
-    const nirf = this.props.college.nirf_rank[0] && this.props.college.nirf_rank[0].rank ? <><img src="/images/rank.png" alt="rank" /> Nirf- {this.props.college.nirf_rank[0].rank}</> :null; 
-    let approved_by = college.approved_by ? <span><img src="/images/approval.png" alt="img" className="img-fluid" />&nbsp;{college.approved_by}</span> : null;
+    location = location && <><Image width={20} height={20} src="/images/location2.png" alt="img" className="img-fluid" />&nbsp;{location} </>;
+    const nirf = this.props.college.nirf_rank[0] && this.props.college.nirf_rank[0].rank ? <><Image width={20} height={20} src="/images/rank.png" alt="rank" /> Nirf- {this.props.college.nirf_rank[0].rank}</> :null; 
+    let approved_by = college.approved_by ? <span><Image width={20} height={20} src="/images/approval.png" alt="img" className="img-fluid" />&nbsp;{college.approved_by}</span> : null;
     return (
         <div className="row">
             <div className="col-md-12">
@@ -23,7 +24,7 @@ class CourseItem extends React.Component {
                     <div className="card-body card-one ">
                         <div className="row">
                             <div className="col-md-2">
-                                <img src={url+college.logo} alt="img" className="img-fluid" />
+                                <Image width={210} height={118} src={url+college.logo} alt="img" className="img-fluid" />
                             </div>
                             <div className="col-md-10">
                                 <h5 className="card-title">{college.name}</h5>

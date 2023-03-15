@@ -2,6 +2,7 @@ import React from 'react';
 import Link from "next/link";
 import Util from '../../util/Util';
 import Const from "../../util/Constants";
+import Image from 'next/image';
 
 class CollegeMobileItem extends React.Component {
   render() {
@@ -10,9 +11,9 @@ class CollegeMobileItem extends React.Component {
     let category = Util.multiLabel(model, 'category', this.props.college.college_categories);
     category = category && <div className="badge job-tags"><span>{category}</span></div>;
     let location = Util.address(model, this.props.college.address);
-    location = location && <><img src="/images/college-location.svg" alt="location" /> &nbsp;{location} </>;
+    location = location && <><Image width={20} height={20} src="/images/college-location.svg" alt="location" /> &nbsp;{location} </>;
     const nirf = this.props.college.nirf_rank[0] && this.props.college.nirf_rank[0].rank ? <>
-    <img src="/images/college-rank.svg" alt="rank" /> &nbsp; Nirf- {this.props.college.nirf_rank[0].rank}</> :''; 
+    <Image width={20} height={20} src="/images/college-rank.svg" alt="rank" /> &nbsp; Nirf- {this.props.college.nirf_rank[0].rank}</> :''; 
     return (
 
         <div className="row">
@@ -24,7 +25,7 @@ class CollegeMobileItem extends React.Component {
                     <div className="col-md-12">
                         <div className="row">
                         <div className="col maxw-30">
-                            <img src={url+this.props.college.logo} alt="img" className="img-fluid"/>
+                            <Image width={210} height={118} src={url+this.props.college.logo} alt="img" className="img-fluid"/>
                         </div>
                         <div className="col maxw-70 p-0">
                             <h5 className="card-title">{this.props.college.name} </h5>
@@ -37,7 +38,7 @@ class CollegeMobileItem extends React.Component {
                         <span>{location}</span>
                         <span>
                         {this.props.college.approved_by ? <>
-                            <img src="/images/college-approval.svg" alt="approval" /> &nbsp; 
+                            <Image width={20} height={20} src="/images/college-approval.svg" alt="approval" /> &nbsp; 
                         {this.props.college.approved_by}
                         </> : ""}
                         </span>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import Util from "../../util/Util";
 import Const from "../../util/Constants";
 import CareerExploreRelated from "../career/CareerExploreRelated";
+import Image from "next/image";
 class CourseItem extends React.Component {
   render() {
     const url = Const.OldUrl;
@@ -19,7 +20,7 @@ class CourseItem extends React.Component {
                 <div className="card-body card-one ">
                     <div className="row">
                         <div className="col-md-4 careerimageonlist">
-                            <img src={url+career.media_path} alt="img" className="img-fluid" />
+                            <Image width={210} height={118} src={url+career.media_path} alt="img" className="img-fluid" />
                         </div>
                         <div className="col-md-8">
                             <h5 className="card-title">{career.name}</h5>
@@ -27,17 +28,17 @@ class CourseItem extends React.Component {
                             <div className="detail pt-2">
                             {   
                                 career.qualification.primary_qualification ? 
-                                <span><img src="/images/course.png" alt="img" className="img-fluid" />&nbsp;
+                                <span><Image width={20} height={20} src="/images/course.png" alt="img" className="img-fluid" />&nbsp;
                                 {career.qualification.primary_qualification}</span>
                                 : null
                             }    
                             {   
                                 streams ?
-                                <span><img src="/images/stream.png" alt="img" className="img-fluid" />&nbsp;
+                                <span><Image width={20} height={20} src="/images/stream.png" alt="img" className="img-fluid" />&nbsp;
                                 {streams}</span>
                                 : null
                             }    
-                                <span> <img src="/images/salary2.png" alt="img" className="img-fluid" /> <strong> ₹ {career.min_salary} - {career.max_salary} </strong> <small>salary /annum</small></span>
+                                <span> <Image width={20} height={20} src="/images/salary2.png" alt="img" className="img-fluid" /> <strong> ₹ {career.min_salary} - {career.max_salary} </strong> <small>salary /annum</small></span>
                             </div>
                         </div>
                     </div>

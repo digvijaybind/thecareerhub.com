@@ -10,6 +10,7 @@ import BlogListItem from '../../components/blog/BlogListItem';
 import Link from "next/link";
 import HtmlHeader from "../../components/common/HtmlHeader";
 import config from "../../config/config";
+import Image from "next/image";
 class BlogList extends React.Component {
   constructor(props) {
     super(props);
@@ -134,9 +135,8 @@ class BlogList extends React.Component {
             <div className="col-md-8">
             <Link target="_blank" href={"/blog/"+this.popularblog[0].sef_url}>
               <div className="bloglist">
-                <img
+                <Image width={830} height={467}
                   src={this.popularblog[0].banner_image ? url+this.popularblog[0].banner_image : `${"/images/2.png"}`}
-                  width="100%"
                   alt="img"
                   className="bloglist-image"
                 />
@@ -156,9 +156,8 @@ class BlogList extends React.Component {
             <div className="col-md-4">
             <Link target="_blank" href={"/blog/"+this.popularblog[1].sef_url}>
               <div className="blogrelated">
-                <img
+                <Image width={403} height={226}
                   src={this.popularblog[1].banner_image ? url+this.popularblog[1].banner_image : `${"/images/2.png"}`}
-                  width="100%"
                   alt="img"
                   className="bloglist-image"
                 />
@@ -176,9 +175,8 @@ class BlogList extends React.Component {
             </Link>
             <Link target="_blank" href={"/blog/"+this.popularblog[2].sef_url}>
               <div className="blogrelated">
-                <img
+                <Image width={403} height={226}
                   src={this.popularblog[2].banner_image ? url+this.popularblog[2].banner_image : `${"/images/2.png"}`}
-                  width="100%"
                   alt="img"
                   className="bloglist-image"
                 />
@@ -208,9 +206,8 @@ class BlogList extends React.Component {
             <div className="col-md-4">
             <Link target="_blank" href={"/blog/"+this.recent[0].sef_url}>
               <div className="blogrelated">
-              <img
+              <Image width={403} height={226}
                   src={this.recent[0].banner_image ? url+this.recent[0].banner_image : `${"/images/2.png"}`}
-                  width="100%"
                   alt="img"
                   className="bloglist-image"
                 />
@@ -230,9 +227,8 @@ class BlogList extends React.Component {
             <div className="col-md-4">
             <Link target="_blank" href={"/blog/"+this.recent[1].sef_url}>
               <div className="blogrelated">
-              <img
+              <Image width={403} height={226}
                   src={this.recent[1].banner_image ? url+this.recent[1].banner_image : `${"/images/2.png"}`}
-                  width="100%"
                   alt="img"
                   className="bloglist-image"
                 />
@@ -252,9 +248,8 @@ class BlogList extends React.Component {
             <div className="col-md-4">
             <Link target="_blank" href={"/blog/"+this.recent[2].sef_url}>
               <div className="blogrelated">
-              <img
+              <Image width={403} height={226}
                   src={this.recent[2].banner_image ? url+this.recent[2].banner_image : `${"/images/2.png"}`}
-                  width="100%"
                   alt="img"
                   className="bloglist-image"
                 />
@@ -315,9 +310,6 @@ export async function getStaticProps(context) {
     body: JSON.stringify(page),
   });
   const data = await response.json();
-
-  console.log(`Res`,data);
-
   return {
     props: {
       data: data,

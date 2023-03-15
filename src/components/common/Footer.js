@@ -1,6 +1,7 @@
 import React from "react";
 import Const from "../../util/Constants";
 import Link from "next/link";
+import Image from "next/image";
 
 
 class Footer extends React.Component {
@@ -41,19 +42,19 @@ class Footer extends React.Component {
                 </div>
               </div>
               <div className="col-md-4 logo-fcol">
-                <div><img src="/images/footer-logo.png" alt="img" /></div>
+                <div><Image width={172} height={25} src="/images/footer-logo.png" alt="img" /></div>
                 <p className="txt-14">The ultimate career guidance platform that will give your success story the boost it needs.</p>
                 <div className="contact-info-footer">
                   <p><span><i className="fa fa-phone" aria-hidden="true"></i></span><Link href="tel:022 4016 3399"> 022 4016 3399 </Link> </p>
                   <p><span><i className="fa fa-envelope" aria-hidden="true"></i></span><Link href="mailto:support@thecareerhub.com"> support@thecareerhub.com </Link></p>
                   <p className="social-img">
                   <span>Follow us</span>
-                  <Link href="https://www.facebook.com/The-Career-Hub-110040528233534/"><img src="/images/social/fb.png" alt="img" /></Link> 
-                  <Link href="https://www.instagram.com/thecareerhubindia/"><img src="/images/social/ig.png" alt="img" /></Link> 
-                  <Link href="https://www.linkedin.com/in/thecareerhub/"><img src="/images/social/li.png" alt="img" /></Link> 
-                  <Link href="https://in.pinterest.com/thecareerhubcom"><img src="/images/social/pt.png" alt="img" /></Link> 
-                  <Link href="https://twitter.com/TheCareerH"><img src="/images/social/tw.png" alt="img" /></Link> 
-                  <Link href="#"><img src="/images/social/yt.png" alt="img" /></Link> 
+                  <Link href="https://www.facebook.com/The-Career-Hub-110040528233534/"><Image width={20} height={20} src="/images/social/fb.png" alt="img" /></Link> 
+                  <Link href="https://www.instagram.com/thecareerhubindia/"><Image width={20} height={20} src="/images/social/ig.png" alt="img" /></Link> 
+                  <Link href="https://www.linkedin.com/in/thecareerhub/"><Image width={20} height={20} src="/images/social/li.png" alt="img" /></Link> 
+                  <Link href="https://in.pinterest.com/thecareerhubcom"><Image width={20} height={20} src="/images/social/pt.png" alt="img" /></Link> 
+                  <Link href="https://twitter.com/TheCareerH"><Image width={20} height={20} src="/images/social/tw.png" alt="img" /></Link> 
+                  <Link href="#"><Image width={20} height={20} src="/images/social/yt.png" alt="img" /></Link> 
                   </p>
                 </div>
               </div> 

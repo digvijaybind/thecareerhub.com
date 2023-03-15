@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Util from "../../util/Util";
 import Const from "../../util/Constants";
+import Image from "next/image";
 
 class IndustryItem extends React.Component {
   render() {
@@ -27,7 +28,7 @@ class IndustryItem extends React.Component {
           <div className="card-body card-one lightbluemain" width="100%">
             <div className="row">
               <div className="col-md-4 careerimageonlist">
-                <img src={url+industry.image_path} alt={industry.imgalt}  width="100%"/>
+                <Image width={210} height={118} src={url+industry.image_path} alt={industry.imgalt}/>
               </div>
               <div className="col-md-8">
                 <h5 className="card-title">{industry.name}</h5>

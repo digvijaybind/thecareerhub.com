@@ -149,7 +149,9 @@ class CourseDetails extends React.Component {
     if(this.state.inApiCall) return(<Loader />);
     return (
       <>
-      <HtmlHeader title={"Course Details - The Career Hub"} description={"Course Details - The Career Hub"} />
+       <HtmlHeader title={this.course?.meta?.title || "Course details - The Career Hub"} 
+      description={this.course?.meta?.description || "Course details - The Career Hub"}
+      />
 
         <PageDetailHeading model={this.model.course} title={this.pagetitle} course={this.course} />      
         <div className="section3">
@@ -185,13 +187,11 @@ CourseDetails.getLayout = page => (
 export async function getStaticProps(context) {
   const { params } = context;
   const id = parseInt(params.id.split(/[- ]+/).pop());
-  console.log(id)
   const response = await fetch(config.link + "course/" + id, {
     method: "GET",
     headers: config.Api_headers,
   });
   const data = await response.json();
-  console.log(data)
   if (!data[0].id) {
     return {
       notFound: true,

@@ -179,12 +179,12 @@ class IndustryDetail extends React.Component {
 
   render() {
     if (this.state.inApiCall) return <Loader />;
-    const title = "Industry Detail - The Career hub";
-    const description = "fdsfsdf";
 
     return (
       <>
-      <HtmlHeader title={"Industry details - The Career Hub"} description={"Industry details - The Career Hub"} />
+       <HtmlHeader title={this.industry?.meta?.title || "Industry details - The Career Hub"} 
+      description={this.industry?.meta?.description || "Industry details - The Career Hub"}
+      />
 
         <PageDetailHeading
           model={this.model.industry}
@@ -243,13 +243,11 @@ IndustryDetail.getLayout = page => (
 export async function getStaticProps(context) {
   const { params } = context;
   const id = parseInt(params.id.split(/[- ]+/).pop());
-  console.log(id)
   const response = await fetch(config.link + "industry/" + id, {
     method: "GET",
     headers: config.Api_headers,
   });
   const data = await response.json();
-  console.log(data)
   if (!data[0].id) {
     return {
       notFound: true,

@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Util from "../../util/Util";
 import Const from "../../util/Constants";
+import Image from "next/image";
 
 class CareerMobileItem extends React.Component {
   render() {
@@ -22,7 +23,7 @@ class CareerMobileItem extends React.Component {
                         <div className="col-md-12">
                             <div className="row">
                             <div className="col maxw-50">
-                                <img src={url+this.props.career.media_path} alt="img" width="100%" />
+                                <Image width={20} height={40} src={url+this.props.career.media_path} alt="img" />
                             </div>
                             <div className="col maxw-70 p-0">
                                 <h5 className="card-title">
@@ -36,15 +37,15 @@ class CareerMobileItem extends React.Component {
                             <div className="detail pt-2">
                                 {
                                 career.qualification.primary_qualification ? 
-                                <span><img src="/images/career-course.svg" alt="course level"/> &nbsp; 
+                                <span><Image width={20} height={20} src="/images/career-course.svg" alt="course level"/> &nbsp; 
                                     {career.qualification.primary_qualification} </span>
                                     : null
                                 }
                                 {
-                                    streams ? <span><img src="/images/career-stream.svg" alt="streams"/> &nbsp; {streams} </span> : null
+                                    streams ? <span><Image width={20} height={20} src="/images/career-stream.svg" alt="streams"/> &nbsp; {streams} </span> : null
                                 }
                                 <span>
-                                    <img src="/images/career-salary.svg" alt="salary" />{" "}
+                                    <Image width={20} height={20} src="/images/career-salary.svg" alt="salary" />{" "}
                                     &nbsp;
                                     <strong> ₹ {Util.convertToMoney(this.props.career.min_salary)} - {Util.convertToMoney(this.props.career.max_salary)} </strong>{" "}
                                     <small>salary /annum</small>
@@ -85,7 +86,7 @@ class CareerMobileItem extends React.Component {
     //       <div className="card-body card-one lightbluemain">
     //         <div className="row">
     //           <div className="col-md-4 careerimageonlist">
-    //             <img src={url+this.props.career.media_path} alt="img" width="100%" />
+    //             <Image width={200} height={400} src={url+this.props.career.media_path} alt="img" width="100%" />
     //           </div>
     //           <div className="col-md-8">
     //             <h5 className="card-title">{this.props.career.name}</h5>
@@ -93,15 +94,15 @@ class CareerMobileItem extends React.Component {
     //             <div className="detail pt-2">
     //                 {
     //                 career.qualification.primary_qualification ? 
-    //                 <span><img src="/images/course.png" alt="course level"/> &nbsp; 
+    //                 <span><Image width={200} height={400} src="/images/course.png" alt="course level"/> &nbsp; 
     //                   {career.qualification.primary_qualification} </span>
     //                  : null
     //                 }
     //                 {
-    //                   streams ? <span><img src="/images/stream.png" alt="streams"/> &nbsp; {streams} </span> : null
+    //                   streams ? <span><Image width={200} height={400} src="/images/stream.png" alt="streams"/> &nbsp; {streams} </span> : null
     //                 }
     //               <span>
-    //                 <img src="/images/salary2.png" alt="salary"/> &nbsp;
+    //                 <Image width={200} height={400} src="/images/salary2.png" alt="salary"/> &nbsp;
     //                 <strong> ₹ {Util.convertToMoney(this.props.career.min_salary)} - {Util.convertToMoney(this.props.career.max_salary)} </strong>{" "}
     //                 <small>salary /annum</small>
     //               </span>

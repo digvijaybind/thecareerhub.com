@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from "next/link";
 import HtmlHeader from '../../components/common/HtmlHeader';
+import Image from 'next/image';
 
 class Qac extends React.Component {
   render() {
@@ -12,7 +13,7 @@ class Qac extends React.Component {
         <div className="form-1-conatiner">
           <div className="row ">
             <div className="col-md-12">
-              <img src="images/brainw.png" alt="img" />
+              <Image width={200} height={42} src="images/brainw.png" alt="img" />
             </div>
           </div>
         </div>
@@ -153,7 +154,7 @@ class Qac extends React.Component {
           <div className="row qac-form-row">
             <div className="col-md-12 mrtp16">
               <div className="stepthankyou justify-content-center">
-                <img src="images/ty.png" alt="img" />
+                <Image width={229} height={237} src="images/ty.png" alt="img" />
                 <div className="ty-textdiv">
                   <h2>Thank You ! </h2>
                   <p>We value your feedback and strive to improve your experience.</p>

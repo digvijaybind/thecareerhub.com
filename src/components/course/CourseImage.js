@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 import Util from '../../util/Util';
 
@@ -14,7 +15,7 @@ class CourseImage extends React.Component {
                   <div className="growth-c">
                     <span>Duration</span>
                     <div className="ng">
-                      <img src="/images/duration-icon .png" alt="img" className="img-fluid" /> 
+                      <Image width={20} height={20} src="/images/duration-icon .png" alt="img" className="img-fluid" /> 
                       {course && Util.singleLabel(model, 'duration', course.duration)}</div>
                   </div>
                 :null}
@@ -22,7 +23,7 @@ class CourseImage extends React.Component {
                   <div className="growth-c ">
                     <span>Level</span>
                     <div className="ng">
-                      <img src="/images/level-icon.png" alt="img" className="img-fluid" /> 
+                      <Image width={20} height={20} src="/images/level-icon.png" alt="img" className="img-fluid" /> 
                       {course && course.course_level}
                     </div>
                   </div>
@@ -31,7 +32,7 @@ class CourseImage extends React.Component {
                   <div className="growth-c ">
                     <span>Programme</span>
                     <div className="ng">
-                      <img src="/images/programme-icon.png" alt="img" className="img-fluid" />
+                      <Image width={20} height={20} src="/images/programme-icon.png" alt="img" className="img-fluid" />
                       {course && Util.singleLabel(model, 'course_level', course.course_level_id)}
                     </div>
                   </div>
@@ -40,7 +41,7 @@ class CourseImage extends React.Component {
                 <div className="growth-c growth2">
                   <span>Study Mode</span>
                   <div className="ng">
-                    <img src="/images/study-mode.png" alt="img" className="img-fluid" />
+                    <Image width={20} height={20} src="/images/study-mode.png" alt="img" className="img-fluid" />
                     {course && course.study_mode && Util.multiLabel(model, 'study_mode', course.study_mode)}
                   </div>
                 </div>

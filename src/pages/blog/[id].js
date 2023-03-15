@@ -126,7 +126,7 @@ class BlogDetails extends React.Component {
       this.comment.map((item, i) => (
         <div className="comment  row " key={i}>
           <div className="col-md-1">
-            <img src="/images/career-test-icon.png" alt="blog_image" />
+            <Image width={20} height={20} src="/images/career-test-icon.png" alt="blog_image" />
           </div>
           <div className="col-md-11">
             <h3 className="c-name">
@@ -146,7 +146,9 @@ class BlogDetails extends React.Component {
 
     return (
       <>
-      <HtmlHeader title={"Blogs details - The Career Hub"} description={"Blogs details - The Career Hub"} />
+      <HtmlHeader title={this.blog?.meta?.title || "Blogs details - The Career Hub"} 
+      description={this.blog?.meta?.description || "Blogs details - The Career Hub"}
+      />
         <div className="section3">
           <div className="container-fluid padding-left-right">
             <div className="row">
@@ -193,10 +195,10 @@ class BlogDetails extends React.Component {
                 <div className="row mt-4">
                   <div className="like-comment col-md-4">
                     <span>
-                      <img src="/images/like-icon.png" alt="like" />
+                      <Image width={20} height={20} src="/images/like-icon.png" alt="like" />
                     </span>
                     <span>
-                      <img src="/images/comment-icon.png" alt="comment" />
+                      <Image width={20} height={20} src="/images/comment-icon.png" alt="comment" />
                     </span>
                   </div>
                   <div className="blog-social col-md-8">
@@ -204,7 +206,7 @@ class BlogDetails extends React.Component {
                       <Link target="_blank"
                         href="https://www.linkedin.com/in/thecareerhub/"
                       >
-                        <img src="/images/social/li.png" alt="social" />
+                        <Image width={20} height={20} src="/images/social/li.png" alt="social" />
                       </Link>
                     </span>
                     <span>
@@ -212,19 +214,19 @@ class BlogDetails extends React.Component {
                         href="https://www.facebook.com/The-Career-Hub-110040528233534/"
                         
                       >
-                        <img src="/images/social/fb.png" alt="social" />
+                        <Image width={20} height={20} src="/images/social/fb.png" alt="social" />
                       </Link>
                     </span>
                     <span>
                       <Link target="_blank"
                         href="https://www.instagram.com/thecareerhubindia/"
                       >
-                        <img src="/images/social/ig.png" alt="social" />
+                        <Image width={20} height={20} src="/images/social/ig.png" alt="social" />
                       </Link>
                     </span>
                     <span>
                       <Link target="_blank" href="https://twitter.com/TheCareerH">
-                        <img src="/images/social/tw.png" alt="social" />
+                        <Image width={20} height={20} src="/images/social/tw.png" alt="social" />
                       </Link>
                     </span>
                   </div>
@@ -241,9 +243,9 @@ class BlogDetails extends React.Component {
                 <h3>Related Post</h3>
                 {relatedpost}
                 <div className="Blog">
-                  <img
+                  <Image  width={403}
+              height={206}
                     src="/images/2.png"
-                    width="100%"
                     alt="img"
                     className="bloglist-image"
                   />
@@ -259,9 +261,9 @@ class BlogDetails extends React.Component {
                 </div>
 
                 <div className="Blog">
-                  <img
+                  <Image  width={403}
+              height={206}
                     src="/images/2.png"
-                    width="100%"
                     alt="img"
                     className="bloglist-image"
                   />
@@ -277,9 +279,9 @@ class BlogDetails extends React.Component {
                 </div>
 
                 <div className="Blog">
-                  <img
+                  <Image  width={403}
+              height={206}
                     src="/images/2.png"
-                    width="100%"
                     alt="img"
                     className="bloglist-image"
                   />
@@ -310,12 +312,14 @@ BlogDetails.getLayout = (page) => <>{page}</>;
 export async function getStaticProps(context) {
   const { params } = context;
   const id = parseInt(params.id.split(/[- ]+/).pop());
+  console.log("id",id)
   const response = await fetch(config.link + "blog/" + id, {
     method: "GET",
-    headers: Const.Api_headers,
+    headers: config.Api_headers,
   });
   const data = await response.json();
-  if (!data.data[0].id) {
+  console.log("blog data",data)
+  if (!data.data || !data.data[0].id) {
     return {
       notFound: true,
     };

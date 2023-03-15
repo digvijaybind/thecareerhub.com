@@ -3,6 +3,7 @@ import Link from "next/link";
 import Util from '../../util/Util';
 import dateFormat from "dateformat";
 import Const from "../../util/Constants";
+import Image from "next/image";
 
 class IndustryItem extends React.Component {
   render() {
@@ -18,9 +19,8 @@ class IndustryItem extends React.Component {
             <div className="col-md-6 mb-4">
             <Link target="_blank" href={`/blog/${blog.sef_url}`}>
               <div className="blogrelated">
-                <img
+               <Image width={509} height={286}
                   src={blog.banner_image ? url+blog.banner_image : `${"/images/2.png"}`} alt={blog.title}
-                  width="100%"
                   className="bloglist-image"
                 />
                 <div className="blog-list-two">

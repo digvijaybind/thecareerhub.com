@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Util from "../../util/Util";
+import Image from "next/image";
 
 
 
@@ -19,10 +20,10 @@ class OthersTab extends React.Component {
                      <span>{item.course_category_ids && Util.multiLabel(model, 'category', item.course_category_ids)}</span>
                   </div>
                   <div className="detail detailCareer pt-2">
-                     <span> <img src="/images/salary.png" alt="img" className="img-fluid" /> {Util.convertToMoney(item.min_fees)} - {Util.convertToMoney(item.max_fees)} <small>fees/year</small></span> 
-                     <span><img src="/images/study-mode.png" alt="img" className="img-fluid" /> {item.course_level}</span> 
-                     <span><img src="/images/duration.png" alt="img" className="img-fluid" /> {item.duration && Util.singleLabel(model, 'duration', item.duration)}</span> 
-                     <span><img src="/images/time.png" alt="img" className="img-fluid" /> {Util.multiLabel(model, 'study_mode', item.study_mode)}</span>
+                     <span> <Image width={20} height={20} src="/images/salary.png" alt="img" className="img-fluid" /> {Util.convertToMoney(item.min_fees)} - {Util.convertToMoney(item.max_fees)} <small>fees/year</small></span> 
+                     <span><Image width={20} height={20} src="/images/study-mode.png" alt="img" className="img-fluid" /> {item.course_level}</span> 
+                     <span><Image width={20} height={20} src="/images/duration.png" alt="img" className="img-fluid" /> {item.duration && Util.singleLabel(model, 'duration', item.duration)}</span> 
+                     <span><Image width={20} height={20} src="/images/time.png" alt="img" className="img-fluid" /> {Util.multiLabel(model, 'study_mode', item.study_mode)}</span>
                   </div>
                </div>
                </Link>

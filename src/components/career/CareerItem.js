@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Util from "../../util/Util";
+import Image from "next/image";
 
 class CourseItem extends React.Component {
   render() {
@@ -18,7 +19,7 @@ class CourseItem extends React.Component {
           <div className="card-body card-one lightbluemain">
             <div className="row">
               <div className="col-md-4 careerimageonlist">
-                <img src={url+this.props.career.media_path} alt="img" width="100%" />
+                <Image width={246} height={138} src={url+this.props.career.media_path} alt="img" />
               </div>
               <div className="col-md-8">
                 <h5 className="card-title">{this.props.career.name}</h5>
@@ -26,15 +27,15 @@ class CourseItem extends React.Component {
                 <div className="detail pt-2">
                     {
                     career.qualification.primary_qualification ? 
-                    <span><img src="/images/career-course.svg" alt="course level"/> &nbsp; 
+                    <span><Image width={20} height={20} src="/images/career-course.svg" alt="course level"/> &nbsp; 
                       {career.qualification.primary_qualification} </span>
                      : null
                     }
                     {
-                      streams ? <span><img src="/images/career-stream.svg" alt="streams"/> &nbsp; {streams} </span> : null
+                      streams ? <span><Image width={20} height={20} src="/images/career-stream.svg" alt="streams"/> &nbsp; {streams} </span> : null
                     }
                   <span>
-                    <img src="/images/career-salary.svg" alt="salary"/> &nbsp;
+                    <Image width={20} height={20} src="/images/career-salary.svg" alt="salary"/> &nbsp;
                     <strong> ₹ {Util.convertToMoney(this.props.career.min_salary)} - {Util.convertToMoney(this.props.career.max_salary)} </strong>{" "}
                     <small>salary /annum</small>
                   </span>

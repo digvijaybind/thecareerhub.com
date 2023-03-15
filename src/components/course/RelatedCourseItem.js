@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Util from "../../util/Util";
+import Image from "next/image";
 
 class CourseItem extends React.Component {
    onCourseViewDetails = () => {
@@ -20,10 +21,10 @@ class CourseItem extends React.Component {
             <h5 className="card-title">{course.name}</h5>
                 {category}
                 <div className="detail detailCareer pt-2">
-                    <span> <img src="/images/salary.png" alt="img" className="img-fluid" /> {course.min_fees} - {course.max_fees} <small>fees/year</small></span> 
-                    <span><img src="/images/study-mode.png" alt="img" className="img-fluid" /> {course && course.course_level}</span> 
-                    <span><img src="/images/duration.png" alt="img" className="img-fluid" /> {course && Util.singleLabel(model, 'duration', course.duration)}</span> 
-                    <span><img src="/images/time.png" alt="img" className="img-fluid" />  {course && course.study_mode && Util.multiLabel(model, 'study_mode', course.study_mode)}</span>
+                    <span> <Image width={20} height={20} src="/images/salary.png" alt="img" className="img-fluid" /> {course.min_fees} - {course.max_fees} <small>fees/year</small></span> 
+                    <span><Image width={20} height={20} src="/images/study-mode.png" alt="img" className="img-fluid" /> {course && course.course_level}</span> 
+                    <span><Image width={20} height={20} src="/images/duration.png" alt="img" className="img-fluid" /> {course && Util.singleLabel(model, 'duration', course.duration)}</span> 
+                    <span><Image width={20} height={20} src="/images/time.png" alt="img" className="img-fluid" />  {course && course.study_mode && Util.multiLabel(model, 'study_mode', course.study_mode)}</span>
                 </div>
             </div>
             </Link>
@@ -83,10 +84,10 @@ export default CourseItem;
                           <span>Computer & IT</span>
                        </div>
                        <div className="detail detailCareer pt-2">
-                          <span> <img src="./images/salary.png" alt="img" className="img-fluid" /> 40,000 - 1,00,000 <small>fees/year</small></span> 
-                          <span><img src="./images/study-mode.png" alt="img" className="img-fluid" /> PG</span> 
-                          <span><img src="./images/duration.png" alt="img" className="img-fluid" /> 5+ Years</span> 
-                          <span><img src="./images/time.png" alt="img" className="img-fluid" />  Full Time</span>
+                          <span> <Image width={20} height={20} src="./images/salary.png" alt="img" className="img-fluid" /> 40,000 - 1,00,000 <small>fees/year</small></span> 
+                          <span><Image width={20} height={20} src="./images/study-mode.png" alt="img" className="img-fluid" /> PG</span> 
+                          <span><Image width={20} height={20} src="./images/duration.png" alt="img" className="img-fluid" /> 5+ Years</span> 
+                          <span><Image width={20} height={20} src="./images/time.png" alt="img" className="img-fluid" />  Full Time</span>
                        </div>
                     </div>
                     <div className="card-body career-card-two">

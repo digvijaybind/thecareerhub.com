@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Const from "../../util/Constants";
 import HomeTestimonial from '../home/HomeTestimonial';
+import Image from "next/image";
 
 class HomeContent extends React.Component {
   render() {
@@ -25,7 +26,7 @@ class HomeContent extends React.Component {
               <Link target="_blank" className="btn btn-take-test" href="/career">Your Career Hub</Link>
             </div>
             <div className="col-md-5">
-              <img src="images/home/career-screen.png" alt="img" className="img-fluid" />
+              <Image width={450} height={470} src="images/home/career-screen.png" alt="img" className="img-fluid" />
             </div>
           </div>          
         </div>
@@ -46,7 +47,7 @@ class HomeContent extends React.Component {
             </ul>
           </div>
           <div className="col-md-5">
-            <img src="images/home/pathways.png" alt="img" className="img-fluid" />
+            <Image width={450} height={470} src="images/home/pathways.png" alt="img" className="img-fluid" />
           </div>
         </div>          
       </div>
@@ -68,7 +69,7 @@ class HomeContent extends React.Component {
               <Link target="_blank" className="btn btn-take-test" href="/course">Find Courses</Link>
             </div>
             <div className="col-md-5">
-              <img src="images/home/career-screen.png" alt="img" className="img-fluid" />
+              <Image width={450} height={470} src="images/home/career-screen.png" alt="img" className="img-fluid" />
             </div>
           </div>          
         </div>
@@ -92,7 +93,7 @@ class HomeContent extends React.Component {
             <Link target="_blank" className="btn btn-take-test" href="/college">Find Colleges</Link>
           </div>
           <div className="col-md-5">
-            <img src="images/home/college-screen.png" alt="img" className="img-fluid" />
+            <Image width={450} height={470} src="images/home/college-screen.png" alt="img" className="img-fluid" />
           </div>
         </div>          
       </div>
@@ -114,7 +115,7 @@ class HomeContent extends React.Component {
             <Link target="_blank" className="btn btn-take-test" href="/industry">Find Industries</Link>
           </div>
           <div className="col-md-5">
-            <img src="images/home/industry-screen.png" alt="img" className="img-fluid" />
+            <Image width={450} height={470} src="images/home/industry-screen.png" alt="img" className="img-fluid" />
           </div>
         </div>          
       </div>
@@ -137,7 +138,7 @@ class HomeContent extends React.Component {
               </Link>
           </div>
           <div className="col-md-5">
-            <img src="images/home/test-screen.png" alt="img" className="img-fluid" />
+            <Image width={450} height={470} src="images/home/test-screen.png" alt="img" className="img-fluid" />
           </div>
         </div>          
       </div>
