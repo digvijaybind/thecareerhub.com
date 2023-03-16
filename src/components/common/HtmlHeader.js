@@ -1,8 +1,16 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import { useRouter, withRouter } from "next/router";
+import config from '@/config/config';
+
 
 class HtmlHeader extends React.Component {
-  const 
+  constructor(props) {
+    super(props);
+  this.link=`${config.link}${this.props.router.pathname?.slice(1,this.props.router.pathname.length)}`;
+  if(this.link[this.link.length-1]==="/") 
+  this.link=this.link.slice(0,this.link.length-1)
+  }
   render() {
      let {title,description,keywords}=this.props;
      if(keywords?.length>0 && typeof(keywords)!=="string") keywords=keywords.join(", ")
@@ -21,10 +29,10 @@ class HtmlHeader extends React.Component {
           <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
           <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
           <meta name="keywords" content={keywords}/>
-          <link rel="canonical" href={window.location.href} />
+          <link rel="canonical" href={this.link} />
         </Helmet>
       </div>
     );
   }
 }
-export default HtmlHeader;
+export default withRouter(HtmlHeader);
