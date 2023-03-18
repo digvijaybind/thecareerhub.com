@@ -153,7 +153,7 @@ class ExamDetails extends React.Component {
         <div className="section3">
           <div className="container-fluid padding-left-right">
             <div className="row ">
-              <div className="col-md-3 mr-5">
+              <div className="col-md-3 my-3">
                 <div className="scroll-sidebar">
                   <ExamDetailSidebar
                     active={this.state.active}
@@ -161,7 +161,7 @@ class ExamDetails extends React.Component {
                   />
                 </div>
               </div>
-              <div className="col-md-8">
+              <div className="col-md-9 rightSec">
                 <div className="list-colright detail-list-colright">
                   <Overview model={this.model.exam} exam={this.exam} />
                   <ExamPrep model={this.model.exam} exam={this.exam} />

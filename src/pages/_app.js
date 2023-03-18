@@ -53,7 +53,7 @@ export default function MyApp(props) {
       </Head>
      
       <Header open={open} setOpen={(val) => setOpen(val)} />
-      <div style={{ minHeight: "1000px" }}>
+      <div style={{ minHeight: "80vh" }}>
         <Component {...pageProps} prop={true} />
       </div>
       <Footer />

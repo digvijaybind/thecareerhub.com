@@ -192,12 +192,12 @@ class CareerDetails extends React.Component {
         <div className="section3">
               <div className="container-fluid padding-left-right">
                   <div className="row ">
-                      <div className="col-md-3 mr-5">
+                      <div className="col-md-3 my-3">
                       <div className="scroll-sidebar">
                           <CareerDetailSidebar active={this.state.active} setActive={this.setActive} />
                       </div>
                       </div>
-                      <div className="col-md-8">
+                      <div className="col-md-9 rightSec">
                           <div className="list-colright detail-list-colright">
                               <CareerImage model={this.model.career} career={this.career} />
                               <Overview model={this.model.career} career={this.career} />

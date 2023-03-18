@@ -1,6 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import { useRouter, withRouter } from "next/router";
+import { withRouter } from "next/router";
 import config from "@/config/config";
 
 class HtmlHeader extends React.Component {

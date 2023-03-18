@@ -149,7 +149,7 @@ class Header extends React.Component {
       <div className="section1 bg-blue fixed-top">
         <div className="container-fluid">
           <div className="row">
-            <nav className="navbar navbar-expand-lg navbar-light col-md-12">
+            <nav className="navbar navbar-expand-lg navbar-light col-md-12 px-3">
               <div className="col-md-2 plrmobile0">
                 <button
                   className="navbar-toggler"

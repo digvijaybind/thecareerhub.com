@@ -94,8 +94,11 @@ body {
 }
 
 a {
-  color: inherit;
+  /* color: inherit; */
   text-decoration: none;
+}
+a:hover{
+  color: inherit !important;
 }
 button:hover{
   color: inherit !important;
@@ -152,8 +155,8 @@ a:hover {
 }
 
 .padding-left-right {
-  padding-left: 131px;
-  padding-right: 131px;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 .mrtp16 {
@@ -498,7 +501,7 @@ a:hover {
 .checkbox-sec .form-check-input {
   width: 18px;
   height: 18px;
-  /* opacity: 0.54; */
+  opacity: 0.54;
   /* background-color: #010101; */
 }
 
@@ -3236,8 +3239,8 @@ hr {
 }
 
 .scroll-sidebar {
-  position: fixed;
-  width: 303px;
+  /* position: fixed; */
+  /* width: 303px; */
 }
 
 #work,
@@ -3398,7 +3401,7 @@ hr {
 }
 
 .social-div img {
-  padding: 10px 8px;
+  /* padding: 10px 8px; */
 }
 
 .iframe {
@@ -3585,7 +3588,7 @@ td {
 }
 
 .growth-c {
-  padding: 2px 25px;
+  padding: 2px 0.5rem;
   border-left: 1px solid #bcbbbb;
   margin: 0px -1px;
 }
@@ -3657,3 +3660,13 @@ td {
   width: 100% !important;
 }
 }
+.rightSec{
+  height: 77vh;
+   overflow-y: auto;
+}
+.rightSec::-webkit-scrollbar {
+  display: none;
+  }
+[class^="col-"]{
+    flex-wrap: wrap;
+  }

@@ -49,12 +49,12 @@ class Footer extends React.Component {
                   <p><span><i className="fa fa-envelope" aria-hidden="true"></i></span><Link href="mailto:support@thecareerhub.com"> support@thecareerhub.com </Link></p>
                   <p className="social-img">
                   <span>Follow us</span>
-                  <Link href="https://www.facebook.com/The-Career-Hub-110040528233534/"><Image width={20} height={20} src="/images/social/fb.png" alt="img" /></Link> 
-                  <Link href="https://www.instagram.com/thecareerhubindia/"><Image width={20} height={20} src="/images/social/ig.png" alt="img" /></Link> 
-                  <Link href="https://www.linkedin.com/in/thecareerhub/"><Image width={20} height={20} src="/images/social/li.png" alt="img" /></Link> 
-                  <Link href="https://in.pinterest.com/thecareerhubcom"><Image width={20} height={20} src="/images/social/pt.png" alt="img" /></Link> 
-                  <Link href="https://twitter.com/TheCareerH"><Image width={20} height={20} src="/images/social/tw.png" alt="img" /></Link> 
-                  <Link href="#"><Image width={20} height={20} src="/images/social/yt.png" alt="img" /></Link> 
+                  <Link href="https://www.facebook.com/The-Career-Hub-110040528233534/"><Image width={25} height={25} src="/images/social/fb.png" alt="img" /></Link> 
+                  <Link href="https://www.instagram.com/thecareerhubindia/"><Image width={25} height={25} src="/images/social/ig.png" alt="img" /></Link> 
+                  <Link href="https://www.linkedin.com/in/thecareerhub/"><Image width={25} height={25} src="/images/social/li.png" alt="img" /></Link> 
+                  <Link href="https://in.pinterest.com/thecareerhubcom"><Image width={25} height={25} src="/images/social/pt.png" alt="img" /></Link> 
+                  <Link href="https://twitter.com/TheCareerH"><Image width={25} height={25} src="/images/social/tw.png" alt="img" /></Link> 
+                  <Link href="#"><Image width={25} height={25} src="/images/social/yt.png" alt="img" /></Link> 
                   </p>
                 </div>
               </div> 
@@ -70,7 +70,7 @@ class Footer extends React.Component {
               </div>
               <div className="col-md-12">
                 <div className="row">
-                  <div className="col-md-2 col-xs-6">
+                  <div className="col-lg-3 col-xs-6">
                     <h6 className="txt12 mt24">Top Categories</h6>
                     <ul className="footer-ul catrowtxt mt20">
                       <li className="explore-menu-links"><Link href={`/career?category=${encodeURIComponent('Engineering & technology')}`} className="dropdown-item">Engineering & technology</Link></li>
@@ -79,7 +79,7 @@ class Footer extends React.Component {
                       <li className="explore-menu-links"><Link href={`/career?category=${encodeURIComponent('Computer & IT')}`} className="dropdown-item">Computer & IT</Link></li>
                     </ul>
                   </div>
-                  <div className="col-md-2 col-xs-6">
+                  <div className="col-lg-3 col-xs-6">
                     <h6 className="txt12 mt24">Top Education</h6>
                     <ul className="footer-ul catrowtxt mt20">
                       <li className="explore-menu-links"><Link href={`/career?course_level=1`} className="dropdown-item">Diploma</Link></li>
@@ -89,7 +89,7 @@ class Footer extends React.Component {
                   
                     </ul>
                   </div>
-                  <div className="col-md-2 col-xs-6">
+                  <div className="col-lg-2 col-xs-6">
                     <h6 className="txt12 mt24">Streams</h6>
                     <ul className="footer-ul catrowtxt mt20">
                       <li className="explore-menu-links"><Link href={`/career?stream=3`} className="dropdown-item">Arts</Link></li>
@@ -99,7 +99,7 @@ class Footer extends React.Component {
                   
                     </ul>
                   </div>
-                  <div className="col-md-2 col-xs-6">
+                  <div className="col-lg-2 col-xs-6">
                     <h6 className="txt12 mt24">Fees</h6>
                     <ul className="footer-ul catrowtxt mt20">
                     <li className="explore-menu-links"><Link href='/career?fees=40000' className="dropdown-item"><i className="fa fa-inr"></i>40,000</Link></li>
@@ -109,7 +109,7 @@ class Footer extends React.Component {
                   
                     </ul>
                   </div>
-                  <div className="col-md-2 col-xs-6">
+                  <div className="col-lg-2 col-xs-6">
                     <h6 className="txt12 mt24">Salary</h6>
                     <ul className="footer-ul catrowtxt mt20">
                       <li className="explore-menu-links"><Link href='/career?salary=40000' className="dropdown-item"><i className="fa fa-inr"></i>4,00,000</Link></li>
@@ -182,7 +182,7 @@ class Footer extends React.Component {
               </div>
               <div className="col-md-12">
                 <div className="row">
-                  <div className="col-md-2">
+                  <div className="col-md-3">
                     <h6 className="txt12 mt24">Top Categories</h6>
                     <ul className="footer-ul catrowtxt mt20">
                       <li className="explore-menu-links"><Link href='/college?category=1' className="dropdown-item">Engineering</Link></li>
@@ -192,7 +192,7 @@ class Footer extends React.Component {
                   
                     </ul>
                   </div>
-                  <div className="col-md-2">
+                  <div className="col-md-3">
                     <h6 className="txt12 mt24">Top Streams</h6>
                     <ul className="footer-ul catrowtxt mt20">
                       <li className="explore-menu-links"><Link href={`/college?stream=3`} className="dropdown-item">Arts</Link></li>
