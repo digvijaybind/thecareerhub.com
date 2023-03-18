@@ -97,7 +97,9 @@ a {
   color: inherit;
   text-decoration: none;
 }
-
+button:hover{
+  color: inherit !important;
+}
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
@@ -140,13 +142,20 @@ a {
   padding: 45px 0px;
 }
 
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
 a:hover {
   text-decoration: none;
 }
+
 .padding-left-right {
   padding-left: 131px;
   padding-right: 131px;
 }
+
 .mrtp16 {
   margin-top: 16px;
 }
@@ -177,7 +186,7 @@ a:hover {
 }
 
 .bntitle {
-  font-size: 20px !important;
+  font-size: 33px;
   font-weight: 600;
   font-stretch: normal;
   font-style: normal;
@@ -215,12 +224,10 @@ a:hover {
   background-color: #fff;
 }
 
-/* .bg-blue {
-  background-color: #112152;
-} */
 .bg-blue {
-  background-color: #040e2b;
+  background-color: #112152;
 }
+
 .navbar-light .navbar-nav .nav-link {
   padding-left: 16px;
   padding-top: 10px;
@@ -270,19 +277,15 @@ a:hover {
 .badge {
   padding: 0px;
   margin-bottom: 12px;
-  display: inline-flex;
-  margin: 0 4px;
-  white-space: normal;
-  flex-wrap: wrap;
-  color: #000;
 }
+
 .detail i {
   margin: 0 8px 0 0;
 }
 
-/* .card-two {
+.card-two {
   padding: 16px 20px 16px 20px;
-} */
+}
 .card-two {
   padding: 1rem 1rem;
 }
@@ -297,9 +300,8 @@ a:hover {
   letter-spacing: normal;
   text-align: left;
   color: #2b2b2b;
-  font-size: 12px;
-  padding: 5px 5px 5px 5px;
 }
+
 .detail strong {
   font-size: 16px;
   font-weight: 500;
@@ -329,18 +331,18 @@ a:hover {
   justify-content: flex-start;
   align-items: flex-start;
   gap: 10px;
+  padding: 13px 16px;
   border-radius: 4px;
   color: #112152;
   border: solid 1px #d6ddec;
   background-color: #f3f7fe;
+  margin: 0px 16px 0px 0px;
+  font-size: 14px;
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   letter-spacing: normal;
   text-align: left;
-  font-size: 12px;
-  margin: 8px 5px !important;
-  padding: 13px 6px !important;
 }
 
 .job-tags span {
@@ -816,9 +818,7 @@ hr {
 .desktop-hide {
   display: none;
 }
-.Blog {
-  position: relative;
-}
+
 /* Media Query For mobile */
 
 @media only screen and (max-width: 600px) {
@@ -901,6 +901,10 @@ hr {
   .desktop-hide {
     display: block;
   }
+  /* .bg-blue{background-color: #000;}
+    .afternavsec {
+        
+    } */
 
   .banner-mask {
     margin-top: 40px !important;
@@ -929,6 +933,10 @@ hr {
     white-space: nowrap;
   }
 
+  .boxwcolor .btn-detail {
+    font-size: 12px;
+  }
+
   /*.leftsidebar {display: none;}*/
   .has-feedback {
     display: none;
@@ -939,13 +947,23 @@ hr {
     padding-left: 5px;
     padding-top: 0px;
   }
-
+  .bg-blue {
+    background-color: #040e2b;
+  }
   .bg-tags {
     margin: 5px 0px;
   }
   .col-md-12p {
     padding-right: 5px;
     padding-left: 5px;
+  }
+  .card-two {
+    padding: 1rem 1rem;
+  }
+  .detail span {
+    margin-right: 15px;
+    font-size: 12px;
+    padding: 5px 5px 5px 5px;
   }
   .detail span img {
     margin-right: 5px;
@@ -1038,6 +1056,10 @@ hr {
   .bttn-yellow-detail {
     display: none !important;
   }
+  .boxwcolor .btn-detail {
+    margin: 8px 5px !important;
+    padding: 13px 6px !important;
+  }
   .card-one h5 {
     margin-top: 0px;
   }
@@ -1078,6 +1100,9 @@ hr {
   .dt-heading {
     display: inline-grid !important;
   }
+  .bntitle {
+    font-size: 20px !important;
+  }
   .growth-c {
     padding: 2px 12px !important;
   }
@@ -1112,9 +1137,11 @@ hr {
   width: 36px;
   height: 23px;
 }
+
 .section1 {
-  padding: 12px;
+  padding: 12px 0px 11px;
 }
+
 .plrmobile0 {
   padding-left: 0px;
   padding-right: 0px;
@@ -1295,8 +1322,8 @@ hr {
   padding: 12px 16px;
   border-radius: 4px;
   text-align: center;
-  background-color: #fee040;
-  color: #112152;
+  background-color: #fee040 !important;
+  color: #112152 !important;
   font-weight: 600;
   font-size: 14px;
   line-height: 1.71;
@@ -1700,9 +1727,7 @@ hr {
 .form-1-conatiner img {
   width: 200px;
 }
-.qac {
-  margin-top: 84px;
-}
+
 .qac-form-row {
   padding: 20px 140px;
 }
@@ -2024,6 +2049,11 @@ hr {
 .careerimageonlist {
   display: flex;
   align-items: center;
+}
+.careerimageonlist img{
+  width: 100% !important;
+  max-width: 247px !important;
+  /* min-width: 200px !important; */
 }
 
 .pointercss {
@@ -2489,7 +2519,7 @@ hr {
 
 .blog-detail-text2 {
   position: absolute;
-  top: 42%;
+  top: 12%;
   z-index: 1000;
   width: 93%;
   height: auto;
@@ -2499,7 +2529,7 @@ hr {
 
 .blog-detail-text3 {
   position: absolute;
-  top: 42%;
+  top: 19.5%;
   z-index: 1000;
   width: 93%;
   height: auto;
@@ -2512,13 +2542,13 @@ hr {
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
-  line-height: 020px;
+  line-height: 1.5;
   letter-spacing: normal;
   text-align: left;
   color: #fff;
   width: auto;
   height: auto;
-  margin: 0;
+  margin: 3% 0% 3% 0%;
 }
 
 .blog-date {
@@ -2575,8 +2605,8 @@ hr {
   gap: 10px;
   padding: 9px 12px;
   border-radius: 4px;
-  background-color: #fee040;
-  color: #112152;
+  background-color: #fee040 !important;
+  color: #112152 !important;
   font-size: 12px;
   font-weight: 500;
 }
@@ -2656,6 +2686,13 @@ hr {
   letter-spacing: normal;
   text-align: left;
   color: #112152;
+}
+.badge {
+  display: inline-flex;
+  margin: 0 4px;
+  white-space: normal;
+  flex-wrap: wrap;
+  color: #000;
 }
 .industrybadge {
   margin: 5px 4px 25px 4px;
@@ -3614,4 +3651,9 @@ td {
   letter-spacing: normal;
   text-align: left;
   color: #2b2b2b;
+}
+@media only screen and (max-width: 600px) {
+.imgWrap img{
+  width: 100% !important;
+}
 }

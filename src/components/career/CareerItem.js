@@ -19,7 +19,7 @@ class CourseItem extends React.Component {
           <div className="card-body card-one lightbluemain">
             <div className="row">
               <div className="col-md-4 careerimageonlist">
-                <Image width={246} height={138} src={url+this.props.career.media_path} alt="img" />
+                <Image width={246} height={138} src={url+this.props.career.media_path} alt="img" objectFit="contain"/>
               </div>
               <div className="col-md-8">
                 <h5 className="card-title">{this.props.career.name}</h5>

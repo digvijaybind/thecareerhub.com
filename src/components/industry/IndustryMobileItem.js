@@ -28,8 +28,8 @@ class IndustryMobileItem extends React.Component {
                 <div className="row">
                   <div className="col-md-12">
                     <div className="row">
-                      <div className="col maxw-50">
-                        <Image width={210} height={118} src={url+industry.image_path} alt={industry.imgalt}/>
+                      <div className="col maxw-50 imgWrap">
+                        <Image width={150} height={118} src={url+industry.image_path} alt={industry.imgalt}/>
                       </div>
                       <div className="col maxw-50 p-0">
                         <h5 className="card-title">{industry.name}</h5>
