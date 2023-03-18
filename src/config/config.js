@@ -5,6 +5,7 @@ const config = {
     "Access-Control-Allow-Origin": "*",
     "Content-Type": "application/json",
     token: "wdxbXcuJgHfuXxbQ",
-  }
+  },
+  baseUrl:"https://master.d28lqk6bvvtx8g.amplifyapp.com/",
 };
 export default config;
