@@ -36,14 +36,14 @@ class SelectFilterWithSearch extends React.Component {
         <>
           <input className="form-check-input" type="checkbox" checked 
             onChange={ event => this.onCheck(category.id, event.target.checked) } />
-            <span class="checkmark"></span>
+            <span className="checkmark"></span>
             </>
         }
         { !checked &&
         <>
           <input className="form-check-input" type="checkbox"
             onChange={ event => this.onCheck(category.id, event.target.checked) } />
-            <span class="checkmark"></span>
+            <span className="checkmark"></span>
             </>
         }
         <label className="form-check-label">{category.name}</label>

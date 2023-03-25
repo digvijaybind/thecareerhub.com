@@ -27,14 +27,14 @@ class SelectFilterWithoutSearch extends React.Component {
         <>
           <input className="form-check-input" type="checkbox" checked id={education.name+'_'+i}
             onChange={ event => this.onCheck(education.id, event.target.checked) } />
-            <span class="checkmark"></span>
+            <span className="checkmark"></span>
             </>
         }
         { !checked &&
         <>
           <input className="form-check-input" type="checkbox" id={education.name+'_'+i}
             onChange={ event => this.onCheck(education.id, event.target.checked) } />
-            <span class="checkmark"></span>
+            <span className="checkmark"></span>
             </>
         }
         <label className={ checked ? 'form-check-label activefilter' : 'form-check-label'} 

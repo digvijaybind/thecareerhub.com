@@ -38,7 +38,7 @@ class SelectFilterWithSearch extends React.Component {
                 this.onCheck(category.id, event.target.checked)
               }
             />
-            <span class="checkmark"></span>
+            <span className="checkmark"></span>
             </> 
           )}
           {!checked && (
@@ -51,7 +51,7 @@ class SelectFilterWithSearch extends React.Component {
                 this.onCheck(category.id, event.target.checked)
               }
             />
-            <span class="checkmark"></span>
+            <span className="checkmark"></span>
             </>
           )}
           <label className={ checked ? 'form-check-label activefilter' : 'form-check-label'} 
