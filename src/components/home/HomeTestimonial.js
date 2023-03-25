@@ -116,12 +116,12 @@ class HomeTestimonial extends React.Component {
                               </div>
                           </div>
 
-                          <Link target="_blank" className="testimonial-prev" href="#testimonialCarousel" role="button" data-slide="prev">
+                          <a className="testimonial-prev" href="#testimonialCarousel" role="button" data-slide="prev">
                           <Image width={20} height={20} src="images/leftfa.png" alt="img" />
-                          </Link>
-                          <Link target="_blank" className="testimonial-next" href="#testimonialCarousel" role="button" data-slide="next">
+                          </a>
+                          <a className="testimonial-next" href="#testimonialCarousel" role="button" data-slide="next">
                           <Image width={20} height={20} src="images/rightfa.png" alt="img" />
-                          </Link>
+                          </a>
                       </div>
                   </div>
               </div>

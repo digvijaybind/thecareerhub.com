@@ -3661,8 +3661,8 @@ td {
 }
 }
 .rightSec{
-  height: 77vh;
-   overflow-y: auto;
+  /* height: 77vh;
+   overflow-y: auto; */
 }
 .rightSec::-webkit-scrollbar {
   display: none;
