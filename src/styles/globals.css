@@ -99,6 +99,10 @@ a {
 }
 a:hover{
   color: inherit !important;
+border: none !important;
+}
+.nav-link{
+border: none !important;
 }
 button:hover{
   color: inherit !important;
@@ -206,7 +210,6 @@ a:hover {
 .leftsidebar .form-check {
   margin-bottom: 19px !important;
 }
-
 #example-search-input::placeholder {
   height: auto;
 }
@@ -503,8 +506,35 @@ a:hover {
   height: 18px;
   opacity: 0.54;
   /* background-color: #010101; */
+  border: 1px solid #01010159;
+}
+.form-check-input:checked[type=checkbox] {
+  background-image: none;
+position: relative;
 }
 
+.form-check-input[type=checkbox] {
+  border-radius: 0.15em !important;
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.form-check-input[type=checkbox]:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkmark:after {
+  left: 6px;
+  top: 6px;
+  width: 6px;
+  height: 11px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
 .checkbox-sec label {
   font-size: 14px;
   font-weight: 500;
@@ -720,9 +750,9 @@ a:hover {
 .bg-bg {
   border-top-left-radius: 25px !important;
   border-bottom-left-radius: 25px !important;
-  background: #f3f7fe;
-  border: 1px solid #ced4da;
-  border-right: none;
+  background: #f3f7fe !important;
+  border: 1px solid #ced4da !important;
+  border-right: none !important;
   border-radius: 0px;
 }
 
@@ -2119,7 +2149,11 @@ hr {
   color: #000;
   padding: 6px 0 !important;
 }
-
+.navbar-nav .explore-menu-links a:hover {
+  color: #16181b;
+    text-decoration: none;
+    background-color: #e9ecef !important;
+}
 .rowcollege h5 a {
   font-size: 14px;
   font-weight: 600;
