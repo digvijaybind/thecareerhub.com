@@ -28,6 +28,7 @@ class SelectFilterWithSearch extends React.Component {
       return (
         <div key={`filter_category_${i}`} className="form-check">
           {checked && (
+            <>
             <input
               id={category.name +'_'+ i}
               className="form-check-input"
@@ -37,8 +38,11 @@ class SelectFilterWithSearch extends React.Component {
                 this.onCheck(category.id, event.target.checked)
               }
             />
+            <span className="checkmark"></span>
+            </> 
           )}
           {!checked && (
+            <>
             <input
               id={category.name +'_'+ i}
               className="form-check-input"
@@ -47,6 +51,8 @@ class SelectFilterWithSearch extends React.Component {
                 this.onCheck(category.id, event.target.checked)
               }
             />
+            <span className="checkmark"></span>
+            </>
           )}
           <label className={ checked ? 'form-check-label activefilter' : 'form-check-label'} 
             htmlFor={category.name +'_'+ i}>{this.props.type && this.props.type =='cities' ? category.name.toUpperCase() : category.name}&nbsp;

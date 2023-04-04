@@ -99,9 +99,21 @@ a {
 }
 a:hover{
   color: inherit !important;
+border: none !important;
 }
-button:hover{
+.nav-link{
+border: none !important;
+}
+button{
   color: inherit !important;
+  box-shadow: none !important;
+  outline: none !important;
+  border: none !important;
+}
+.btn{
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
 }
 @media (prefers-color-scheme: dark) {
   html {
@@ -206,7 +218,6 @@ a:hover {
 .leftsidebar .form-check {
   margin-bottom: 19px !important;
 }
-
 #example-search-input::placeholder {
   height: auto;
 }
@@ -502,9 +513,8 @@ a:hover {
   width: 18px;
   height: 18px;
   opacity: 0.54;
-  /* background-color: #010101; */
+  border: 1px solid #01010159;
 }
-
 .checkbox-sec label {
   font-size: 14px;
   font-weight: 500;
@@ -720,9 +730,9 @@ a:hover {
 .bg-bg {
   border-top-left-radius: 25px !important;
   border-bottom-left-radius: 25px !important;
-  background: #f3f7fe;
-  border: 1px solid #ced4da;
-  border-right: none;
+  background: #f3f7fe !important;
+  border: 1px solid #ced4da !important;
+  border-right: none !important;
   border-radius: 0px;
 }
 
@@ -1084,10 +1094,8 @@ hr {
   .Mask {
     margin-left: 1.5rem !important;
   }
-  .scroll-sidebar {
-    position: static !important;
-    width: 100% !important;
-  }
+  
+  
   .secg {
     display: flex-root !important;
   }
@@ -1480,6 +1488,7 @@ hr {
 
 .imgc2a {
   height: 305px;
+  width: 100% !important;
 }
 
 .padd-0c2a {
@@ -2119,7 +2128,11 @@ hr {
   color: #000;
   padding: 6px 0 !important;
 }
-
+.navbar-nav .explore-menu-links a:hover {
+  color: #16181b;
+    text-decoration: none;
+    background-color: #e9ecef !important;
+}
 .rowcollege h5 a {
   font-size: 14px;
   font-weight: 600;
@@ -2775,7 +2788,7 @@ hr {
   color: #fff;
 }
 .footer a:hover {
-  color: #fee040;
+  color: #fee040 !important;
   background-color: transparent !important;
 }
 
@@ -3237,12 +3250,16 @@ hr {
 .swiper-slide3 {
   width: auto;
 }
-
 .scroll-sidebar {
+  position: static !important;
+  width: 100% !important;
   /* position: fixed; */
   /* width: 303px; */
 }
 
+.scroll-sidebar .leftsidebar {
+  padding: 0 !important;
+}
 #work,
 #overview,
 #abilities,

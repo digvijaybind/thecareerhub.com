@@ -65,6 +65,7 @@ class CourseListFilter extends React.Component {
               <div className="switch">
                 <p className="title">INTERNSHIPs available</p>
                 <input type="checkbox" id="toggleAll" />
+                
                 <label
                   htmlFor="toggleAll"
                   onClick={this.internshipFilter}
